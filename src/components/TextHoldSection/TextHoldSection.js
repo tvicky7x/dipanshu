@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import HamsterSection from "./HamsterSection/HamsterSection";
+import TextTypeSection from "./TextTypeSection/TextTypeSection";
 
 function TextHoldSection() {
   const [mouseOnHold, setMouseOnHold] = useState(false); // Controls hamster motion state
@@ -9,12 +10,10 @@ function TextHoldSection() {
   //   onHold function of mouse
   const handleMouseDown = () => {
     setMouseOnHold(true); // Start hamster when mouse is held down
-    console.log("Hamster running");
   };
 
   const handleMouseUp = () => {
     setMouseOnHold(false); // Stop hamster when mouse is released
-    console.log("Hamster stopped");
   };
 
   useEffect(() => {
@@ -39,10 +38,11 @@ function TextHoldSection() {
   return (
     <div
       ref={textHoldContainerRef}
-      className="flex h-screen items-center justify-center bg-black"
+      className="flex h-screen items-center justify-center bg-black text-white"
     >
-      <div>
+      <div className="flex flex-col items-center justify-center gap-y-5">
         <HamsterSection hamsterMotion={mouseOnHold} />
+        <TextTypeSection textMotion={mouseOnHold} />
       </div>
     </div>
   );
