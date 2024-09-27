@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "gsap": "^3.12.5",
+    "jquery.ripples": "^0.6.3",
     "next": "14.2.12",
     "react": "^18",
+    "react-curved-text": "^3.0.1",
     "react-dom": "^18",
     "typewriter-effect": "^2.21.0"
   },

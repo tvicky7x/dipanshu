@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Typewriter from "typewriter-effect";
 
-function TextTypeSection({ textMotion }) {
+function TextTypeSection({ textMotion, onCompleteTyping }) {
   const typewriterRef = useRef(null);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function TextTypeSection({ textMotion }) {
           .typeString("Never mind me,<br/> just doing my shit")
           .pauseFor(500)
           .callFunction(() => {
-            console.log("Done typing");
+            onCompleteTyping();
           });
       }}
     />
