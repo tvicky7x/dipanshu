@@ -24,38 +24,43 @@ function HeroSection() {
   // );
 
   return (
-    <div
-      ref={heroSectionRef}
-      className="relative flex h-screen flex-col items-center justify-center overflow-hidden bg-black bg-cover bg-center"
-      style={{ backgroundImage: "url(bg.svg)" }}
-    >
-      <Image
-        src={heroSectionHand}
-        alt="hero section hand illustration"
-        className="heroSectionHand mb-[155px] aspect-auto w-[366px]"
-      />
-      <div className="heroSectionCurveText absolute top-full -translate-y-[350px]">
-        <ReactCurvedText
-          width={3500}
-          height={3500}
-          cx={1750}
-          cy={1750}
-          rx={1500}
-          ry={1500}
-          startOffset={1330}
-          reversed={true}
-          text="PRODUCT DESIGN"
-          textProps={{ style: { fontSize: 210 } }}
-          textPathProps={{
-            fill: "transparent",
-            stroke: "#ffffff",
-            strokeWidth: "1.4px",
-          }}
-          tspanProps={{ wordSpacing: "100px" }}
-          // ellipseProps={{ style: "fill: #ff0000" }}
-          svgProps={null}
-        />
+    <div className="overflow-hidden">
+      <div
+        ref={heroSectionRef}
+        className="flex h-screen flex-col items-center justify-center bg-cover bg-center"
+        // style={{ backgroundImage: "url(bg.svg)" }}
+      >
+        <div className="relative">
+          <Image
+            src={heroSectionHand}
+            alt="hero section hand illustration"
+            className="heroSectionHand mb-[155px] aspect-auto w-[366px]"
+          />
+          <div className="heroSectionCurveText absolute left-1/2 top-full -translate-x-1/2 -translate-y-[350px]">
+            <ReactCurvedText
+              width={3500}
+              height={3500}
+              cx={1750}
+              cy={1750}
+              rx={1500}
+              ry={1500}
+              startOffset={1330}
+              reversed={true}
+              text="PRODUCT DESIGN"
+              textProps={{ style: { fontSize: 210 } }}
+              textPathProps={{
+                fill: "transparent",
+                stroke: "#ffffff",
+                strokeWidth: "1.4px",
+              }}
+              tspanProps={{ wordSpacing: "100px" }}
+              // ellipseProps={{ style: "fill: #ff0000" }}
+              svgProps={null}
+            />
+          </div>
+        </div>
       </div>
+      <div className="h-[130px]" />
     </div>
   );
 }

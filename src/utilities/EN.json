@@ -2,6 +2,22 @@
   "home": {
     "loadingScreen": {
       "notePara": "[ TAP AND HOLD TO CONTINUE ]"
+    },
+    "aboutSection": {
+      "aboutList": [
+        {
+          "head": "[HI]",
+          "para": "My friend. Welcome to my website. You can call me noone. Please take a look at my digital crip and have a wonderful time exploring."
+        },
+        {
+          "head": "[WHO I AM]",
+          "para": "Master Procrastinator. Daddy Joke Connoisseur. Expert Creative Individual. Vision Seeker. Dream Chaser. Toilet Destroyer. Aesthetic Enthusiast. Good Friend. Best Designer."
+        },
+        {
+          "head": "[WHAT I OFFER]",
+          "para": "Bad Jokes. Fancy Art. Dope Photoshoots. Beautifully crafted and highly functional websites as well as modern web applications that make your heart jump a lil bit higher. An exceptional visual direction supported by well-thought-through concepts, lo-fi & hi-fi designs, and interactive prototypes. Phenomenal and future-proof Webflow development with lots of love."
+        }
+      ]
     }
   }
 }
