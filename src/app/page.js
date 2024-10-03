@@ -1,10 +1,10 @@
-import TextHoldSection from "@/components/TextHoldSection/TextHoldSection";
+import PageTransition from "@/components/PageTransition/PageTransition";
 import React from "react";
 
 export default function Home() {
   return (
     <>
-      <TextHoldSection />
+      <PageTransition />
     </>
   );
 }

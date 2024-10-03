@@ -1,1 +1,7 @@
-{}
+{
+  "home": {
+    "loadingScreen": {
+      "notePara": "[ TAP AND HOLD TO CONTINUE ]"
+    }
+  }
+}

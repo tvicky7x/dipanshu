@@ -2,10 +2,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import HamsterSection from "./HamsterSection/HamsterSection";
 import TextTypeSection from "./TextTypeSection/TextTypeSection";
+import { getComponentText } from "@/utilities/commanFunctions";
+import gsap from "gsap";
+import { useRouter } from "next/navigation";
 
-function TextHoldSection() {
-  const [mouseOnHold, setMouseOnHold] = useState(false); // Controls hamster motion state
+function TextHoldSection({ endTextOnHold }) {
+  const [mouseOnHold, setMouseOnHold] = useState(false);
   const textHoldContainerRef = useRef(null);
+  const content = getComponentText("home.loadingScreen");
+  const router = useRouter();
+
+  // Function onComplete
+  function onCompleteTyping() {
+    endTextOnHold();
+  }
 
   // Function to handle mouse and touch start
   const handleStart = () => {
@@ -16,7 +26,6 @@ function TextHoldSection() {
   const handleEnd = () => {
     setMouseOnHold(false); // Stop hamster when mouse is released or touch ends
   };
-
   useEffect(() => {
     const container = textHoldContainerRef.current;
 
@@ -28,7 +37,10 @@ function TextHoldSection() {
       container.addEventListener("touchend", handleEnd); // Handle touch end
     }
 
-    // Clean up event listeners when component unmounts
+    // Disable scrolling
+    // document.body.style.overflow = "hidden";
+
+    // Clean up event listeners and re-enable scrolling when component unmounts
     return () => {
       if (container) {
         container.removeEventListener("mousedown", handleStart);
@@ -41,15 +53,27 @@ function TextHoldSection() {
   }, []);
 
   return (
-    <div
-      ref={textHoldContainerRef}
-      className="flex h-screen items-center justify-center bg-black text-white"
-    >
-      <div className="flex flex-col items-center justify-center gap-y-5">
-        <HamsterSection hamsterMotion={mouseOnHold} />
-        <TextTypeSection textMotion={mouseOnHold} />
+    <>
+      <div
+        ref={textHoldContainerRef}
+        className="relative left-0 top-0 z-50 flex h-screen items-center justify-center bg-black text-white"
+      >
+        <div className="flex flex-col items-center justify-center gap-y-5">
+          <div className="relative">
+            <HamsterSection hamsterMotion={mouseOnHold} />
+            <div className="absolute -bottom-5 left-1/2 w-full -translate-x-1/2 translate-y-full text-center">
+              <TextTypeSection
+                textMotion={mouseOnHold}
+                onCompleteTyping={onCompleteTyping}
+              />
+            </div>
+          </div>
+        </div>
+        <p className="absolute bottom-[56px] left-1/2 -translate-x-1/2">
+          {content.notePara}
+        </p>
       </div>
-    </div>
+    </>
   );
 }
 
