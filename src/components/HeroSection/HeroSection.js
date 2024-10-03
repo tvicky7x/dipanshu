@@ -27,7 +27,7 @@ function HeroSection() {
     <div className="overflow-hidden">
       <div
         ref={heroSectionRef}
-        className="flex h-screen flex-col items-center justify-center bg-cover bg-center"
+        className="flex h-[879px] flex-col items-center justify-center bg-cover bg-center"
         // style={{ backgroundImage: "url(bg.svg)" }}
       >
         <div className="relative">
@@ -43,8 +43,8 @@ function HeroSection() {
               cx={1750}
               cy={1750}
               rx={1500}
-              ry={1500}
-              startOffset={1330}
+              ry={1450}
+              startOffset={1310}
               reversed={true}
               text="PRODUCT DESIGN"
               textProps={{ style: { fontSize: 210 } }}
@@ -60,7 +60,7 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="h-[130px]" />
+      <div className="h-[150px]" />
     </div>
   );
 }
