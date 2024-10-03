@@ -13,11 +13,12 @@ function PageTransition() {
 
   return (
     <div>
-      {!textHoldEnd ? (
+      {/* {!textHoldEnd ? (
         <TextHoldSection endTextOnHold={endTextOnHold} />
       ) : (
         <HeroSection />
-      )}
+      )} */}
+      <HeroSection />
     </div>
   );
 }
