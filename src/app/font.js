@@ -48,3 +48,18 @@ export const offBit = localFont({
     { path: "/fonts/offBit/OffBitTrial-Regular.otf", weight: "400" },
   ],
 });
+
+export const futuraCyrillic = localFont({
+  src: [
+    { path: "/fonts/futuraCyrillic/FuturaCyrillicBold.ttf", weight: "700" },
+    { path: "/fonts/futuraCyrillic/FuturaCyrillicBook.ttf", weight: "400" },
+    { path: "/fonts/futuraCyrillic/FuturaCyrillicDemi.ttf", weight: "600" },
+    {
+      path: "/fonts/futuraCyrillic/FuturaCyrillicExtraBold.ttf",
+      weight: "800",
+    },
+    { path: "/fonts/futuraCyrillic/FuturaCyrillicHeavy.ttf", weight: "900" },
+    { path: "/fonts/futuraCyrillic/FuturaCyrillicLight.ttf", weight: "300" },
+    { path: "/fonts/futuraCyrillic/FuturaCyrillicMedium.ttf", weight: "500" },
+  ],
+});
