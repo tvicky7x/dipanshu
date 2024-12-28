@@ -25,7 +25,7 @@ function AboutSection() {
                 Sadly for most, that path is kept in the dark and stays out of
                 reach.
               </p>
-              <p className="my-[1.3em] text-hiddenTextColor">
+              <p className="mt-[1.3em] text-hiddenTextColor">
                 Our value-first method focuses on innovative tech insights and
                 deep tactical knowledge to give your MVP value for everyone to
                 see, feel and want to invest in.
