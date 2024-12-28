@@ -1,28 +1,5 @@
-import localFont from "next/font/local";
 import "./globals.css";
 
-const montreal = localFont({
-  src: [
-    { path: "/fonts/Montreal Bold.ttf", weight: "800" },
-    { path: "/fonts/Montreal BoldOblique.ttf", weight: "800", style: "italic" },
-    { path: "/fonts/Montreal Light.ttf", weight: "300" },
-    {
-      path: "/fonts/Montreal LightOblique.ttf",
-      weight: "300",
-      style: "italic",
-    },
-    { path: "/fonts/Montreal Medium.ttf", weight: "500" },
-    {
-      path: "/fonts/Montreal MediumOblique.ttf",
-      weight: "500",
-      style: "italic",
-    },
-    { path: "/fonts/Montreal Oblique.ttf", weight: "400", style: "italic" },
-    { path: "/fonts/Montreal Regular.ttf", weight: "400" },
-    { path: "/fonts/Montreal Thin.ttf", weight: "100" },
-    { path: "/fonts/Montreal ThinOblique.ttf", weight: "100", style: "italic" },
-  ],
-});
 
 export const metadata = {
   title: "Next.js",
@@ -32,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montreal.className} text-white`}>{children}</body>
+      <body className={`text-white`}>{children}</body>
     </html>
   );
 }

@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import TextHoldSection from "../TextHoldSection/TextHoldSection";
-import HeroSection from "../HeroSection/HeroSection";
+import WholePage from "../WholePage/WholePage";
 
 function PageTransition() {
-  const [textHoldEnd, setTextHoldEnd] = useState(false);
+  const [textHoldEnd, setTextHoldEnd] = useState(true);
 
   // end text on hold
   function endTextOnHold() {
@@ -12,13 +12,14 @@ function PageTransition() {
   }
 
   return (
-    <div>
-      {!textHoldEnd ? (
+    <>
+      <div className={`${!textHoldEnd ? "block" : "hidden"}`}>
         <TextHoldSection endTextOnHold={endTextOnHold} />
-      ) : (
-        <HeroSection />
-      )}
-    </div>
+      </div>
+      <div className={`${!textHoldEnd ? "hidden" : "block"}`}>
+        <WholePage />
+      </div>
+    </>
   );
 }
 

@@ -10,7 +10,6 @@ function TextHoldSection({ endTextOnHold }) {
   const [mouseOnHold, setMouseOnHold] = useState(false);
   const textHoldContainerRef = useRef(null);
   const content = getComponentText("home.loadingScreen");
-  const router = useRouter();
 
   // Function onComplete
   function onCompleteTyping() {
