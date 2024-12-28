@@ -49,17 +49,37 @@ export const offBit = localFont({
   ],
 });
 
-export const futuraCyrillic = localFont({
+export const aeonikTrial = localFont({
   src: [
-    { path: "/fonts/futuraCyrillic/FuturaCyrillicBold.ttf", weight: "700" },
-    { path: "/fonts/futuraCyrillic/FuturaCyrillicBook.ttf", weight: "400" },
-    { path: "/fonts/futuraCyrillic/FuturaCyrillicDemi.ttf", weight: "600" },
     {
-      path: "/fonts/futuraCyrillic/FuturaCyrillicExtraBold.ttf",
-      weight: "800",
+      path: "/fonts/aeonikTrial/AeonikTRIAL-Bold.otf",
+      weight: "700",
+      style: "normal",
     },
-    { path: "/fonts/futuraCyrillic/FuturaCyrillicHeavy.ttf", weight: "900" },
-    { path: "/fonts/futuraCyrillic/FuturaCyrillicLight.ttf", weight: "300" },
-    { path: "/fonts/futuraCyrillic/FuturaCyrillicMedium.ttf", weight: "500" },
+    {
+      path: "/fonts/aeonikTrial/AeonikTRIAL-BoldItalic.otf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "/fonts/aeonikTrial/AeonikTRIAL-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "/fonts/aeonikTrial/AeonikTRIAL-LightItalic.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "/fonts/aeonikTrial/AeonikTRIAL-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "/fonts/aeonikTrial/AeonikTRIAL-RegularItalic.otf",
+      weight: "400",
+      style: "italic",
+    },
   ],
 });

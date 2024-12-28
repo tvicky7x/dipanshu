@@ -1,4 +1,4 @@
-import { futuraCyrillic } from "@/app/font";
+import { layGrotesk } from "@/app/font";
 import React from "react";
 
 function AboutSection() {
@@ -11,11 +11,11 @@ function AboutSection() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="flex w-[650px] flex-col gap-y-[56px] text-center text-black">
             <p
-              className={`${futuraCyrillic.className} text-[24px] font-semibold leading-[22px]`}
+              className={`${layGrotesk.className} text-[24px] font-semibold leading-[22px] tracking-[0.04em]`}
             >
               {"[ABOUT]"}
             </p>
-            <div className="text-[32px] leading-[40px]">
+            <div className="text-[32px] leading-[40px] tracking-[0.02em]">
               <p className="mb-[1.3em]">
                 Startups who make it all have a thing in common. They’ve found
                 the way to make their value obvious to their users and their

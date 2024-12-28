@@ -1,4 +1,4 @@
-import { futuraCyrillic, layGrotesk, offBit } from "@/app/font";
+import { aeonikTrial, futuraCyrillic, layGrotesk, offBit } from "@/app/font";
 import React from "react";
 
 const skillsArray = [
@@ -22,12 +22,12 @@ function SkillsSection() {
       <div className="relative h-full rounded-[40px] border-[1px] border-white">
         <div className="absolute left-1/2 top-[28%] -translate-x-1/2 -translate-y-1/2 text-nowrap text-center uppercase">
           <p
-            className={`${futuraCyrillic.className} text-[24px] font-[450] leading-[22px] tracking-[0.04em]`}
+            className={`${aeonikTrial.className} text-[24px] leading-[22px] tracking-[0.02em]`}
           >
             {"[SKILLS]"}
           </p>
           <p
-            className={`${layGrotesk.className} mt-[20px] text-[70px] font-medium leading-[83px] tracking-[0.04em]`}
+            className={`${layGrotesk.className} mt-[20px] text-[70px] leading-[83px]`}
           >
             Design Arsenal
           </p>
