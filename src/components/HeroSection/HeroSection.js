@@ -31,7 +31,7 @@ function HeroSection() {
   // );
 
   return (
-    <div className="snap-start snap-always overflow-hidden">
+    <div className="snap-center snap-always overflow-hidden">
       <div
         ref={heroSectionRef}
         className="flex h-screen flex-col items-center justify-center bg-cover bg-center"
