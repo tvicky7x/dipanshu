@@ -7,13 +7,13 @@ function SimplicitySection() {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex flex-col text-nowrap text-center">
           <p
-            className={`${layGrotesk.className} flex flex-col text-[96px] font-semibold leading-[109px]`}
+            className={`${layGrotesk.className} flex flex-col text-[96px] font-semibold leading-[109px] tracking-[0.04em]`}
           >
             <span>
               "
               <span
                 style={{ fontStyle: "oblique" }}
-                className={`${maziusReview.className} font-normal`}
+                className={`${maziusReview.className} font-normal tracking-[0.04em]`}
               >
                 Simplicity
               </span>{" "}

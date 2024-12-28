@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        calc_50p_160px: "calc(50% - 160px)",
+      },
       colors: {
         hiddenTextColor: "#F5F5F5",
       },

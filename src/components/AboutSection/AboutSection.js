@@ -5,7 +5,7 @@ function AboutSection() {
   return (
     <div
       style={{ backgroundImage: `url(/aboutBg.svg)` }}
-      className="relative h-[3000px] snap-center snap-always bg-white bg-cover bg-center bg-no-repeat"
+      className="relative h-[2500px] snap-center snap-always bg-white bg-cover bg-center bg-no-repeat"
     >
       <div className="sticky top-0 h-screen w-full">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -21,11 +21,11 @@ function AboutSection() {
                 the way to make their value obvious to their users and their
                 investors.
               </p>
-              <p className="text-hiddenTextColor my-[1.3em]">
+              <p className="my-[1.3em] text-hiddenTextColor">
                 Sadly for most, that path is kept in the dark and stays out of
                 reach.
               </p>
-              <p className="text-hiddenTextColor my-[1.3em]">
+              <p className="my-[1.3em] text-hiddenTextColor">
                 Our value-first method focuses on innovative tech insights and
                 deep tactical knowledge to give your MVP value for everyone to
                 see, feel and want to invest in.
