@@ -4,6 +4,7 @@ import ShapeSection from "../ShapeSection/ShapeSection";
 import SimplicitySection from "../SimplicitySection/SimplicitySection";
 import AboutSection from "../AboutSection/AboutSection";
 import VisualDesignSection from "../VisualDesignSection/VisualDesignSection";
+import SkillsSection from "../SkillsSection/SkillsSection";
 
 function WholePage() {
   return (
@@ -13,6 +14,7 @@ function WholePage() {
       <SimplicitySection />
       <AboutSection />
       <VisualDesignSection />
+      <SkillsSection />
     </div>
   );
 }
