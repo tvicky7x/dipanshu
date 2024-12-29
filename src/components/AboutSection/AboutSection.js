@@ -1,42 +1,40 @@
+import { layGrotesk } from "@/app/font";
 import React from "react";
-import MainLayout from "../MainLayout/MainLayout";
-import { getComponentText } from "@/utilities/commanFunctions";
-import Image from "next/image";
-import aboutSectionHand from "../../../public/aboutSectionHand.svg";
-import aboutSectionCloud from "../../../public/aboutSectionCloud.svg";
 
 function AboutSection() {
-  const content = getComponentText("home.aboutSection");
   return (
-    <MainLayout outerClass={"relative"}>
-      <div className="relative flex justify-between pb-[263px] pt-[161px]">
-        <div className="w-[689px] space-y-14 text-[24px] leading-[24px]">
-          {content?.aboutList?.map((item, index) => {
-            return (
-              <div key={index}>
-                <h2>{item?.head}</h2>
-                <p className="mt-6">{item?.para}</p>
-              </div>
-            );
-          })}
-        </div>
-        <div className="w-[289px]">
-          <div className="h-[323px] bg-white"></div>
+    <div
+      style={{ backgroundImage: `url(/aboutBg.svg)` }}
+      className="relative h-[2500px] snap-center snap-always bg-white bg-cover bg-center bg-no-repeat"
+    >
+      <div className="sticky top-0 h-screen w-full">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="flex w-[650px] flex-col gap-y-[56px] text-center text-black">
+            <p
+              className={`${layGrotesk.className} text-[24px] font-semibold leading-[22px] tracking-[0.04em]`}
+            >
+              {"[ABOUT]"}
+            </p>
+            <div className="text-[32px] leading-[40px] tracking-[0.02em]">
+              <p className="mb-[1.3em]">
+                Startups who make it all have a thing in common. They’ve found
+                the way to make their value obvious to their users and their
+                investors.
+              </p>
+              <p className="my-[1.3em] text-hiddenTextColor">
+                Sadly for most, that path is kept in the dark and stays out of
+                reach.
+              </p>
+              <p className="mt-[1.3em] text-hiddenTextColor">
+                Our value-first method focuses on innovative tech insights and
+                deep tactical knowledge to give your MVP value for everyone to
+                see, feel and want to invest in.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="absolute bottom-0 right-0 flex w-[440px] flex-col">
-        <Image
-          src={aboutSectionCloud}
-          alt="cloud illustration"
-          className="translate-y-5"
-        />
-        <Image
-          src={aboutSectionHand}
-          alt="hand illustration"
-          className="ms-auto"
-        />
-      </div>
-    </MainLayout>
+    </div>
   );
 }
 

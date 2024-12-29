@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <div style={{ backgroundImage: "url(bg.svg)" }} className="bg-black">
       <PageTransition />
-      <AboutSection />
     </div>
   );
 }

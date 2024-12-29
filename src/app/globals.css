@@ -6,6 +6,9 @@
   .text-balance {
     text-wrap: balance;
   }
+  body {
+    height: 100%;
+  }
   body::-webkit-scrollbar {
     display: none;
   }

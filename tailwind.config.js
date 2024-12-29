@@ -6,7 +6,15 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        calc_50p_160px: "calc(50% - 160px)",
+        calc_50p_150px: "calc(50% - 150px)",
+      },
+      colors: {
+        hiddenTextColor: "#F5F5F5",
+      },
+    },
   },
   plugins: [],
 };

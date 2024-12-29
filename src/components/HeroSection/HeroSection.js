@@ -5,6 +5,13 @@ import Image from "next/image";
 // import { useGSAP } from "@gsap/react";
 // import gsap from "gsap";
 import ReactCurvedText from "react-curved-text";
+import { Ubuntu_Mono } from "next/font/google";
+
+const ubuntuMonu = Ubuntu_Mono({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 function HeroSection() {
   const heroSectionRef = useRef();
@@ -24,19 +31,21 @@ function HeroSection() {
   // );
 
   return (
-    <div className="overflow-hidden">
+    <div className="snap-center snap-always overflow-hidden">
       <div
         ref={heroSectionRef}
-        className="flex h-[879px] flex-col items-center justify-center bg-cover bg-center"
+        className="flex h-screen flex-col items-center justify-center bg-cover bg-center"
         // style={{ backgroundImage: "url(bg.svg)" }}
       >
         <div className="relative">
           <Image
             src={heroSectionHand}
             alt="hero section hand illustration"
-            className="heroSectionHand mb-[155px] aspect-auto w-[366px]"
+            className="heroSectionHand mb-[155px] aspect-auto w-[340px]"
           />
-          <div className="heroSectionCurveText absolute left-1/2 top-full -translate-x-1/2 -translate-y-[350px]">
+          <div
+            className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-full -translate-x-1/2 -translate-y-[420px]`}
+          >
             <ReactCurvedText
               width={3500}
               height={3500}
@@ -44,23 +53,26 @@ function HeroSection() {
               cy={1750}
               rx={1500}
               ry={1450}
-              startOffset={1310}
+              startOffset={1640}
               reversed={true}
-              text="PRODUCT DESIGN"
-              textProps={{ style: { fontSize: 210 } }}
+              text={`${Array(5)
+                .fill(true)
+                .reduce((str) => {
+                  return str + "PRODUCT DESIGN ";
+                }, "")}`}
+              textProps={{ style: { fontSize: 180 } }}
               textPathProps={{
                 fill: "transparent",
                 stroke: "#ffffff",
-                strokeWidth: "1.4px",
+                strokeWidth: "0.9px",
               }}
-              tspanProps={{ wordSpacing: "100px" }}
+              tspanProps={{ wordSpacing: "50px" }}
               // ellipseProps={{ style: "fill: #ff0000" }}
               svgProps={null}
             />
           </div>
         </div>
       </div>
-      <div className="h-[150px]" />
     </div>
   );
 }
