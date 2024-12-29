@@ -5,6 +5,7 @@ import TextTypeSection from "./TextTypeSection/TextTypeSection";
 import { getComponentText } from "@/utilities/commanFunctions";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
+import { aeonikTrial } from "@/app/font";
 
 function TextHoldSection({ endTextOnHold }) {
   const [mouseOnHold, setMouseOnHold] = useState(false);
@@ -60,7 +61,9 @@ function TextHoldSection({ endTextOnHold }) {
         <div className="flex flex-col items-center justify-center gap-y-5">
           <div className="relative">
             <HamsterSection hamsterMotion={mouseOnHold} />
-            <div className="absolute -bottom-5 left-1/2 w-full -translate-x-1/2 translate-y-full text-center">
+            <div
+              className={`${aeonikTrial.className} absolute -bottom-5 left-1/2 w-full -translate-x-1/2 translate-y-full text-center`}
+            >
               <TextTypeSection
                 textMotion={mouseOnHold}
                 onCompleteTyping={onCompleteTyping}
@@ -68,8 +71,10 @@ function TextHoldSection({ endTextOnHold }) {
             </div>
           </div>
         </div>
-        <p className="absolute bottom-[56px] left-1/2 -translate-x-1/2">
-          {content.notePara}
+        <p
+          className={`${aeonikTrial.className} absolute bottom-[56px] left-1/2 -translate-x-1/2`}
+        >
+          {"[ TAP AND HOLD TO CONTINUE ]"}
         </p>
       </div>
     </>
