@@ -8,6 +8,7 @@ import SkillsSection from "../SkillsSection/SkillsSection";
 import ServicesSection from "../ServicesSections/ServicesSection";
 import DesignProcessSection from "../DesignProcessSection/DesignProcessSection";
 import HandSection from "../HandSection/HandSection";
+import ContactSection from "../ContactSection/ContactSection";
 
 function WholePage() {
   return (
@@ -21,6 +22,7 @@ function WholePage() {
       <ServicesSection />
       <DesignProcessSection />
       <HandSection />
+      <ContactSection />
     </div>
   );
 }
