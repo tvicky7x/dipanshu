@@ -7,6 +7,7 @@ import VisualDesignSection from "../VisualDesignSection/VisualDesignSection";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import ServicesSection from "../ServicesSections/ServicesSection";
 import DesignProcessSection from "../DesignProcessSection/DesignProcessSection";
+import HandSection from "../HandSection/HandSection";
 
 function WholePage() {
   return (
@@ -19,6 +20,7 @@ function WholePage() {
       <SkillsSection />
       <ServicesSection />
       <DesignProcessSection />
+      <HandSection />
     </div>
   );
 }
