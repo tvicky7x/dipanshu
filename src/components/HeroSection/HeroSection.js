@@ -26,49 +26,44 @@ function HeroSection() {
   });
 
   return (
-    <div className="overflow-hidden">
+    <div
+      className="relative flex h-screen flex-col items-center justify-center overflow-hidden"
+      // style={{ backgroundImage: "url(bg.svg)" }}
+    >
+      <Image
+        src={heroSectionHand}
+        alt="hero section hand illustration"
+        className="heroSectionHand mb-[155px] aspect-auto w-[340px]"
+      />
       <div
-        className="relative flex h-screen flex-col items-center justify-center bg-cover bg-center"
-        // style={{ backgroundImage: "url(bg.svg)" }}
+        ref={curvedTextRef}
+        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[80px]`}
       >
-        <div className="relative">
-          <Image
-            src={heroSectionHand}
-            alt="hero section hand illustration"
-            className="heroSectionHand mb-[155px] aspect-auto w-[340px]"
-          />
-          <div
-            ref={curvedTextRef}
-            className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-full -translate-x-1/2 -translate-y-[400px]`}
-          >
-            <ReactCurvedText
-              width={3500}
-              height={3500}
-              cx={1750}
-              cy={1750}
-              rx={1500}
-              ry={1450}
-              startOffset={0}
-              reversed={true}
-              text={`${Array(5)
-                .fill(true)
-                .reduce((str) => {
-                  return str + " PRODUCT DESIGNER ";
-                }, " ")}`}
-              textProps={{ style: { fontSize: 210 } }}
-              textPathProps={{
-                fill: "transparent",
-                stroke: "#ffffff",
-                strokeWidth: "1.5px",
-              }}
-              tspanProps={{ wordSpacing: "50px" }}
-              // ellipseProps={{ style: "fill: #ff0000" }}
-              svgProps={null}
-            />
-          </div>
-        </div>
+        <ReactCurvedText
+          width={3500}
+          height={3500}
+          cx={1750}
+          cy={1750}
+          rx={1500}
+          ry={1450}
+          startOffset={0}
+          reversed={true}
+          text={`${Array(5)
+            .fill(true)
+            .reduce((str) => {
+              return str + " PRODUCT DESIGNER ";
+            }, " ")}`}
+          textProps={{ style: { fontSize: 210 } }}
+          textPathProps={{
+            fill: "transparent",
+            stroke: "#ffffff",
+            strokeWidth: "1.5px",
+          }}
+          tspanProps={{ wordSpacing: "50px" }}
+          // ellipseProps={{ style: "fill: #ff0000" }}
+          svgProps={null}
+        />
       </div>
-      <div className="h-[50px]"></div>
     </div>
   );
 }
