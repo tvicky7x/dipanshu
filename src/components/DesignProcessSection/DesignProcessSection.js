@@ -4,7 +4,7 @@ import React from "react";
 
 function DesignProcessSection() {
   return (
-    <div className="relative h-screen snap-center snap-always px-[50px]">
+    <div className="relative h-screen px-[50px]">
       <div className="absolute left-1/2 top-1/2 w-full max-w-[1225px] -translate-x-1/2 -translate-y-1/2">
         <div className="flex flex-col gap-y-[20px]">
           <p

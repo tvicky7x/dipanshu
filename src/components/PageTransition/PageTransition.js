@@ -4,7 +4,7 @@ import TextHoldSection from "../TextHoldSection/TextHoldSection";
 import WholePage from "../WholePage/WholePage";
 
 function PageTransition() {
-  const [textHoldEnd, setTextHoldEnd] = useState(false);
+  const [textHoldEnd, setTextHoldEnd] = useState(true);
 
   // end text on hold
   function endTextOnHold() {

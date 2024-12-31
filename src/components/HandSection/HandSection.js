@@ -4,7 +4,7 @@ import React from "react";
 
 function HandSection() {
   return (
-    <div className="relative h-screen snap-center snap-always overflow-hidden bg-black">
+    <div className="relative h-screen overflow-hidden bg-black">
       <Image
         src={"/leftHand.svg"}
         alt="left hand"

@@ -12,7 +12,7 @@ import ContactSection from "../ContactSection/ContactSection";
 
 function WholePage() {
   return (
-    <div className="h-screen snap-y snap-mandatory overflow-y-auto [&::-webkit-scrollbar]:hidden">
+    <div className="h-screen overflow-y-auto [&::-webkit-scrollbar]:hidden">
       <HeroSection />
       <ShapeSection />
       <SimplicitySection />
