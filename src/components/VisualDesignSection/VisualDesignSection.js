@@ -4,7 +4,7 @@ import React from "react";
 
 function VisualDesignSection() {
   return (
-    <div className="relative h-screen snap-center snap-always">
+    <div className="relative h-screen">
       <div className="absolute left-1/2 top-calc_50p_160px -translate-x-1/2 -translate-y-1/2">
         <p className="flex flex-col text-nowrap text-center text-[64px] leading-[80px] tracking-[0.04em]">
           <span>

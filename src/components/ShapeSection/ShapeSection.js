@@ -3,7 +3,7 @@ import React from "react";
 
 function ShapeSection() {
   return (
-    <div className="relative h-screen snap-center snap-always">
+    <div className="relative h-screen">
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
           <p

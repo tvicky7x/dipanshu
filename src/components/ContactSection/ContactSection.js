@@ -5,7 +5,7 @@ import React from "react";
 
 function ContactSection() {
   return (
-    <div className="relative h-screen snap-center snap-always">
+    <div className="relative h-screen">
       <p
         className={`${layGrotesk.className} absolute left-1/2 top-[5%] flex -translate-x-1/2 flex-col text-nowrap text-center text-[90px] font-medium leading-[90px]`}
       >

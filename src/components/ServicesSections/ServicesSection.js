@@ -26,7 +26,7 @@ const servicesArray = [
 
 function ServicesSection() {
   return (
-    <div className="snap-center snap-always pb-[204px] pt-[150px]">
+    <div className="pb-[204px] pt-[150px]">
       <div className="flex flex-col gap-y-[160px]">
         <div className="flex flex-col gap-y-[20px] text-center uppercase">
           <p

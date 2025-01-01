@@ -18,7 +18,7 @@ const skillsArray = [
 
 function SkillsSection() {
   return (
-    <div className="h-screen snap-center snap-always px-[50px] py-[5%]">
+    <div className="h-screen px-[50px] py-[5%]">
       <div className="relative h-full rounded-[40px] border-[1px] border-white">
         <div className="absolute left-1/2 top-[28%] -translate-x-1/2 -translate-y-1/2 text-nowrap text-center uppercase">
           <p
