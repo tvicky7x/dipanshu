@@ -17,7 +17,7 @@ function ShapeSection() {
             );
           })}
       </div>
-      <div className="relative z-10 h-screen">
+      <div className="relative z-10 h-[110vh]">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
             <p
@@ -56,7 +56,7 @@ function ShapeSection() {
           </div>
         </div>
       </div>
-      <div className="relative z-10 h-screen">
+      <div className="relative z-10 h-[110vh]">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-col text-nowrap text-center">
             <p

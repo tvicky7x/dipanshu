@@ -26,7 +26,7 @@ function HeroSection() {
   });
 
   return (
-    <div className="relative flex h-screen flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex h-screen flex-col items-center justify-center">
       {/* grid */}
       <div className="absolute left-0 top-0 flex h-full w-full justify-center gap-x-[323px]">
         {Array(5)
@@ -43,7 +43,7 @@ function HeroSection() {
       <Image
         src={heroSectionHand}
         alt="hero section hand illustration"
-        className="heroSectionHand relative z-10 mb-[155px] aspect-auto w-[340px]"
+        className="heroSectionHand relative z-10 mb-[155px] aspect-auto w-[20vw]"
       />
       <div
         ref={curvedTextRef}
@@ -56,14 +56,14 @@ function HeroSection() {
           cy={1750}
           rx={1500}
           ry={1450}
-          startOffset={0}
+          startOffset={50}
           reversed={true}
           text={`${Array(5)
             .fill(true)
             .reduce((str) => {
-              return str + " PRODUCT DESIGNER ";
+              return str + "PRODUCT DESIGNER ";
             }, " ")}`}
-          textProps={{ style: { fontSize: 210 } }}
+          textProps={{ style: { fontSize: "15vw" } }}
           textPathProps={{
             fill: "transparent",
             stroke: "#ffffff",
