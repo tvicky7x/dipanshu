@@ -26,18 +26,28 @@ function HeroSection() {
   });
 
   return (
-    <div
-      className="relative flex h-screen flex-col items-center justify-center overflow-hidden"
-      // style={{ backgroundImage: "url(bg.svg)" }}
-    >
+    <div className="relative flex h-screen flex-col items-center justify-center overflow-hidden">
+      {/* grid */}
+      <div className="absolute left-0 top-0 flex h-full w-full justify-center gap-x-[323px]">
+        {Array(5)
+          .fill(true)
+          .map((_, index) => {
+            return (
+              <div
+                key={index}
+                className={`border-x-[0.5px] ${index !== 2 ? "border-white/15" : "border-transparent"} `}
+              />
+            );
+          })}
+      </div>
       <Image
         src={heroSectionHand}
         alt="hero section hand illustration"
-        className="heroSectionHand mb-[155px] aspect-auto w-[340px]"
+        className="heroSectionHand relative z-10 mb-[155px] aspect-auto w-[340px]"
       />
       <div
         ref={curvedTextRef}
-        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[80px]`}
+        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[80px]`}
       >
         <ReactCurvedText
           width={3500}

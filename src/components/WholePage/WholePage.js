@@ -2,7 +2,6 @@
 import React from "react";
 import HeroSection from "../HeroSection/HeroSection";
 import ShapeSection from "../ShapeSection/ShapeSection";
-import SimplicitySection from "../SimplicitySection/SimplicitySection";
 import AboutSection from "../AboutSection/AboutSection";
 import VisualDesignSection from "../VisualDesignSection/VisualDesignSection";
 import SkillsSection from "../SkillsSection/SkillsSection";
@@ -32,7 +31,6 @@ function WholePage() {
     <div className="smooth-wrapper overflow-y-auto [&::-webkit-scrollbar]:hidden">
       <HeroSection />
       <ShapeSection />
-      <SimplicitySection />
       <AboutSection />
       <VisualDesignSection />
       <SkillsSection />
