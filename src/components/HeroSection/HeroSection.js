@@ -19,47 +19,54 @@ function HeroSection() {
   useGSAP(() => {
     gsap.to(curvedTextRef.current, {
       rotation: -360,
-      duration: 100,
+      duration: 40,
       repeat: -1,
       ease: "none",
     });
   });
 
   return (
-    <div
-      className="relative flex h-screen flex-col items-center justify-center overflow-hidden"
-      // style={{ backgroundImage: "url(bg.svg)" }}
-    >
+    <div className="relative flex h-screen items-start justify-center">
+      {/* grid */}
+      <div className="absolute left-0 top-0 flex h-full w-full justify-center gap-x-[323px]">
+        {Array(5)
+          .fill(true)
+          .map((_, index) => {
+            return (
+              <div key={index} className={`border-x-[0.5px] border-white/15`} />
+            );
+          })}
+      </div>
       <Image
         src={heroSectionHand}
         alt="hero section hand illustration"
-        className="heroSectionHand mb-[155px] aspect-auto w-[340px]"
+        className="heroSectionHand relative z-10 mt-[80px] aspect-auto w-[20vw]"
       />
       <div
         ref={curvedTextRef}
-        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[80px]`}
+        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[80px]`}
       >
         <ReactCurvedText
           width={3500}
           height={3500}
           cx={1750}
           cy={1750}
-          rx={1500}
+          rx={1450}
           ry={1450}
-          startOffset={0}
+          startOffset={50}
           reversed={true}
-          text={`${Array(5)
+          text={`${Array(4)
             .fill(true)
             .reduce((str) => {
-              return str + " PRODUCT DESIGNER ";
+              return str + "PRODUCT DESIGNER ";
             }, " ")}`}
-          textProps={{ style: { fontSize: 210 } }}
+          textProps={{ style: { fontSize: "15vw" } }}
           textPathProps={{
             fill: "transparent",
             stroke: "#ffffff",
-            strokeWidth: "1.5px",
+            strokeWidth: "1.7px",
           }}
-          tspanProps={{ wordSpacing: "50px" }}
+          tspanProps={{ wordSpacing: "50px", overflow: "visible" }}
           // ellipseProps={{ style: "fill: #ff0000" }}
           svgProps={null}
         />

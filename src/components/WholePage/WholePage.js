@@ -2,7 +2,6 @@
 import React from "react";
 import HeroSection from "../HeroSection/HeroSection";
 import ShapeSection from "../ShapeSection/ShapeSection";
-import SimplicitySection from "../SimplicitySection/SimplicitySection";
 import AboutSection from "../AboutSection/AboutSection";
 import VisualDesignSection from "../VisualDesignSection/VisualDesignSection";
 import SkillsSection from "../SkillsSection/SkillsSection";
@@ -13,7 +12,7 @@ import ContactSection from "../ContactSection/ContactSection";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Lenis from "lenis";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function WholePage() {
   useGSAP(() => {
@@ -29,10 +28,11 @@ function WholePage() {
   });
 
   return (
-    <div className="smooth-wrapper overflow-y-auto [&::-webkit-scrollbar]:hidden">
-      <HeroSection />
-      <ShapeSection />
-      <SimplicitySection />
+    <div className="overflow-y-auto [&::-webkit-scrollbar]:hidden">
+      <div className="overflow-hidden">
+        <HeroSection />
+        <ShapeSection />
+      </div>
       <AboutSection />
       <VisualDesignSection />
       <SkillsSection />

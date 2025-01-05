@@ -62,7 +62,7 @@ function ServicesSection() {
                   </p>
                 </div>
                 {index !== array.length - 1 && (
-                  <div className="my-[54px] border-b-[1px] border-white/[0.15]" />
+                  <div className="my-[54px] border-b border-white/[0.15]" />
                 )}
               </React.Fragment>
             );
