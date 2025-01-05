@@ -28,9 +28,11 @@ function WholePage() {
   });
 
   return (
-    <div className="smooth-wrapper overflow-y-auto [&::-webkit-scrollbar]:hidden">
-      <HeroSection />
-      <ShapeSection />
+    <div className="overflow-y-auto [&::-webkit-scrollbar]:hidden">
+      <div className="overflow-hidden">
+        <HeroSection />
+        <ShapeSection />
+      </div>
       <AboutSection />
       <VisualDesignSection />
       <SkillsSection />
