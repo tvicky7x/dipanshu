@@ -4,7 +4,7 @@ import React from "react";
 function AboutSection() {
   return (
     <div
-      style={{ backgroundImage: `url(/aboutBg.svg)` }}
+      // style={{ backgroundImage: `url(/aboutBg.svg)` }}
       className="relative h-[2500px] bg-white bg-cover bg-center bg-no-repeat"
     >
       <div className="sticky top-0 h-screen w-full">

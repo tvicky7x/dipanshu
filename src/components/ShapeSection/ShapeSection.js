@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function ShapeSection() {
   const shapeSectionRef = useRef();
+  const scrollBarContainerRef = useRef();
 
   useGSAP(() => {
     // shape section gsap animation
@@ -35,6 +36,24 @@ function ShapeSection() {
       ease: "none",
       repeat: -1,
     });
+
+    // Scroll bar
+    const scrollTimeLine = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: scrollBarContainerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      })
+      .to("#scrollDiv1", { height: 100 }, 0)
+      .to("#scrollDiv2", { height: 220 }, 0)
+      .to("#scrollDiv3", { height: 320 }, 0)
+      .to("#scrollDiv4", { height: 350 }, 0)
+      .to("#scrollDiv5", { height: 270 }, 0)
+      .to("#scrollDiv6", { height: 180 }, 0)
+      .to("#scrollDiv7", { height: 50 }, 0);
   });
 
   const skillLoopText = Array(2).fill(` ONE PIXEL AT A TIME `);
@@ -174,17 +193,17 @@ function ShapeSection() {
       </div>
 
       {/* scroll grid */}
-      <div className="-translate-x-calc_50p_323d2 absolute bottom-0 left-1/2 z-10 flex justify-center">
-        {Array(7)
-          .fill(true)
-          .map((_, index) => {
-            return (
-              <div
-                key={index}
-                className={`h-[50px] w-[323px] border-x bg-white`}
-              />
-            );
-          })}
+      <div
+        ref={scrollBarContainerRef}
+        className="-translate-x-calc_50p_323d2 absolute bottom-0 left-1/2 z-10 flex items-end justify-center"
+      >
+        <div id="scrollDiv1" className={`w-[323px] border-x bg-white`} />
+        <div id="scrollDiv2" className={`w-[323px] border-x bg-white`} />
+        <div id="scrollDiv3" className={`w-[323px] border-x bg-white`} />
+        <div id="scrollDiv4" className={`w-[323px] border-x bg-white`} />
+        <div id="scrollDiv5" className={`w-[323px] border-x bg-white`} />
+        <div id="scrollDiv6" className={`w-[323px] border-x bg-white`} />
+        <div id="scrollDiv7" className={`w-[323px] border-x bg-white`} />
       </div>
     </div>
   );
