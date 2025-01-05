@@ -63,7 +63,7 @@ function ShapeSection() {
       </div>
 
       {/* Shape Section */}
-      <div className="relative z-10 h-[110vh]">
+      <div className="relative z-10 h-[1024px]">
         <div
           ref={shapeSectionRef}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -125,7 +125,7 @@ function ShapeSection() {
               <div
                 key={index}
                 style={{ left: `${index * 16.6}%` }}
-                className={`${aeonikTrial.className} ${index % 2 === 0 ? `top-0 -translate-y-2` : `bottom-0 -translate-y-2`} absolute border-[1px] border-white bg-black p-[9px] text-[16px] font-light leading-[24px]`}
+                className={`${aeonikTrial.className} ${index % 2 === 0 ? `top-0 -translate-y-2` : `bottom-0 -translate-y-2`} absolute border border-white bg-black p-[9px] text-[16px] font-light leading-[24px]`}
               >
                 {item}
               </div>
@@ -135,7 +135,7 @@ function ShapeSection() {
       </div>
 
       {/* Simplicity Section */}
-      <div className="relative z-10 h-[110vh]">
+      <div className="relative z-10 h-[1024px]">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-col text-nowrap text-center">
             <p
@@ -171,6 +171,20 @@ function ShapeSection() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* scroll grid */}
+      <div className="-translate-x-calc_50p_323d2 absolute bottom-0 left-1/2 z-10 flex justify-center">
+        {Array(7)
+          .fill(true)
+          .map((_, index) => {
+            return (
+              <div
+                key={index}
+                className={`h-[50px] w-[323px] border-x bg-white`}
+              />
+            );
+          })}
       </div>
     </div>
   );

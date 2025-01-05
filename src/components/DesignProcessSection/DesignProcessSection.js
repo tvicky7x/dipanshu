@@ -30,7 +30,7 @@ function DesignProcessSection() {
                 Design & Refine
               </p>
             </div>
-            <div className="flex w-full flex-col gap-y-[27px] rounded-[16px] border-[1px] border-white p-[25px]">
+            <div className="flex w-full flex-col gap-y-[27px] rounded-[16px] border border-white p-[25px]">
               <p
                 className={`${aeonikTrial.className} text-[24px] uppercase leading-[32px] tracking-[0.03em]`}
               >

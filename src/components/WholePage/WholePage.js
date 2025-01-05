@@ -12,7 +12,7 @@ import ContactSection from "../ContactSection/ContactSection";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Lenis from "lenis";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function WholePage() {
   useGSAP(() => {
