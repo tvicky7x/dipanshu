@@ -10,6 +10,7 @@ function ShapeSection() {
   const shapeSectionRef = useRef();
 
   useGSAP(() => {
+    // shape section gsap animation
     gsap.fromTo(
       "#shapeSectionShowElement",
       { display: "none", opacity: 0 },
@@ -19,11 +20,34 @@ function ShapeSection() {
         duration: 0.8,
         scrollTrigger: {
           trigger: shapeSectionRef.current,
-          start: "center center",
+          start: "top center",
         },
       },
     );
+
+    // skills band animation
+    let clone = document.getElementById("skillBandTarget").cloneNode(true);
+    document.getElementById("skillsBandWrapper").append(clone);
+
+    gsap.to("#skillBandTarget", {
+      duration: 10,
+      xPercent: "-=100",
+      ease: "none",
+      repeat: -1,
+    });
   });
+
+  const skillLoopText = Array(2).fill(` ONE PIXEL AT A TIME `);
+  const skillsList = Array(1)
+    .fill([
+      "UX Design",
+      "Front end",
+      "UI Design",
+      "Brand Design",
+      "UX Research",
+      "Fintech",
+    ])
+    .flat();
 
   return (
     <div className="relative">
@@ -33,13 +57,11 @@ function ShapeSection() {
           .fill(true)
           .map((_, index) => {
             return (
-              <div
-                key={index}
-                className={`border-x-[0.5px] border-white/15 `}
-              />
+              <div key={index} className={`border-x-[0.5px] border-white/15`} />
             );
           })}
       </div>
+
       {/* Shape Section */}
       <div className="relative z-10 h-[110vh]">
         <div
@@ -86,6 +108,32 @@ function ShapeSection() {
           </div>
         </div>
       </div>
+
+      {/* Skills Band */}
+      <div
+        id="skillsBandWrapper"
+        className="relative z-10 flex h-[201px] items-center border-y-[2px] border-white/15 bg-black"
+      >
+        <div id="skillBandTarget" className="relative">
+          <p
+            className={`${offBit.className} overflow-visible whitespace-pre-wrap text-nowrap text-[96px] uppercase leading-[128px] tracking-[0.06em]`}
+          >
+            {skillLoopText}
+          </p>
+          {skillsList?.map((item, index) => {
+            return (
+              <div
+                key={index}
+                style={{ left: `${index * 16.6}%` }}
+                className={`${aeonikTrial.className} ${index % 2 === 0 ? `top-0 -translate-y-2` : `bottom-0 -translate-y-2`} absolute border-[1px] border-white bg-black p-[9px] text-[16px] font-light leading-[24px]`}
+              >
+                {item}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Simplicity Section */}
       <div className="relative z-10 h-[110vh]">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">

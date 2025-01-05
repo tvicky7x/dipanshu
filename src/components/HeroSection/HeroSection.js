@@ -64,9 +64,9 @@ function HeroSection() {
           textPathProps={{
             fill: "transparent",
             stroke: "#ffffff",
-            strokeWidth: "1.5px",
+            strokeWidth: "1.7px",
           }}
-          tspanProps={{ wordSpacing: "50px" }}
+          tspanProps={{ wordSpacing: "50px", overflow: "visible" }}
           // ellipseProps={{ style: "fill: #ff0000" }}
           svgProps={null}
         />
