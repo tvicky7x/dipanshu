@@ -195,15 +195,15 @@ function ShapeSection() {
       {/* scroll grid */}
       <div
         ref={scrollBarContainerRef}
-        className="-translate-x-calc_50p_323d2 absolute bottom-0 left-1/2 z-10 flex items-end justify-center"
+        className="-translate-x-calc_50p_323d2 absolute bottom-0 left-1/2 z-20 flex items-end justify-center"
       >
-        <div id="scrollDiv1" className={`w-[323px] border-x bg-white`} />
-        <div id="scrollDiv2" className={`w-[323px] border-x bg-white`} />
-        <div id="scrollDiv3" className={`w-[323px] border-x bg-white`} />
-        <div id="scrollDiv4" className={`w-[323px] border-x bg-white`} />
-        <div id="scrollDiv5" className={`w-[323px] border-x bg-white`} />
-        <div id="scrollDiv6" className={`w-[323px] border-x bg-white`} />
-        <div id="scrollDiv7" className={`w-[323px] border-x bg-white`} />
+        <div id="scrollDiv1" className={`w-[323px] bg-white`} />
+        <div id="scrollDiv2" className={`w-[323px] bg-white`} />
+        <div id="scrollDiv3" className={`w-[323px] bg-white`} />
+        <div id="scrollDiv4" className={`w-[323px] bg-white`} />
+        <div id="scrollDiv5" className={`w-[323px] bg-white`} />
+        <div id="scrollDiv6" className={`w-[323px] bg-white`} />
+        <div id="scrollDiv7" className={`w-[323px] bg-white`} />
       </div>
     </div>
   );
