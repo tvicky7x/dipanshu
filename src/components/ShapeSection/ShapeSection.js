@@ -38,7 +38,7 @@ function ShapeSection() {
     });
 
     // Scroll bar
-    const scrollTimeLine = gsap
+    gsap
       .timeline({
         scrollTrigger: {
           trigger: scrollBarContainerRef.current,
@@ -154,48 +154,51 @@ function ShapeSection() {
       </div>
 
       {/* Simplicity Section */}
-      <div className="relative z-10 h-[1024px]">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="flex flex-col text-nowrap text-center">
-            <p
-              className={`${layGrotesk.className} flex flex-col text-[96px] font-medium leading-[99px] tracking-[-0.02em]`}
-            >
-              <span>
-                <span
-                  className={`${aeonikTrial.className} font-bold leading-[109px] tracking-[0.04em]`}
-                >
-                  "
+      <div>
+        <div className="relative z-10 h-[1024px]">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="flex flex-col text-nowrap text-center">
+              <p
+                className={`${layGrotesk.className} flex flex-col text-[96px] font-medium leading-[99px] tracking-[-0.02em]`}
+              >
+                <span>
+                  <span
+                    className={`${aeonikTrial.className} font-bold leading-[109px] tracking-[0.04em]`}
+                  >
+                    "
+                  </span>
+                  <span
+                    style={{ fontStyle: "oblique" }}
+                    className={`${maziusReview.className} font-normal leading-[115px] tracking-[0.04em]`}
+                  >
+                    Simplicity
+                  </span>{" "}
+                  is the ultimate
                 </span>
-                <span
-                  style={{ fontStyle: "oblique" }}
-                  className={`${maziusReview.className} font-normal leading-[115px] tracking-[0.04em]`}
-                >
-                  Simplicity
-                </span>{" "}
-                is the ultimate
-              </span>
-              <span>
-                sophistication
-                <span
-                  className={`${aeonikTrial.className} font-bold leading-[109px] tracking-[0.04em]`}
-                >
-                  ”
+                <span>
+                  sophistication
+                  <span
+                    className={`${aeonikTrial.className} font-bold leading-[109px] tracking-[0.04em]`}
+                  >
+                    ”
+                  </span>
                 </span>
-              </span>
-            </p>
-            <p
-              className={`${aeonikTrial.className} mt-[20px] text-[20px] font-light uppercase italic leading-[23px] tracking-[0.04em]`}
-            >
-              — Leonardo da Vinci
-            </p>
+              </p>
+              <p
+                className={`${aeonikTrial.className} mt-[20px] text-[20px] font-light uppercase italic leading-[23px] tracking-[0.04em]`}
+              >
+                — Leonardo da Vinci
+              </p>
+            </div>
           </div>
         </div>
+        <div className="h-[2vh]" />
       </div>
 
       {/* scroll grid */}
       <div
         ref={scrollBarContainerRef}
-        className="-translate-x-calc_50p_323d2 absolute bottom-0 left-1/2 z-20 flex items-end justify-center"
+        className="absolute bottom-0 left-1/2 z-20 flex -translate-x-calc_50p_323d2 items-end justify-center"
       >
         <div id="scrollDiv1" className={`w-[325px] bg-white`} />
         <div id="scrollDiv2" className={`w-[325px] bg-white`} />
