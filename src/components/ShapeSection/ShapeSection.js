@@ -14,7 +14,7 @@ function ShapeSection() {
       .timeline({
         scrollTrigger: {
           trigger: "#shapeSectionTopElement",
-          start: "top center",
+          start: "top 55%",
         },
       })
       .addLabel("start", 0)
@@ -37,7 +37,7 @@ function ShapeSection() {
       repeat: -1,
     });
 
-    // Scroll bar
+    // Scroll bar transition
     gsap
       .timeline({
         scrollTrigger: {
@@ -190,7 +190,7 @@ function ShapeSection() {
             </div>
           </div>
         </div>
-        <div className="h-[2vh]" />
+        <div className="h-[50px]" />
       </div>
 
       {/* scroll grid */}

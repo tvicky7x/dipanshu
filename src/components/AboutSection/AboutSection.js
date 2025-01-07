@@ -16,6 +16,7 @@ const aboutTextHighlightContent = [
 function AboutSection() {
   const aboutSectionContainerRef = useRef();
   const aboutPinSectionRef = useRef();
+  const scrollBarBlackContainerRef = useRef();
 
   useGSAP(() => {
     // gsap pin animation
@@ -54,10 +55,29 @@ function AboutSection() {
         },
       })
       .set(chars, { duration: 0.3, color: "black", stagger: 0.1 }, 0.1);
+
+    // scroll bar transition
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: scrollBarBlackContainerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      })
+      .to("#scrollBlackDiv1", { height: 20 }, 0)
+      .to("#scrollBlackDiv2", { height: 80 }, 0)
+      .to("#scrollBlackDiv3", { height: 120 }, 0)
+      .to("#scrollBlackDiv4", { height: 300 }, 0)
+      .to("#scrollBlackDiv5", { height: 230 }, 0)
+      .to("#scrollBlackDiv6", { height: 150 }, 0)
+      .to("#scrollBlackDiv7", { height: 100 }, 0);
   });
 
   return (
-    <>
+    <div className="relative">
+      {/* About text highlight section */}
       <div
         ref={aboutSectionContainerRef}
         id="aboutSectionContainer"
@@ -85,19 +105,37 @@ function AboutSection() {
           </div>
         </div>
       </div>
-      <div className="relative flex items-center justify-center bg-white pb-[200px] pt-[80px]">
-        <div className="flex flex-col items-center gap-y-[80px]">
-          <div className="aspect-[376/460] w-[23vw] rounded-[26px] bg-black"></div>
-          <p
-            className={`${layGrotesk.className} w-[1010px] text-center text-[32px] leading-[40px] text-black`}
-          >
-            For over 10 years I have been striving to create bold experiences
-            that connect brands with their audience through design that
-            resonates.
-          </p>
+      {/* About picture section */}
+      <div className="bg-white">
+        <div className="relative flex items-center justify-center pb-[200px] pt-[120px]">
+          <div className="flex flex-col items-center gap-y-[80px]">
+            <div className="aspect-[376/460] w-[23vw] rounded-[26px] bg-black"></div>
+            <p
+              className={`${layGrotesk.className} w-[1010px] text-center text-[32px] leading-[40px] text-black`}
+            >
+              For over 10 years I have been striving to create bold experiences
+              that connect brands with their audience through design that
+              resonates.
+            </p>
+          </div>
         </div>
+        <div className="h-[200px]" />
       </div>
-    </>
+
+      {/* scroll grid */}
+      <div
+        ref={scrollBarBlackContainerRef}
+        className="absolute bottom-0 left-1/2 z-20 flex -translate-x-calc_50p_323d2 items-end justify-center"
+      >
+        <div id="scrollBlackDiv1" className={`w-[325px] bg-black`} />
+        <div id="scrollBlackDiv2" className={`w-[325px] bg-black`} />
+        <div id="scrollBlackDiv3" className={`w-[325px] bg-black`} />
+        <div id="scrollBlackDiv4" className={`w-[325px] bg-black`} />
+        <div id="scrollBlackDiv5" className={`w-[325px] bg-black`} />
+        <div id="scrollBlackDiv6" className={`w-[325px] bg-black`} />
+        <div id="scrollBlackDiv7" className={`w-[325px] bg-black`} />
+      </div>
+    </div>
   );
 }
 
