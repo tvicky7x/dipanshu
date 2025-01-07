@@ -7,24 +7,24 @@ import React, { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 function ShapeSection() {
-  const shapeSectionRef = useRef();
   const scrollBarContainerRef = useRef();
 
   useGSAP(() => {
-    // shape section gsap animation
-    gsap.fromTo(
-      "#shapeSectionShowElement",
-      { display: "none", opacity: 0 },
-      {
-        display: "block",
-        opacity: 1,
-        duration: 0.8,
+    gsap
+      .timeline({
         scrollTrigger: {
-          trigger: shapeSectionRef.current,
+          trigger: "#shapeSectionTopElement",
           start: "top center",
         },
-      },
-    );
+      })
+      .addLabel("start", 0)
+      .from("#shapeSectionTopElement", { y: 26, duration: 0.2 }, "start")
+      .from("#shapeSectionBottomElement", { y: -26, duration: 0.2 }, "start")
+      .fromTo(
+        "#shapeSectionShowElement",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.2 },
+      );
 
     // skills band animation
     let clone = document.getElementById("skillBandTarget").cloneNode(true);
@@ -83,10 +83,7 @@ function ShapeSection() {
 
       {/* Shape Section */}
       <div className="relative z-10 h-[1024px]">
-        <div
-          ref={shapeSectionRef}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-        >
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
             <p
               id="shapeSectionShowElement"
@@ -95,6 +92,7 @@ function ShapeSection() {
               Because Every Detail Matters
             </p>
             <p
+              id="shapeSectionTopElement"
               className={`${layGrotesk.className} text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
             >
               <span>Let's Shape</span>
@@ -105,7 +103,7 @@ function ShapeSection() {
             >
               To Take It To The Next Level
             </p>
-            <p>
+            <p id="shapeSectionBottomElement">
               <span
                 className={`${layGrotesk.className} text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
               >

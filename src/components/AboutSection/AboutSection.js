@@ -85,8 +85,8 @@ function AboutSection() {
           </div>
         </div>
       </div>
-      <div className="relative h-[975px] bg-white">
-        <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-y-[80px]">
+      <div className="relative flex items-center justify-center bg-white pb-[200px] pt-[80px]">
+        <div className="flex flex-col items-center gap-y-[80px]">
           <div className="aspect-[376/460] w-[23vw] rounded-[26px] bg-black"></div>
           <p
             className={`${layGrotesk.className} w-[1010px] text-center text-[32px] leading-[40px] text-black`}
