@@ -21,10 +21,17 @@ function AboutSection() {
   useGSAP(() => {
     // gsap pin animation
     ScrollTrigger.create({
-      trigger: "#aboutSectionContainer",
+      trigger: "#aboutSectionWholePage",
       start: "top top",
       end: "bottom bottom",
       pin: "#aboutPinSection",
+    });
+
+    ScrollTrigger.create({
+      trigger: "#aboutSectionPictureSection",
+      start: "top top",
+      end: "bottom bottom",
+      pin: "#aboutSectionPicturePinSection",
     });
 
     // gsap text highlight animation
@@ -54,7 +61,8 @@ function AboutSection() {
           scrub: true,
         },
       })
-      .set(chars, { duration: 0.3, color: "black", stagger: 0.1 }, 0.1);
+      .set(chars, { duration: 0.3, color: "black", stagger: 0.1 }, 0.1)
+      .to("#aboutPinSection", { opacity: 0, duration: 3 });
 
     // scroll bar transition
     gsap
@@ -77,64 +85,71 @@ function AboutSection() {
 
   return (
     <div className="relative">
-      {/* About text highlight section */}
-      <div
-        ref={aboutSectionContainerRef}
-        id="aboutSectionContainer"
-        className="relative h-[2500px] bg-white bg-cover bg-center bg-no-repeat"
-      >
+      <div id="aboutSectionWholePage" className="bg-white">
+        {/* About text highlight section */}
         <div
-          ref={aboutPinSectionRef}
-          id="aboutPinSection"
-          className="h-screen w-full"
+          ref={aboutSectionContainerRef}
+          id="aboutSectionContainer"
+          className="relative h-[2500px] bg-cover bg-center bg-no-repeat"
         >
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="flex w-[650px] flex-col gap-y-[56px] text-center text-black">
-              <p
-                className={`${layGrotesk.className} text-[24px] font-semibold leading-[22px] tracking-[0.04em]`}
-              >
-                {"[ABOUT]"}
-              </p>
-              <div
-                id="aboutTextHighlightContainer"
-                className="space-y-[1.3em] text-[32px] leading-[40px] tracking-[0.02em] text-hiddenTextColor"
-              >
-                {/* Highlight Text Container */}
+          <div
+            ref={aboutPinSectionRef}
+            id="aboutPinSection"
+            className="h-screen w-full"
+          >
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="flex w-[650px] flex-col gap-y-[56px] text-center text-black">
+                <p
+                  className={`${layGrotesk.className} text-[24px] font-semibold leading-[22px] tracking-[0.04em]`}
+                >
+                  {"[ABOUT]"}
+                </p>
+                <div
+                  id="aboutTextHighlightContainer"
+                  className="space-y-[1.3em] text-[32px] leading-[40px] tracking-[0.02em] text-hiddenTextColor"
+                >
+                  {/* Highlight Text Container */}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* About picture section */}
-      <div className="bg-white">
-        <div className="relative flex items-center justify-center pb-[200px] pt-[120px]">
-          <div className="flex flex-col items-center gap-y-[80px]">
-            <div className="aspect-[376/460] w-[23vw] rounded-[26px] bg-black"></div>
-            <p
-              className={`${layGrotesk.className} w-[1010px] text-center text-[32px] leading-[40px] text-black`}
-            >
-              For over 10 years I have been striving to create bold experiences
-              that connect brands with their audience through design that
-              resonates.
-            </p>
+        {/* About picture section */}
+        <div id="aboutSectionPictureSection" className="relative h-[1500px]">
+          <div
+            id="aboutSectionPicturePinSection"
+            className="flex h-screen w-full items-center justify-center"
+          >
+            <div className="flex flex-col items-center gap-y-[80px]">
+              <div className="aspect-[376/460] w-[23vw] rounded-[26px] bg-black"></div>
+              <p
+                className={`${layGrotesk.className} w-[1010px] text-center text-[32px] leading-[40px] text-black`}
+              >
+                For over 10 years I have been striving to create bold
+                experiences that connect brands with their audience through
+                design that resonates.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="h-[200px]" />
       </div>
 
-      {/* scroll grid */}
-      <div
-        ref={scrollBarBlackContainerRef}
-        className="absolute bottom-0 left-1/2 z-20 flex -translate-x-calc_50p_323d2 items-end justify-center"
-      >
-        <div id="scrollBlackDiv1" className={`w-[325px] bg-black`} />
-        <div id="scrollBlackDiv2" className={`w-[325px] bg-black`} />
-        <div id="scrollBlackDiv3" className={`w-[325px] bg-black`} />
-        <div id="scrollBlackDiv4" className={`w-[325px] bg-black`} />
-        <div id="scrollBlackDiv5" className={`w-[325px] bg-black`} />
-        <div id="scrollBlackDiv6" className={`w-[325px] bg-black`} />
-        <div id="scrollBlackDiv7" className={`w-[325px] bg-black`} />
+      <div className="bg-white">
+        <div className="h-[250px]" />
+        <div
+          ref={scrollBarBlackContainerRef}
+          className="absolute bottom-0 left-1/2 z-20 flex -translate-x-calc_50p_323d2 items-end justify-center"
+        >
+          <div id="scrollBlackDiv1" className={`w-[325px] bg-black`} />
+          <div id="scrollBlackDiv2" className={`w-[325px] bg-black`} />
+          <div id="scrollBlackDiv3" className={`w-[325px] bg-black`} />
+          <div id="scrollBlackDiv4" className={`w-[325px] bg-black`} />
+          <div id="scrollBlackDiv5" className={`w-[325px] bg-black`} />
+          <div id="scrollBlackDiv6" className={`w-[325px] bg-black`} />
+          <div id="scrollBlackDiv7" className={`w-[325px] bg-black`} />
+        </div>
       </div>
+      {/* scroll grid */}
     </div>
   );
 }
