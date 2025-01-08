@@ -35,22 +35,26 @@ function AboutSection() {
     });
 
     // gsap text highlight animation
-    const textHighlightContainer = document.querySelector(
-      "#aboutTextHighlightContainer",
+    // const textHighlightContainer = document.querySelector(
+    //   "#aboutTextHighlightContainer",
+    // );
+    // const chars = aboutTextHighlightContent
+    //   .map((str) => {
+    //     const p = document.createElement("p");
+    //     const splittedSpanArray = str.split("").map((characters) => {
+    //       const span = document.createElement("span");
+    //       span.textContent = characters;
+    //       p.appendChild(span);
+    //       return span;
+    //     });
+    //     textHighlightContainer.appendChild(p);
+    //     return splittedSpanArray;
+    //   })
+    //   .flat();
+
+    const chars = document.querySelectorAll(
+      "#aboutTextHighlightContainer p span",
     );
-    const chars = aboutTextHighlightContent
-      .map((str) => {
-        const p = document.createElement("p");
-        const splittedSpanArray = str.split("").map((characters) => {
-          const span = document.createElement("span");
-          span.textContent = characters;
-          p.appendChild(span);
-          return span;
-        });
-        textHighlightContainer.appendChild(p);
-        return splittedSpanArray;
-      })
-      .flat();
 
     gsap
       .timeline({
@@ -108,7 +112,13 @@ function AboutSection() {
                   id="aboutTextHighlightContainer"
                   className="space-y-[1.3em] text-[32px] leading-[40px] tracking-[0.02em] text-hiddenTextColor"
                 >
-                  {/* Highlight Text Container */}
+                  {aboutTextHighlightContent.map((str, index) => (
+                    <p key={index}>
+                      {str.split("").map((char, i) => (
+                        <span key={i}>{char}</span>
+                      ))}
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>
