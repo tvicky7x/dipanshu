@@ -26,7 +26,7 @@ function HeroSection() {
   });
 
   return (
-    <div className="relative flex h-screen items-start justify-center">
+    <div className="relative h-[1024] overflow-hidden">
       {/* grid */}
       <div className="absolute left-0 top-0 flex h-full w-full justify-center gap-x-[323px]">
         {Array(5)
@@ -40,11 +40,11 @@ function HeroSection() {
       <Image
         src={heroSectionHand}
         alt="hero section hand illustration"
-        className="heroSectionHand relative z-10 mt-[80px] aspect-auto w-[20vw]"
+        className="heroSectionHand relative top-[80px] z-10 aspect-auto w-[366px]"
       />
       <div
         ref={curvedTextRef}
-        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[80px]`}
+        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-[142px] z-10 -translate-x-1/2`}
       >
         <ReactCurvedText
           width={3500}
@@ -60,11 +60,11 @@ function HeroSection() {
             .reduce((str) => {
               return str + "PRODUCT DESIGNER ";
             }, " ")}`}
-          textProps={{ style: { fontSize: "15vw" } }}
+          textProps={{ style: { fontSize: "250px" } }}
           textPathProps={{
             fill: "transparent",
             stroke: "#ffffff",
-            strokeWidth: "1.7px",
+            strokeWidth: "1.9px",
           }}
           tspanProps={{ wordSpacing: "50px", overflow: "visible" }}
           // ellipseProps={{ style: "fill: #ff0000" }}
