@@ -14,7 +14,7 @@ function ShapeSection() {
       .timeline({
         scrollTrigger: {
           trigger: "#shapeSectionTopElement",
-          start: "top 55%",
+          start: "top center",
         },
       })
       .addLabel("start", 0)
@@ -54,7 +54,12 @@ function ShapeSection() {
       .to("#scrollDiv5", { height: 270 }, 0)
       .to("#scrollDiv6", { height: 180 }, 0)
       .to("#scrollDiv7", { height: 50 }, 0);
-  });
+
+    return () => {
+      timeline.kill();
+      ScrollTrigger.kill();
+    };
+  }, []);
 
   const skillLoopText = Array(2).fill(` ONE PIXEL AT A TIME `);
   const skillsList = Array(1)
@@ -84,7 +89,10 @@ function ShapeSection() {
       {/* Shape Section */}
       <div className="relative z-10 h-[1024px]">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
+          <div
+            id="testSection"
+            className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase"
+          >
             <p
               id="shapeSectionShowElement"
               className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em]`}

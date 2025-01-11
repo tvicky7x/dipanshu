@@ -12,5 +12,17 @@
   body::-webkit-scrollbar {
     display: none;
   }
+  /* @keyframes fromBottomKeyframe {
+    0% {
+      transform: translateY(500px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  .fromBottom {
+    animation: fromBottomKeyframe 1.2s ease-in-out;
+  } */
 }
-

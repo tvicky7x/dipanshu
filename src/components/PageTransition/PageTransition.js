@@ -1,24 +1,27 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextHoldSection from "../TextHoldSection/TextHoldSection";
 import WholePage from "../WholePage/WholePage";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 function PageTransition() {
-  const [textHoldEnd, setTextHoldEnd] = useState(true);
+  const [textHoldEnd, setTextHoldEnd] = useState(false);
 
   // end text on hold
   function endTextOnHold() {
     setTextHoldEnd(true);
   }
 
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, []);
+
   return (
     <>
-      <div className={`${!textHoldEnd ? "block" : "hidden"}`}>
-        <TextHoldSection endTextOnHold={endTextOnHold} />
-      </div>
-      <div className={`${!textHoldEnd ? "hidden" : "block"}`}>
-        <WholePage />
-      </div>
+      {!textHoldEnd && <TextHoldSection endTextOnHold={endTextOnHold} />}
+      {textHoldEnd && <WholePage />}
     </>
   );
 }
