@@ -8,23 +8,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 function ShapeSection() {
   const scrollBarContainerRef = useRef();
+  const shapeSectionSectionRef = useRef();
+  const shapeSectionPinRef = useRef();
 
   useGSAP(() => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#shapeSectionTopElement",
-          start: "top center",
-        },
-      })
-      .addLabel("start", 0)
-      .from("#shapeSectionTopElement", { y: 26, duration: 0.2 }, "start")
-      .from("#shapeSectionBottomElement", { y: -26, duration: 0.2 }, "start")
-      .fromTo(
-        "#shapeSectionShowElement",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.2 },
-      );
+    ScrollTrigger.create({
+      trigger: shapeSectionSectionRef.current,
+      start: "center center",
+      end: "bottom-=100 bottom",
+      pin: shapeSectionPinRef.current,
+      onEnter: () => {
+        gsap
+          .timeline()
+          .addLabel("start", 0)
+          .to("#shapeSectionTopElement", { y: 0, duration: 0.2 }, "start")
+          .to("#shapeSectionBottomElement", { y: 0, duration: 0.2 }, "start")
+          .to("#shapeSectionShowElement", { opacity: 1, duration: 0.2 });
+      },
+    });
 
     // skills band animation
     let clone = document.getElementById("skillBandTarget").cloneNode(true);
@@ -87,49 +88,52 @@ function ShapeSection() {
       </div>
 
       {/* Shape Section */}
-      <div className="relative z-10 h-[1024px]">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div
-            id="testSection"
-            className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase"
-          >
-            <p
-              id="shapeSectionShowElement"
-              className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em]`}
-            >
-              Because Every Detail Matters
-            </p>
-            <p
-              id="shapeSectionTopElement"
-              className={`${layGrotesk.className} text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
-            >
-              <span>Let's Shape</span>
-            </p>
-            <p
-              id="shapeSectionShowElement"
-              className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em]`}
-            >
-              To Take It To The Next Level
-            </p>
-            <p id="shapeSectionBottomElement">
-              <span
-                className={`${layGrotesk.className} text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
+      <div ref={shapeSectionSectionRef} className="relative z-10 h-[1400px]">
+        <div
+          ref={shapeSectionPinRef}
+          id="shapeSectionPinId"
+          className="absolute left-0 top-1/2 !h-screen !w-full -translate-y-1/2"
+        >
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
+              <p
+                id="shapeSectionShowElement"
+                className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em] opacity-0`}
               >
-                Your{" "}
-              </span>
-              <span
-                style={{ fontStyle: "oblique" }}
-                className={`${maziusReview.className} text-[128px] font-normal leading-[154px] tracking-[0.04em]`}
+                Because Every Detail Matters
+              </p>
+              <p
+                id="shapeSectionTopElement"
+                className={`${layGrotesk.className} translate-y-[26px] text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
               >
-                Vision
-              </span>
-            </p>
-            <p
-              id="shapeSectionShowElement"
-              className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em]`}
-            >
-              -LOREM IPSUM-
-            </p>
+                <span>Let's Shape</span>
+              </p>
+              <p
+                id="shapeSectionShowElement"
+                className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em] opacity-0`}
+              >
+                To Take It To The Next Level
+              </p>
+              <p id="shapeSectionBottomElement">
+                <span
+                  className={`${layGrotesk.className} -translate-y-[26px] text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
+                >
+                  Your{" "}
+                </span>
+                <span
+                  style={{ fontStyle: "oblique" }}
+                  className={`${maziusReview.className} text-[128px] font-normal leading-[154px] tracking-[0.04em]`}
+                >
+                  Vision
+                </span>
+              </p>
+              <p
+                id="shapeSectionShowElement"
+                className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em] opacity-0`}
+              >
+                -LOREM IPSUM-
+              </p>
+            </div>
           </div>
         </div>
       </div>
