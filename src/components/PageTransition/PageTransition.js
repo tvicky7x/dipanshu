@@ -16,7 +16,7 @@ function PageTransition() {
 
   useEffect(() => {
     ScrollTrigger.refresh();
-  }, []);
+  }, [textHoldEnd]);
 
   return (
     <>

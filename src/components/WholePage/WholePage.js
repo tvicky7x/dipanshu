@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HeroSection from "../HeroSection/HeroSection";
 import ShapeSection from "../ShapeSection/ShapeSection";
 import AboutSection from "../AboutSection/AboutSection";
@@ -13,6 +13,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
   const [heroSectionEnd, setHeroSectionEnd] = useState(false);
@@ -36,6 +38,16 @@ function WholePage() {
     gsap.ticker.lagSmoothing(9);
   });
 
+  useGSAP(() => {
+    gsap.to(restSectionRef.current, {
+      height: 0,
+      duration: 1.2,
+      onComplete: () => {
+        ScrollTrigger.refresh();
+      },
+    });
+  }, [heroSectionEnd]);
+
   return (
     <div
       id="wholePage"
@@ -43,7 +55,8 @@ function WholePage() {
     >
       {!heroSectionEnd && <HeroSection heroSectionEnded={heroSectionEnded} />}
       {heroSectionEnd && (
-        <>
+        <div>
+          <div ref={restSectionRef} className="h-screen" />
           <ShapeSection />
           <AboutSection />
           <VisualDesignSection />
@@ -52,7 +65,7 @@ function WholePage() {
           <DesignProcessSection />
           <HandSection />
           <ContactSection />
-        </>
+        </div>
       )}
     </div>
   );
