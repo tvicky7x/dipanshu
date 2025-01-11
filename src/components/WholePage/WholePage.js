@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import HeroSection from "../HeroSection/HeroSection";
 import ShapeSection from "../ShapeSection/ShapeSection";
 import AboutSection from "../AboutSection/AboutSection";
@@ -15,7 +15,16 @@ import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function WholePage() {
+  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
+  const restSectionRef = useRef();
+
+  // hero section has ended
+  function heroSectionEnded() {
+    setHeroSectionEnd(true);
+  }
+
   useGSAP(() => {
+    // lazy loading
     const lenis = new Lenis();
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -28,17 +37,23 @@ function WholePage() {
   });
 
   return (
-    <div className="overflow-y-auto [&::-webkit-scrollbar]:hidden">
-      <HeroSection />
-      <ShapeSection />
-
-      <AboutSection />
-      <VisualDesignSection />
-      <SkillsSection />
-      <ServicesSection />
-      <DesignProcessSection />
-      <HandSection />
-      <ContactSection />
+    <div
+      id="wholePage"
+      className="overflow-y-auto [&::-webkit-scrollbar]:hidden"
+    >
+      {!heroSectionEnd && <HeroSection heroSectionEnded={heroSectionEnded} />}
+      {heroSectionEnd && (
+        <>
+          <ShapeSection />
+          <AboutSection />
+          <VisualDesignSection />
+          <SkillsSection />
+          <ServicesSection />
+          <DesignProcessSection />
+          <HandSection />
+          <ContactSection />
+        </>
+      )}
     </div>
   );
 }

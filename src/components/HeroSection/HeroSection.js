@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ReactCurvedText from "react-curved-text";
 import { Ubuntu_Mono } from "next/font/google";
+import { ScrollTrigger } from "gsap/all";
 
 const ubuntuMonu = Ubuntu_Mono({
   weight: ["400"],
@@ -13,10 +14,24 @@ const ubuntuMonu = Ubuntu_Mono({
   display: "swap",
 });
 
-function HeroSection() {
+gsap.registerPlugin(ScrollTrigger);
+
+function HeroSection({ heroSectionEnded }) {
   const curvedTextRef = useRef();
+  const heroSectionRef = useRef();
 
   useGSAP(() => {
+    // scroll trigger for end
+    ScrollTrigger.create({
+      trigger: heroSectionRef.current,
+      start: "top top",
+      end: "95% bottom ",
+      onLeave: () => {
+        heroSectionEnded();
+      },
+    });
+
+    // gsap curved section
     gsap.to(curvedTextRef.current, {
       rotation: -360,
       duration: 40,
@@ -26,7 +41,7 @@ function HeroSection() {
   });
 
   return (
-    <div className="relative h-[1024] overflow-hidden">
+    <div ref={heroSectionRef} className="relative h-[1024px] overflow-hidden">
       {/* grid */}
       <div className="absolute left-0 top-0 flex h-full w-full justify-center gap-x-[323px]">
         {Array(5)
@@ -40,11 +55,11 @@ function HeroSection() {
       <Image
         src={heroSectionHand}
         alt="hero section hand illustration"
-        className="heroSectionHand relative top-[80px] z-10 aspect-auto w-[366px]"
+        className="heroSectionHand absolute left-1/2 top-[80px] z-10 aspect-auto w-[366px] -translate-x-1/2"
       />
       <div
         ref={curvedTextRef}
-        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-[142px] z-10 -translate-x-1/2`}
+        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-[412px] z-10 -translate-x-1/2`}
       >
         <ReactCurvedText
           width={3500}
