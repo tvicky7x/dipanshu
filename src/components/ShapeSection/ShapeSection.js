@@ -17,6 +17,7 @@ function ShapeSection() {
       start: "center center",
       end: "bottom-=100 bottom",
       pin: shapeSectionPinRef.current,
+      pinSpacing: true,
       onEnter: () => {
         gsap
           .timeline()
