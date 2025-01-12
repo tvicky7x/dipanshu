@@ -49,13 +49,10 @@ function ShapeSection() {
           scrub: true,
         },
       })
-      .to("#scrollDiv1", { height: 100 }, 0)
-      .to("#scrollDiv2", { height: 220 }, 0)
-      .to("#scrollDiv3", { height: 320 }, 0)
-      .to("#scrollDiv4", { height: 350 }, 0)
-      .to("#scrollDiv5", { height: 270 }, 0)
-      .to("#scrollDiv6", { height: 180 }, 0)
-      .to("#scrollDiv7", { height: 50 }, 0);
+      .to("#scrollDiv1", { height: 40 }, 0)
+      .to("#scrollDiv2", { height: 120 }, 0)
+      .to("#scrollDiv3", { height: 160 }, 0)
+      .to("#scrollDiv4", { height: 80 }, 0);
 
     return () => {
       timeline.kill();
@@ -78,12 +75,15 @@ function ShapeSection() {
   return (
     <div className="relative">
       {/* grid */}
-      <div className="absolute left-0 top-0 flex h-full w-full justify-center gap-x-[323px]">
-        {Array(5)
+      <div className="absolute left-0 top-0 grid h-full w-full grid-flow-col grid-cols-4 px-[72px]">
+        {Array(4)
           .fill(true)
           .map((_, index) => {
             return (
-              <div key={index} className={`border-x-[0.5px] border-white/15`} />
+              <div
+                key={index}
+                className={`border-x-[0.5px] border-white/15 first:border-s-[2px] last:border-e-[2px]`}
+              />
             );
           })}
       </div>
@@ -203,21 +203,25 @@ function ShapeSection() {
             </div>
           </div>
         </div>
-        <div className="h-[50px]" />
+        <div className="h-[30px]" />
       </div>
 
       {/* scroll grid */}
       <div
         ref={scrollBarContainerRef}
-        className="absolute bottom-0 left-1/2 z-20 flex -translate-x-calc_50p_323d2 items-end justify-center"
+        className="absolute bottom-0 left-0 grid w-full grid-flow-col grid-cols-4 px-[72px]"
       >
-        <div id="scrollDiv1" className={`w-[325px] bg-white`} />
-        <div id="scrollDiv2" className={`w-[325px] bg-white`} />
-        <div id="scrollDiv3" className={`w-[325px] bg-white`} />
-        <div id="scrollDiv4" className={`w-[325px] bg-white`} />
-        <div id="scrollDiv5" className={`w-[325px] bg-white`} />
-        <div id="scrollDiv6" className={`w-[325px] bg-white`} />
-        <div id="scrollDiv7" className={`w-[325px] bg-white`} />
+        {Array(4)
+          .fill(true)
+          .map((_, index) => {
+            return (
+              <div
+                key={index}
+                id={`scrollDiv${index + 1}`}
+                className={`self-end bg-white`}
+              />
+            );
+          })}
       </div>
     </div>
   );

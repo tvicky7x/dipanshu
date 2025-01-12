@@ -6,12 +6,15 @@ function VisualDesignSection() {
   return (
     <div className="relative h-screen">
       {/* grid */}
-      <div className="absolute left-0 top-0 flex h-full w-full justify-center gap-x-[323px]">
-        {Array(5)
+      <div className="absolute left-0 top-0 grid h-full w-full grid-flow-col grid-cols-4 px-[72px]">
+        {Array(4)
           .fill(true)
           .map((_, index) => {
             return (
-              <div key={index} className={`border-x-[0.5px] border-white/15`} />
+              <div
+                key={index}
+                className={`border-x-[0.5px] border-white/15 first:border-s-[2px] last:border-e-[2px]`}
+              />
             );
           })}
       </div>

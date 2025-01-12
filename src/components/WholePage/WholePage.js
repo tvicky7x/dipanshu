@@ -17,7 +17,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
-  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
+  const [heroSectionEnd, setHeroSectionEnd] = useState(true);
   const restSectionRef = useRef();
 
   // hero section has ended

@@ -78,13 +78,10 @@ function AboutSection() {
           scrub: true,
         },
       })
-      .to("#scrollBlackDiv1", { height: 20 }, 0)
-      .to("#scrollBlackDiv2", { height: 80 }, 0)
+      .to("#scrollBlackDiv1", { height: 40 }, 0)
+      .to("#scrollBlackDiv2", { height: 180 }, 0)
       .to("#scrollBlackDiv3", { height: 120 }, 0)
-      .to("#scrollBlackDiv4", { height: 300 }, 0)
-      .to("#scrollBlackDiv5", { height: 230 }, 0)
-      .to("#scrollBlackDiv6", { height: 150 }, 0)
-      .to("#scrollBlackDiv7", { height: 100 }, 0);
+      .to("#scrollBlackDiv4", { height: 60 }, 0);
   });
 
   return (
@@ -142,24 +139,25 @@ function AboutSection() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="bg-white">
         <div className="h-[250px]" />
-        <div
-          ref={scrollBarBlackContainerRef}
-          className="absolute bottom-0 left-1/2 z-20 flex -translate-x-calc_50p_323d2 items-end justify-center"
-        >
-          <div id="scrollBlackDiv1" className={`w-[325px] bg-black`} />
-          <div id="scrollBlackDiv2" className={`w-[325px] bg-black`} />
-          <div id="scrollBlackDiv3" className={`w-[325px] bg-black`} />
-          <div id="scrollBlackDiv4" className={`w-[325px] bg-black`} />
-          <div id="scrollBlackDiv5" className={`w-[325px] bg-black`} />
-          <div id="scrollBlackDiv6" className={`w-[325px] bg-black`} />
-          <div id="scrollBlackDiv7" className={`w-[325px] bg-black`} />
-        </div>
       </div>
       {/* scroll grid */}
+      <div
+        ref={scrollBarBlackContainerRef}
+        className="absolute bottom-0 left-0 grid w-full grid-flow-col grid-cols-4 px-[72px]"
+      >
+        {Array(4)
+          .fill(true)
+          .map((_, index) => {
+            return (
+              <div
+                key={index}
+                id={`scrollBlackDiv${index + 1}`}
+                className={`self-end border-x-[0.5px] border-white/15 bg-black first:border-s-[2px] last:border-e-[2px]`}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 }
