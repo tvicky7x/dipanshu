@@ -41,7 +41,7 @@ function WholePage() {
   useGSAP(() => {
     gsap.to(restSectionRef.current, {
       height: 0,
-      duration: 1.2,
+      duration: 1.9,
       onComplete: () => {
         ScrollTrigger.refresh();
       },
