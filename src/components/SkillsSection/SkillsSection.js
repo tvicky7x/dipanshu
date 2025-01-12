@@ -202,7 +202,7 @@ function SkillsSection() {
   useGSAP(() => {
     ScrollTrigger.create({
       trigger: skillsContainerRef.current,
-      start: "30% center",
+      start: "10% center",
       once: true,
       onEnter: () => {
         if (skillsContainerRef.current) {
