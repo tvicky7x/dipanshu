@@ -13,17 +13,10 @@
   body::-webkit-scrollbar {
     display: none;
   }
-  /* @keyframes fromBottomKeyframe {
-    0% {
-      transform: translateY(500px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0px);
-      opacity: 1;
-    }
+  @font-face {
+    font-family: "OffBit";
+    src: url("../app/fonts/offBit/OffBitTrial-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
   }
-  .fromBottom {
-    animation: fromBottomKeyframe 1.2s ease-in-out;
-  } */
 }
