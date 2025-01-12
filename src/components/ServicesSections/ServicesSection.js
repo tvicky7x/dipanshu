@@ -26,47 +26,49 @@ const servicesArray = [
 
 function ServicesSection() {
   return (
-    <div className="pb-[204px] pt-[150px]">
-      <div className="flex flex-col gap-y-[160px]">
-        <div className="flex flex-col gap-y-[20px] text-center uppercase">
-          <p
-            className={`${aeonikTrial.className} text-[24px] leading-[22px] tracking-[0.02em]`}
-          >
-            {"[SERVICES]"}
-          </p>
-          <p
-            className={`${layGrotesk.className} text-[70px] font-medium leading-[83px]`}
-          >
-            Focused on Impact
-          </p>
-        </div>
-        <div>
-          {servicesArray?.map((item, index, array) => {
-            return (
-              <React.Fragment key={index}>
-                <div className="flex flex-col gap-y-[30px] text-center">
-                  <p
-                    className={`${aeonikTrial.className} text-[24px] font-light leading-[22px]`}
-                  >
-                    {item?.comment}
-                  </p>
-                  <p
-                    className={`${layGrotesk.className} text-[64px] font-medium uppercase leading-[50px] tracking-[0.02em]`}
-                  >
-                    {item?.serviceName}
-                  </p>
-                  <p
-                    className={`${offBit.className} text-[24px] leading-[50px] tracking-[0.06em]`}
-                  >
-                    {item?.quote}
-                  </p>
-                </div>
-                {index !== array.length - 1 && (
-                  <div className="my-[54px] border-b border-white/[0.15]" />
-                )}
-              </React.Fragment>
-            );
-          })}
+    <div className="px-[72px]">
+      <div className="border-x-2 border-white/15 pb-[204px] pt-[150px]">
+        <div className="flex flex-col gap-y-[160px]">
+          <div className="flex flex-col gap-y-[20px] text-center uppercase">
+            <p
+              className={`${aeonikTrial.className} text-[24px] leading-[22px] tracking-[0.02em]`}
+            >
+              {"[SERVICES]"}
+            </p>
+            <p
+              className={`${layGrotesk.className} text-[70px] font-medium leading-[83px]`}
+            >
+              Focused on Impact
+            </p>
+          </div>
+          <div>
+            {servicesArray?.map((item, index, array) => {
+              return (
+                <React.Fragment key={index}>
+                  <div className="flex flex-col gap-y-[30px] text-center">
+                    <p
+                      className={`${aeonikTrial.className} text-[24px] font-light leading-[22px]`}
+                    >
+                      {item?.comment}
+                    </p>
+                    <p
+                      className={`${layGrotesk.className} text-[64px] font-medium uppercase leading-[50px] tracking-[0.02em]`}
+                    >
+                      {item?.serviceName}
+                    </p>
+                    <p
+                      className={`${offBit.className} text-[24px] leading-[50px] tracking-[0.06em]`}
+                    >
+                      {item?.quote}
+                    </p>
+                  </div>
+                  {index !== array.length - 1 && (
+                    <div className="my-[54px] border-b-2 border-white/15" />
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
