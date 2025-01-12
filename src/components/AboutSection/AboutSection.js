@@ -34,24 +34,6 @@ function AboutSection() {
       pin: "#aboutSectionPicturePinSection",
     });
 
-    // gsap text highlight animation
-    // const textHighlightContainer = document.querySelector(
-    //   "#aboutTextHighlightContainer",
-    // );
-    // const chars = aboutTextHighlightContent
-    //   .map((str) => {
-    //     const p = document.createElement("p");
-    //     const splittedSpanArray = str.split("").map((characters) => {
-    //       const span = document.createElement("span");
-    //       span.textContent = characters;
-    //       p.appendChild(span);
-    //       return span;
-    //     });
-    //     textHighlightContainer.appendChild(p);
-    //     return splittedSpanArray;
-    //   })
-    //   .flat();
-
     const chars = document.querySelectorAll(
       "#aboutTextHighlightContainer p span",
     );
@@ -144,19 +126,21 @@ function AboutSection() {
       {/* scroll grid */}
       <div
         ref={scrollBarBlackContainerRef}
-        className="absolute bottom-0 left-0 grid w-full grid-flow-col grid-cols-4 px-[72px]"
+        className="absolute bottom-0 left-0 w-full px-[72px]"
       >
-        {Array(4)
-          .fill(true)
-          .map((_, index) => {
-            return (
-              <div
-                key={index}
-                id={`scrollBlackDiv${index + 1}`}
-                className={`self-end border-x-[0.5px] border-white/15 bg-black first:border-s-[2px] last:border-e-[2px]`}
-              />
-            );
-          })}
+        <div className="grid grid-flow-col grid-cols-4 divide-x-2 divide-white/15 border-x-2 border-white/15">
+          {Array(4)
+            .fill(true)
+            .map((_, index) => {
+              return (
+                <div
+                  key={index}
+                  id={`scrollBlackDiv${index + 1}`}
+                  className={`self-end bg-black`}
+                />
+              );
+            })}
+        </div>
       </div>
     </div>
   );

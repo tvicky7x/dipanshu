@@ -7,6 +7,7 @@ import gsap from "gsap";
 import ReactCurvedText from "react-curved-text";
 import { Ubuntu_Mono } from "next/font/google";
 import { ScrollTrigger } from "gsap/all";
+import GridLines from "../UtilitiesComponents/GridLines";
 
 const ubuntuMonu = Ubuntu_Mono({
   weight: ["400"],
@@ -25,7 +26,7 @@ function HeroSection({ heroSectionEnded }) {
     ScrollTrigger.create({
       trigger: heroSectionRef.current,
       start: "top top",
-      end: "95% bottom ",
+      end: "bottom bottom ",
       markers: true,
       onLeave: () => {
         heroSectionEnded();
@@ -42,17 +43,13 @@ function HeroSection({ heroSectionEnded }) {
   });
 
   return (
-    <div ref={heroSectionRef} className="relative h-[1024px] overflow-hidden">
+    <div
+      ref={heroSectionRef}
+      className="relative h-[calc(100vh+50px)] min-h-[1024px] overflow-hidden"
+    >
       {/* grid */}
-      <div className="absolute left-0 top-0 flex h-full w-full justify-center gap-x-[323px]">
-        {Array(5)
-          .fill(true)
-          .map((_, index) => {
-            return (
-              <div key={index} className={`border-x-[0.5px] border-white/15`} />
-            );
-          })}
-      </div>
+      <GridLines />
+
       <Image
         src={heroSectionHand}
         alt="hero section hand illustration"

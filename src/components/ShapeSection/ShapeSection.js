@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
+import GridLines from "../UtilitiesComponents/GridLines";
 gsap.registerPlugin(ScrollTrigger);
 
 function ShapeSection() {
@@ -75,18 +76,7 @@ function ShapeSection() {
   return (
     <div className="relative">
       {/* grid */}
-      <div className="absolute left-0 top-0 grid h-full w-full grid-flow-col grid-cols-4 px-[72px]">
-        {Array(4)
-          .fill(true)
-          .map((_, index) => {
-            return (
-              <div
-                key={index}
-                className={`border-x-[0.5px] border-white/15 first:border-s-[2px] last:border-e-[2px]`}
-              />
-            );
-          })}
-      </div>
+      <GridLines />
 
       {/* Shape Section */}
       <div ref={shapeSectionSectionRef} className="relative z-10 h-[1400px]">
