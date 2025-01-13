@@ -5,7 +5,11 @@ import { ScrollTrigger } from "gsap/all";
 import React, { useRef } from "react";
 import GridLines from "../UtilitiesComponents/GridLines";
 import { layGrotesk } from "@/app/font";
+import { Inter } from "next/font/google";
+import { motion } from "motion/react";
 gsap.registerPlugin(ScrollTrigger);
+
+const inter = Inter({ subsets: ["latin"], weight: ["400"], display: "swap" });
 
 const featuredWorkArray = [
   {
@@ -183,8 +187,30 @@ function FeaturedWork() {
                       <div
                         key={index}
                         ref={(ref) => (workRefs.current[index + 1] = ref)}
-                        className="h-full w-1/4 flex-shrink-0"
-                      ></div>
+                        className="h-full w-1/4 flex-shrink-0 pt-[calc(10vh+200px)]"
+                      >
+                        <span
+                          className={`${inter.className} ps-[13.5px] text-[16px] leading-[19px] tracking-[0.02em]`}
+                        >
+                          00{index + 1}
+                        </span>
+                        <div className="relative h-full">
+                          <motion.div
+                            id={`featuredWorkCard-${index}`}
+                            initial={{ opacity: 0, scale: 0, x: "-50%" }}
+                            whileInView={{
+                              opacity: 1,
+                              scale: 1,
+                              x: "-50%",
+                              transition: { duration: 0.5 },
+                            }}
+                            style={{
+                              backgroundColor: item?.fillColor,
+                            }}
+                            className={`${index % 2 === 0 ? "top-[26px]" : "bottom-[50px]"} featuredWorkCard absolute left-0 h-[269px] w-[285px] rounded-[8px] px-[13.5px] pb-[11px] pt-[22px]`}
+                          ></motion.div>
+                        </div>
+                      </div>
                     );
                   })}
                 </div>
