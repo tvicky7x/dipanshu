@@ -13,6 +13,7 @@
     "gsap": "^3.12.5",
     "lenis": "^1.1.18",
     "matter-js": "^0.20.0",
+    "motion": "^11.17.0",
     "next": "14.2.12",
     "react": "^18",
     "react-curved-text": "^3.0.1",
