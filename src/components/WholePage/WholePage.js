@@ -13,11 +13,12 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FeaturedWork from "../FeaturedWork/FeaturedWork";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
-  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
+  const [heroSectionEnd, setHeroSectionEnd] = useState(true);
   const restSectionRef = useRef();
 
   // hero section has ended
@@ -62,6 +63,7 @@ function WholePage() {
           <VisualDesignSection />
           <SkillsSection />
           <ServicesSection />
+          <FeaturedWork />
           <DesignProcessSection />
           <HandSection />
           <ContactSection />
