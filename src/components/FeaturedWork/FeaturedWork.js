@@ -113,7 +113,7 @@ function FeaturedWork() {
         scrollTrigger: {
           trigger: featuredWorkSectionRef.current,
           start: "top 25%",
-          end: "top -50%",
+          end: "top -1100px",
           scrub: true,
         },
       })
@@ -128,7 +128,7 @@ function FeaturedWork() {
       .timeline({
         scrollTrigger: {
           trigger: featuredWorkSectionRef.current,
-          start: "top -80%",
+          start: "top -1300px",
           end: "bottom bottom",
           scrub: true,
         },
@@ -150,7 +150,7 @@ function FeaturedWork() {
       <div
         id="featuredWorkSection"
         ref={featuredWorkSectionRef}
-        style={{ height: `${500 * featuredWorkArray.length + 1000}px` }}
+        style={{ height: `${400 * featuredWorkArray.length + 1300}px` }}
         className={`text-black`}
       >
         <div
@@ -184,9 +184,7 @@ function FeaturedWork() {
                         key={index}
                         ref={(ref) => (workRefs.current[index + 1] = ref)}
                         className="h-full w-1/4 flex-shrink-0"
-                      >
-                        {index}
-                      </div>
+                      ></div>
                     );
                   })}
                 </div>
