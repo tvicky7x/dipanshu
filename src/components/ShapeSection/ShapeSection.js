@@ -50,10 +50,10 @@ function ShapeSection() {
           scrub: true,
         },
       })
-      .to("#scrollDiv1", { height: 40 }, 0)
-      .to("#scrollDiv2", { height: 120 }, 0)
-      .to("#scrollDiv3", { height: 160 }, 0)
-      .to("#scrollDiv4", { height: 80 }, 0);
+      .to("#scrollDiv1", { height: 80 }, 0)
+      .to("#scrollDiv2", { height: 160 }, 0)
+      .to("#scrollDiv3", { height: 200 }, 0)
+      .to("#scrollDiv4", { height: 120 }, 0);
 
     return () => {
       timeline.kill();

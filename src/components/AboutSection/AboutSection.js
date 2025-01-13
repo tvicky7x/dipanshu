@@ -60,10 +60,10 @@ function AboutSection() {
           scrub: true,
         },
       })
-      .to("#scrollBlackDiv1", { height: 40 }, 0)
-      .to("#scrollBlackDiv2", { height: 180 }, 0)
-      .to("#scrollBlackDiv3", { height: 120 }, 0)
-      .to("#scrollBlackDiv4", { height: 60 }, 0);
+      .to("#scrollBlackDiv1", { height: 60 }, 0)
+      .to("#scrollBlackDiv2", { height: 200 }, 0)
+      .to("#scrollBlackDiv3", { height: 140 }, 0)
+      .to("#scrollBlackDiv4", { height: 80 }, 0);
   });
 
   return (
