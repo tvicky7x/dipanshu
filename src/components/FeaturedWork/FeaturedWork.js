@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React, { useRef } from "react";
 import GridLines from "../UtilitiesComponents/GridLines";
-import { layGrotesk } from "@/app/font";
+import { aeonikTrial, layGrotesk } from "@/app/font";
 import { Inter } from "next/font/google";
 import { motion } from "motion/react";
 gsap.registerPlugin(ScrollTrigger);
@@ -14,64 +14,64 @@ const inter = Inter({ subsets: ["latin"], weight: ["400"], display: "swap" });
 const featuredWorkArray = [
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#82F0BE",
     imageUrl: "/cat.jpg",
   },
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#F19595",
     imageUrl: "/cat.jpg",
   },
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#8EF9F9",
     imageUrl: "/cat.jpg",
   },
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#82F0BE",
     imageUrl: "/cat.jpg",
   },
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#F19595",
     imageUrl: "/cat.jpg",
   },
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#8EF9F9",
     imageUrl: "/cat.jpg",
   },
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#82F0BE",
     imageUrl: "/cat.jpg",
   },
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#F19595",
     imageUrl: "/cat.jpg",
   },
   {
     title: "Title",
-    brand: "Brand",
-    identity: "identity",
+    smallDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     fillColor: "#8EF9F9",
     imageUrl: "/cat.jpg",
   },
@@ -111,6 +111,7 @@ function FeaturedWork() {
         },
         0,
       );
+
     // Heading
     gsap
       .timeline({
@@ -119,9 +120,26 @@ function FeaturedWork() {
           start: "top 25%",
           end: "top -1100px",
           scrub: true,
+          onUpdate: (self) => {
+            console.log(self);
+            if (self.direction === -1) {
+              // Reverse scrolling
+              gsap.to(".featuredCard", { opacity: 0, duration: 0.2 });
+            }
+            if (self.progress === 1) {
+              // Forward scrolling
+              gsap.to(".featuredCard", { opacity: 1, duration: 0.5 });
+            }
+          },
         },
       })
-      .from(headingRef.current, { left: "100%" }, 0);
+      .from(
+        headingRef.current,
+        {
+          left: "100%",
+        },
+        0,
+      );
 
     //   flexed section
     const flexSectionTransformValue =
@@ -132,7 +150,7 @@ function FeaturedWork() {
       .timeline({
         scrollTrigger: {
           trigger: featuredWorkSectionRef.current,
-          start: "top -1300px",
+          start: "top -1500px",
           end: "bottom bottom",
           scrub: true,
         },
@@ -173,7 +191,7 @@ function FeaturedWork() {
               Featured Work
             </h2>
             <div className="h-full w-full px-[72px]">
-              <div className="h-full overflow-hidden border-x-2 border-black/15">
+              <div className="featuredCard h-full overflow-hidden border-x-2 border-black/15 opacity-0">
                 <div
                   ref={flexedSectionRef}
                   className="flex h-full divide-x-2 divide-black/15"
@@ -196,7 +214,6 @@ function FeaturedWork() {
                         </span>
                         <div className="relative h-full">
                           <motion.div
-                            id={`featuredWorkCard-${index}`}
                             initial={{ opacity: 0, scale: 0, x: "-50%" }}
                             whileInView={{
                               opacity: 1,
@@ -207,8 +224,28 @@ function FeaturedWork() {
                             style={{
                               backgroundColor: item?.fillColor,
                             }}
-                            className={`${index % 2 === 0 ? "top-[26px]" : "bottom-[50px]"} featuredWorkCard absolute left-0 h-[269px] w-[285px] rounded-[8px] px-[13.5px] pb-[11px] pt-[22px]`}
-                          ></motion.div>
+                            className={`${index % 2 === 0 ? "top-[26px]" : "bottom-[50px]"} absolute left-0 flex h-[269px] w-[285px] flex-col gap-y-[25px] rounded-[8px] px-[13.5px] pb-[11px] pt-[22px]`}
+                          >
+                            <div className="flex flex-col gap-y-[8px]">
+                              <p
+                                className={`${layGrotesk.className} text-[24px] font-medium tracking-[0.02em]`}
+                              >
+                                {item?.title}
+                              </p>
+                              <p
+                                className={`${aeonikTrial.className} line-clamp-2 text-[14px] leading-[16px] tracking-[0.02em]`}
+                              >
+                                {item?.smallDescription}
+                              </p>
+                            </div>
+                            <div className="flex h-full items-center justify-center overflow-hidden rounded-[6px]">
+                              <img
+                                src={item?.imageUrl}
+                                alt={item?.title}
+                                className="aspect-auto w-full"
+                              />
+                            </div>
+                          </motion.div>
                         </div>
                       </div>
                     );
@@ -219,7 +256,7 @@ function FeaturedWork() {
           </div>
         </div>
       </div>
-      <div className="relative h-[70px] rounded-b-[70px] bg-white px-[72px]">
+      <div className="relative h-[200px] rounded-b-[70px] bg-white px-[72px]">
         <GridLines whiteBg={true} />
       </div>
     </div>

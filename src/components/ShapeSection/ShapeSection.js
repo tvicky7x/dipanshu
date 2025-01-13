@@ -79,7 +79,7 @@ function ShapeSection() {
       <GridLines />
 
       {/* Shape Section */}
-      <div ref={shapeSectionSectionRef} className="relative z-10 h-[1400px]">
+      <div ref={shapeSectionSectionRef} className="relative z-10 h-[1800px]">
         <div
           ref={shapeSectionPinRef}
           id="shapeSectionPinId"

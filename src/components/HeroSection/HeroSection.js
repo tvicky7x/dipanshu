@@ -26,7 +26,7 @@ function HeroSection({ heroSectionEnded }) {
     ScrollTrigger.create({
       trigger: heroSectionRef.current,
       start: "top top",
-      end: "bottom bottom ",
+      end: "bottom-=50 bottom",
       onLeave: () => {
         heroSectionEnded();
       },
@@ -44,7 +44,7 @@ function HeroSection({ heroSectionEnded }) {
   return (
     <div
       ref={heroSectionRef}
-      className="relative h-[calc(100vh+50px)] min-h-[1024px] overflow-hidden"
+      className="relative h-[calc(100vh+100px)] min-h-[1024px] overflow-hidden"
     >
       {/* grid */}
       <GridLines />
