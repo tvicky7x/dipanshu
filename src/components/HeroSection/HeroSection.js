@@ -27,7 +27,6 @@ function HeroSection({ heroSectionEnded }) {
       trigger: heroSectionRef.current,
       start: "top top",
       end: "bottom bottom ",
-      markers: true,
       onLeave: () => {
         heroSectionEnded();
       },
