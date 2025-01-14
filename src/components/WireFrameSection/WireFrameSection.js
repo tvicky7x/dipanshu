@@ -15,9 +15,10 @@ function WireFrameSection() {
       wireFrameSectionRef.current.getBoundingClientRect();
     const cursorX = event.clientX - wireFrameSectionRect.left;
     const percentage = Number(cursorX / wireFrameSectionRect.width);
-    setCursorPositionPercentage(
-      Number(Math.max(0.025, Math.min(0.975, percentage))),
+    const currentCursorPositionPercentage = Number(
+      Math.max(0.025, Math.min(0.975, percentage)),
     );
+    setCursorPositionPercentage(currentCursorPositionPercentage);
   }
 
   return (
