@@ -28,12 +28,12 @@ function DesignProcessSection() {
         scrollTrigger: {
           trigger: designProcessSectionRef.current,
           start: "top top",
-          end: "bottom-=15% bottom",
+          end: "bottom-=10% bottom",
           scrub: true,
         },
       })
       .set(processContainer, { width: 0 })
-      .to(processContainer, { width: "100%", duration: 0.8, stagger: 1 }, 0.5);
+      .to(processContainer, { width: "100%", duration: 0.8, stagger: 0.9 }, 0);
   });
 
   return (
