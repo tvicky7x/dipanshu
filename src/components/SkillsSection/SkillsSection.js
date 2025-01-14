@@ -220,11 +220,11 @@ function SkillsSection() {
       </div>
       <div
         style={{ backgroundImage: "url(skillsBg.svg)" }}
-        className="pointer-events-none relative z-10 h-full w-full border-y-2 border-white/15 bg-cover bg-clip-padding bg-left-top bg-repeat px-[72px]"
+        className="g-cover pointer-events-none relative z-10 h-full w-full border-y-2 border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[72px]"
       >
         <div
           ref={skillsContainerRef}
-          className="pointer-events-auto relative h-full w-full border-x-2 border-white/15 bg-black"
+          className="pointer-events-auto relative h-full w-full bg-black"
         >
           {/* Title container */}
           <div className="pointer-events-none absolute left-1/2 top-[28%] -translate-x-1/2 -translate-y-1/2 text-nowrap text-center uppercase">

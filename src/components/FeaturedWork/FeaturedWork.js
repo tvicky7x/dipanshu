@@ -256,7 +256,7 @@ function FeaturedWork() {
           </div>
         </div>
       </div>
-      <div className="relative h-[200px] rounded-b-[70px] bg-white px-[72px]">
+      <div className="relative h-[20vh] rounded-b-[70px] bg-white px-[72px]">
         <GridLines whiteBg={true} />
       </div>
     </div>

@@ -15,7 +15,7 @@ function ShapeSection() {
   useGSAP(() => {
     ScrollTrigger.create({
       trigger: shapeSectionSectionRef.current,
-      start: "center center",
+      start: "33.3% center",
       end: "bottom-=100 bottom",
       pin: shapeSectionPinRef.current,
       pinSpacing: true,
@@ -83,7 +83,7 @@ function ShapeSection() {
         <div
           ref={shapeSectionPinRef}
           id="shapeSectionPinId"
-          className="absolute left-0 top-1/2 !h-screen !w-full -translate-y-1/2"
+          className="absolute left-0 top-1/3 !h-screen !w-full -translate-y-1/2"
         >
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
