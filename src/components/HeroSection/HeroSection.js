@@ -39,12 +39,21 @@ function HeroSection({ heroSectionEnded }) {
       repeat: -1,
       ease: "none",
     });
+
+    // arrow down animation
+    gsap.from("#arrowDownIcon", {
+      y: -30,
+      repeat: -1,
+      yoyo: true,
+      duration: 0.5,
+      ease: "none",
+    });
   });
 
   return (
     <div
       ref={heroSectionRef}
-      className="relative h-[calc(100vh+100px)] min-h-[1024px] overflow-hidden"
+      className="relative h-[calc(100vh+80px)] min-h-[1124px] overflow-hidden"
     >
       {/* grid */}
       <GridLines />
@@ -81,6 +90,16 @@ function HeroSection({ heroSectionEnded }) {
           tspanProps={{ wordSpacing: "50px", overflow: "visible" }}
           // ellipseProps={{ style: "fill: #ff0000" }}
           svgProps={null}
+        />
+      </div>
+
+      <div className="absolute bottom-[50px] left-1/2 -translate-x-1/2">
+        <Image
+          id="arrowDownIcon"
+          width={55}
+          height={55}
+          src={"./arrowDownIcon.svg"}
+          alt="arrow down icon"
         />
       </div>
     </div>
