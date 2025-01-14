@@ -18,7 +18,7 @@ import FeaturedWork from "../FeaturedWork/FeaturedWork";
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
-  const [heroSectionEnd, setHeroSectionEnd] = useState(true);
+  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
   const restSectionRef = useRef();
 
   // hero section has ended

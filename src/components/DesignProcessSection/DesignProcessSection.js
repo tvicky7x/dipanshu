@@ -195,6 +195,9 @@ function DesignProcessSection() {
           </div>
         </div>
       </div>
+      <div className="relative h-[15vh]">
+        <GridLines />
+      </div>
     </>
   );
 }
