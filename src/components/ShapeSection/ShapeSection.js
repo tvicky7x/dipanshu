@@ -16,7 +16,6 @@ function ShapeSection() {
     ScrollTrigger.create({
       trigger: shapeSectionSectionRef.current,
       start: "33.3% center",
-      markers: true,
       end: "bottom-=100 bottom",
       pin: shapeSectionPinRef.current,
       pinSpacing: true,
