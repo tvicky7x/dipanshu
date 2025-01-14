@@ -203,6 +203,7 @@ function SkillsSection() {
     ScrollTrigger.create({
       trigger: skillsContainerRef.current,
       start: "top 80%",
+      markers: true,
       once: true,
       onEnter: () => {
         if (skillsContainerRef.current) {
