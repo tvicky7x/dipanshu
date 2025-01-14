@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         hiddenTextColor: "#F5F5F5",
+        wireFrameBgColor: "#3a7dfa",
       },
     },
   },
