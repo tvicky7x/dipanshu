@@ -14,6 +14,7 @@ import gsap from "gsap";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FeaturedWork from "../FeaturedWork/FeaturedWork";
+import WireFrameSection from "../WireFrameSection/WireFrameSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,6 +66,7 @@ function WholePage() {
           <ServicesSection />
           <FeaturedWork />
           <DesignProcessSection />
+          <WireFrameSection />
           <HandSection />
           <ContactSection />
         </div>

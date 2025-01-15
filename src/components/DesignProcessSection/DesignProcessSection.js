@@ -28,12 +28,12 @@ function DesignProcessSection() {
         scrollTrigger: {
           trigger: designProcessSectionRef.current,
           start: "top top",
-          end: "bottom-=15% bottom",
+          end: "bottom-=10% bottom",
           scrub: true,
         },
       })
       .set(processContainer, { width: 0 })
-      .to(processContainer, { width: "100%", duration: 0.8, stagger: 1 }, 0.5);
+      .to(processContainer, { width: "100%", duration: 0.8, stagger: 0.9 }, 0);
   });
 
   return (
@@ -127,7 +127,10 @@ function DesignProcessSection() {
                         className={`${index === 1 && "col-span-2"}`}
                       >
                         {index === 0 && (
-                          <div className="h-full bg-[url(/skillsBg.svg)] bg-auto bg-clip-padding"></div>
+                          <div
+                            style={{ backgroundImage: `url(/skillsBg.svg)` }}
+                            className="h-full bg-auto bg-clip-padding"
+                          ></div>
                         )}
                         {index === 1 && (
                           <div
@@ -164,7 +167,10 @@ function DesignProcessSection() {
                     return (
                       <div key={index}>
                         {(index === 0 || index === 1 || index === 2) && (
-                          <div className="h-full bg-[url(/skillsBg.svg)] bg-auto bg-clip-padding"></div>
+                          <div
+                            style={{ backgroundImage: `url(/skillsBg.svg)` }}
+                            className="h-full bg-auto bg-clip-padding"
+                          ></div>
                         )}
                         {index === 3 && (
                           <div

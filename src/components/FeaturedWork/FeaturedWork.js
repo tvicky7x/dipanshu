@@ -121,7 +121,6 @@ function FeaturedWork() {
           end: "top -1100px",
           scrub: true,
           onUpdate: (self) => {
-            console.log(self);
             if (self.direction === -1) {
               // Reverse scrolling
               gsap.to(".featuredCard", { opacity: 0, duration: 0.2 });
