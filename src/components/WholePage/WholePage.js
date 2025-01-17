@@ -15,11 +15,12 @@ import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FeaturedWork from "../FeaturedWork/FeaturedWork";
 import WireFrameSection from "../WireFrameSection/WireFrameSection";
+import UniqueSections from "../UniqueSection/UniqueSections";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
-  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
+  const [heroSectionEnd, setHeroSectionEnd] = useState(true);
   const restSectionRef = useRef();
 
   // hero section has ended
@@ -67,6 +68,7 @@ function WholePage() {
           <FeaturedWork />
           <DesignProcessSection />
           <WireFrameSection />
+          <UniqueSections />
           <HandSection />
           <ContactSection />
         </div>
