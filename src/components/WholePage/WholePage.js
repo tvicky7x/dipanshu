@@ -7,7 +7,6 @@ import VisualDesignSection from "../VisualDesignSection/VisualDesignSection";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import ServicesSection from "../ServicesSections/ServicesSection";
 import DesignProcessSection from "../DesignProcessSection/DesignProcessSection";
-import HandSection from "../HandSection/HandSection";
 import ContactSection from "../ContactSection/ContactSection";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -16,11 +15,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FeaturedWork from "../FeaturedWork/FeaturedWork";
 import WireFrameSection from "../WireFrameSection/WireFrameSection";
 import UniqueSections from "../UniqueSection/UniqueSections";
+import StarSection from "../StarSection/StarSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
-  const [heroSectionEnd, setHeroSectionEnd] = useState(true);
+  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
   const restSectionRef = useRef();
 
   // hero section has ended
@@ -69,7 +69,7 @@ function WholePage() {
           <DesignProcessSection />
           <WireFrameSection />
           <UniqueSections />
-          <HandSection />
+          <StarSection />
           <ContactSection />
         </div>
       )}
