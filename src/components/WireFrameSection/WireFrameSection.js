@@ -3,14 +3,13 @@ import React, { useEffect, useRef, useState } from "react";
 import GridLines from "../UtilitiesComponents/GridLines";
 
 function WireFrameSection() {
-  const [mouseDownActive, setMouseDownActive] = useState(false);
   const [cursorPositionPercentage, setCursorPositionPercentage] = useState(0.5);
 
   const wireFrameSectionRef = useRef();
 
   // Dragging cursor
   function draggingCursor(event) {
-    if (!mouseDownActive) return;
+    // if (!mouseDownActive) return;
     const wireFrameSectionRect =
       wireFrameSectionRef.current.getBoundingClientRect();
     const cursorX = event.clientX - wireFrameSectionRect.left;
@@ -34,9 +33,6 @@ function WireFrameSection() {
           <div className="outline-x-2 relative h-full w-full overflow-hidden bg-black outline-white/15">
             <div
               ref={wireFrameSectionRef}
-              onMouseUpCapture={() => {
-                setMouseDownActive(false);
-              }}
               onMouseMove={(e) => draggingCursor(e)}
               className="relative flex h-full w-full select-none flex-nowrap"
             >
@@ -57,12 +53,7 @@ function WireFrameSection() {
                   className={`absolute bottom-0 left-0 aspect-auto h-full w-[calc(100vw-144px)] max-w-none`}
                 />
                 {/* Dragging section */}
-                <div
-                  onMouseDown={() => {
-                    setMouseDownActive(true);
-                  }}
-                  className="absolute right-0 top-0 h-full w-[20px] translate-x-1/2 cursor-col-resize"
-                >
+                <div className="absolute right-0 top-0 h-full w-[20px] translate-x-1/2 cursor-col-resize">
                   <div className="absolute left-1/2 h-full w-[2px] -translate-x-1/2 bg-black"></div>
                   <div className="absolute left-1/2 top-1/2 flex w-max -translate-x-1/2 -translate-y-1/2 gap-x-[8px]">
                     <img
