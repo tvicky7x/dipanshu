@@ -20,14 +20,6 @@ import StarSection from "../StarSection/StarSection";
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
-  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
-  const restSectionRef = useRef();
-
-  // hero section has ended
-  function heroSectionEnded() {
-    setHeroSectionEnd(true);
-  }
-
   useGSAP(() => {
     // lazy loading
     const lenis = new Lenis();
@@ -41,38 +33,23 @@ function WholePage() {
     gsap.ticker.lagSmoothing(9);
   });
 
-  useGSAP(() => {
-    gsap.to(restSectionRef.current, {
-      height: 0,
-      duration: 0.8,
-      onComplete: () => {
-        ScrollTrigger.refresh();
-      },
-    });
-  }, [heroSectionEnd]);
-
   return (
     <div
+      style={{ backgroundImage: "url(bg.svg)" }}
       id="wholePage"
       className="overflow-y-auto [&::-webkit-scrollbar]:hidden"
     >
-      {!heroSectionEnd && <HeroSection heroSectionEnded={heroSectionEnded} />}
-      {heroSectionEnd && (
-        <div>
-          <div ref={restSectionRef} className="h-screen" />
-          <ShapeSection />
-          <AboutSection />
-          <VisualDesignSection />
-          <SkillsSection />
-          <ServicesSection />
-          <FeaturedWork />
-          <DesignProcessSection />
-          <WireFrameSection />
-          <UniqueSections />
-          <StarSection />
-          <ContactSection />
-        </div>
-      )}
+      <ShapeSection />
+      <AboutSection />
+      <VisualDesignSection />
+      <SkillsSection />
+      <ServicesSection />
+      <FeaturedWork />
+      <DesignProcessSection />
+      <WireFrameSection />
+      <UniqueSections />
+      <StarSection />
+      <ContactSection />
     </div>
   );
 }

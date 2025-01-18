@@ -17,6 +17,15 @@ module.exports = {
         hiddenTextColor: "#F5F5F5",
         wireFrameBgColor: "#3a7dfa",
       },
+      animation: {
+        "hover-spin": "hover-spin 10s linear infinite",
+      },
+      keyframes: {
+        "hover-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
     },
   },
   plugins: [],

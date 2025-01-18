@@ -13,21 +13,27 @@ function ShapeSection() {
   const shapeSectionPinRef = useRef();
 
   useGSAP(() => {
+    // pinning
     ScrollTrigger.create({
       trigger: shapeSectionSectionRef.current,
-      start: "center center",
+      start: "top top",
       end: "bottom-=100 bottom",
       pin: shapeSectionPinRef.current,
       pinSpacing: true,
-      onEnter: () => {
-        gsap
-          .timeline()
-          .addLabel("start", 0)
-          .to("#shapeSectionTopElement", { y: 0, duration: 0.2 }, "start")
-          .to("#shapeSectionBottomElement", { y: 0, duration: 0.2 }, "start")
-          .to("#shapeSectionShowElement", { opacity: 1, duration: 0.2 });
-      },
     });
+
+    // transformation
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: shapeSectionSectionRef.current,
+          start: "center center",
+        },
+      })
+      .addLabel("start", 0)
+      .to("#shapeSectionTopElement", { y: 0, duration: 0.2 }, "start")
+      .to("#shapeSectionBottomElement", { y: 0, duration: 0.2 }, "start")
+      .to("#shapeSectionShowElement", { opacity: 1, duration: 0.2 });
 
     // skills band animation
     let clone = document.getElementById("skillBandTarget").cloneNode(true);
@@ -83,7 +89,7 @@ function ShapeSection() {
         <div
           ref={shapeSectionPinRef}
           id="shapeSectionPinId"
-          className="absolute left-0 top-1/2 !h-screen !w-full -translate-y-1/2"
+          className="h-screen"
         >
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">

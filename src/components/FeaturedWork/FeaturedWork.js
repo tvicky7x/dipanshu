@@ -223,7 +223,7 @@ function FeaturedWork() {
                             style={{
                               backgroundColor: item?.fillColor,
                             }}
-                            className={`${index % 2 === 0 ? "top-[26px]" : "bottom-[50px]"} absolute left-0 flex h-[269px] w-[285px] flex-col gap-y-[25px] rounded-[8px] px-[13.5px] pb-[11px] pt-[22px]`}
+                            className={`${index % 2 === 0 ? "top-[26px]" : "bottom-[50px]"} absolute left-0 flex aspect-[285/175] w-[15vw] flex-col gap-y-[25px] rounded-[8px] px-[13.5px] pb-[11px] pt-[22px]`}
                           >
                             <div className="flex flex-col gap-y-[8px]">
                               <p
