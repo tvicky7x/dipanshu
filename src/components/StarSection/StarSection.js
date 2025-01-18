@@ -1,5 +1,4 @@
 import React from "react";
-import GridLines from "../UtilitiesComponents/GridLines";
 import { aeonikTrial } from "@/app/font";
 import Image from "next/image";
 
