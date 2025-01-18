@@ -35,6 +35,7 @@ function WholePage() {
 
   return (
     <div
+      style={{ backgroundImage: "url(bg.svg)" }}
       id="wholePage"
       className="overflow-y-auto [&::-webkit-scrollbar]:hidden"
     >

@@ -2,11 +2,10 @@ import { layGrotesk, maziusReview, offBit } from "@/app/font";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import GridLines from "../UtilitiesComponents/GridLines";
 
 function ContactSection() {
   return (
-    <div className="relative h-[989px]">
+    <div className="relative h-[950px]">
       {/* Grid lines */}
       <div className="absolute left-0 top-0 h-full w-full px-[72px]">
         <div
@@ -121,7 +120,7 @@ function ContactSection() {
         width={594}
         height={546}
         alt="right hand"
-        className="absolute bottom-0 right-0 aspect-auto h-[50%] -translate-y-[25px] translate-x-[9%] -rotate-[15deg] transition-all duration-[2.5s] ease-in-out peer-hover:right-[3%]"
+        className="absolute bottom-0 right-0 aspect-auto h-[50%] translate-x-[9%] -rotate-[15deg] transition-all duration-[2.5s] ease-in-out peer-hover:right-[3%]"
       />
       <div
         className={`${offBit.className} absolute bottom-[3%] left-1/2 -translate-x-1/2 text-[32px] leading-[35px] tracking-[0.05em]`}

@@ -5,12 +5,12 @@ import GridLines from "../UtilitiesComponents/GridLines";
 
 function VisualDesignSection() {
   return (
-    <div className="relative h-screen">
+    <div className="relative h-[1024px]">
       {/* grid */}
       <GridLines />
 
-      <div className="absolute left-1/2 top-calc_50p_160px z-10 -translate-x-1/2 -translate-y-1/2">
-        <p className="flex flex-col text-nowrap text-center text-[64px] leading-[80px] tracking-[0.04em]">
+      <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+        <p className="flex flex-col text-nowrap text-center text-[64px] leading-[80px] tracking-[0.02em]">
           <span>
             I pair strong{" "}
             <span
@@ -38,7 +38,7 @@ function VisualDesignSection() {
         alt="magical hand"
         width={426}
         height={396.5}
-        className="absolute bottom-0 right-0 z-10 aspect-auto w-[426px]"
+        className="absolute bottom-0 right-0 z-10 aspect-auto h-[40%]"
       />
     </div>
   );
