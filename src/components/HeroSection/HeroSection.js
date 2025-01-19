@@ -43,9 +43,6 @@ function HeroSection() {
             const span = document.createElement("span");
             element.appendChild(span);
             const paraTimeline = gsap.timeline();
-            // if (index === 2) {
-            //   span.className = "opacity-[0.5]";
-            // }
             setTimeout(
               () => {
                 // Random character phase
@@ -56,13 +53,6 @@ function HeroSection() {
                 setTimeout(() => {
                   // Replace with the correct character
                   span.textContent = char;
-                  // if (index === 2) {
-                  //   gsap.fromTo(
-                  //     span,
-                  //     { opacity: 0.15 },
-                  //     { opacity: 1, duration: 2 },
-                  //   );
-                  // }
                 }, charDelay / 2);
 
                 if (index === 1) {
