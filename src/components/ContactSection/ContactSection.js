@@ -19,10 +19,17 @@ function ContactSection() {
       },
     );
 
-    gsap.timeline({ repeatDelay: 1, repeat: -1 }).to("#rightHandContactUs", {
+    // gsap.timeline({ repeatDelay: 1, repeat: -1 }).to("#rightHandContactUs", {
+    //   right: "3%",
+    //   duration: 2,
+    //   repeat: 1,
+    //   yoyo: true,
+    //   ease: "power2.inOut",
+    // });
+    gsap.to("#rightHandContactUs", {
       right: "3%",
       duration: 2,
-      repeat: 1,
+      repeat: -1,
       yoyo: true,
       ease: "power2.inOut",
     });

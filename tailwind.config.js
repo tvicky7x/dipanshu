@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         hiddenTextColor: "#F5F5F5",
         wireFrameBgColor: "#3a7dfa",
+        heroSectionTextColor: "#222222",
       },
       animation: {
         "hover-spin": "hover-spin 10s linear infinite",

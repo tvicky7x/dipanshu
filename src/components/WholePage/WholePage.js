@@ -20,6 +20,13 @@ import StarSection from "../StarSection/StarSection";
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
+  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
+
+  // hero section ended
+  function heroSectionEnded() {
+    setHeroSectionEnd(true);
+  }
+
   useGSAP(() => {
     // lazy loading
     const lenis = new Lenis();
@@ -39,17 +46,22 @@ function WholePage() {
       id="wholePage"
       className="overflow-y-auto [&::-webkit-scrollbar]:hidden"
     >
-      <ShapeSection />
-      <AboutSection />
-      <VisualDesignSection />
-      <SkillsSection />
-      <ServicesSection />
-      <FeaturedWork />
-      <DesignProcessSection />
-      <WireFrameSection />
-      <UniqueSections />
-      <StarSection />
-      <ContactSection />
+      <HeroSection heroSectionEnded={heroSectionEnded} />
+      {heroSectionEnd && (
+        <>
+          <ShapeSection />
+          <AboutSection />
+          <VisualDesignSection />
+          <SkillsSection />
+          <ServicesSection />
+          <FeaturedWork />
+          <DesignProcessSection />
+          <WireFrameSection />
+          <UniqueSections />
+          <StarSection />
+          <ContactSection />
+        </>
+      )}
     </div>
   );
 }
