@@ -22,7 +22,26 @@ function ShapeSection() {
       pinSpacing: true,
     });
 
-    // transformation
+    // bg transition
+    gsap.set(".whiteBgTransition", {
+      backgroundColor: "rgba(255, 255, 255, 1)",
+    });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: shapeSectionSectionRef.current,
+          start: "top top",
+          end: "top center",
+          toggleActions: "play reverse play reverse",
+          scrub: 0.8,
+        },
+      })
+      .to(".whiteBgTransition", {
+        backgroundColor: "rgba(255, 255, 255, 0)",
+      });
+
+    // transformation text mask
     gsap.set(".firstMaskText", { y: "100%" });
     gsap.set(".secondMaskText", { y: "100%" });
 
@@ -30,12 +49,16 @@ function ShapeSection() {
       .timeline({
         scrollTrigger: {
           trigger: shapeSectionSectionRef.current,
-          start: "25% center",
+          start: "30% center",
           toggleActions: "play reverse play reverse",
         },
       })
       .fromTo(".firstMaskText", { y: "100%" }, { y: 0, duration: 0.4 })
-      .fromTo(".secondMaskText", { y: "100%" }, { y: 0, duration: 0.1 });
+      .fromTo(
+        ".secondMaskText",
+        { y: "100%" },
+        { y: 0, duration: 0.2, delay: 0.2 },
+      );
 
     // skills band animation
     let clone = document.getElementById("skillBandTarget").cloneNode(true);
@@ -88,8 +111,11 @@ function ShapeSection() {
 
       {/* Shape Section */}
       <>
-        <div className="h-[200px]" />
-        <div ref={shapeSectionSectionRef} className="relative z-10 h-[2000px]">
+        <div className="whiteBgTransition h-[200px]" />
+        <div
+          ref={shapeSectionSectionRef}
+          className="whiteBgTransition relative z-10 h-[2500px]"
+        >
           <div
             ref={shapeSectionPinRef}
             id="shapeSectionPinId"
