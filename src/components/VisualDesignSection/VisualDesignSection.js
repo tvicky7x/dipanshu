@@ -10,7 +10,7 @@ function VisualDesignSection() {
       <GridLines />
 
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-        <p className="flex flex-col text-nowrap text-center text-[64px] leading-[80px] tracking-[0.02em]">
+        <p className="flex flex-col text-nowrap text-center text-[64px] leading-[80px]">
           <span>
             I pair strong{" "}
             <span

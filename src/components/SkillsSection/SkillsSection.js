@@ -227,7 +227,7 @@ function SkillsSection() {
           className="pointer-events-auto relative h-full w-full bg-black"
         >
           {/* Title container */}
-          <div className="pointer-events-none absolute left-1/2 top-[28%] -translate-x-1/2 -translate-y-1/2 text-nowrap text-center uppercase">
+          <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-nowrap text-center uppercase">
             <p
               className={`${aeonikTrial.className} text-[24px] leading-[22px] tracking-[0.02em]`}
             >

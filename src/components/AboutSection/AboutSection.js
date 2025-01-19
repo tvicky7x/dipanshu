@@ -121,7 +121,7 @@ function AboutSection() {
             </div>
           </div>
         </div>
-        <div className="h-[300px]" />
+        <div className="h-[350px]" />
       </div>
       {/* scroll grid */}
       <div
