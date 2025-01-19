@@ -2,13 +2,14 @@ import { layGrotesk } from "@/app/font";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/all";
+import Image from "next/image";
 import React, { useEffect } from "react";
 
 gsap.registerPlugin(TextPlugin);
 
 const heroSectionMainText = ["we create", "award", "winning sites"];
 
-function HeroSection() {
+function HeroSection({ heroSectionEnded }) {
   // useGSAP(() => {
   //   gsap
   //     .timeline()
@@ -24,7 +25,7 @@ function HeroSection() {
     const heroSectionTextContainer = document.querySelector(
       "#heroSectionTextContainer",
     );
-
+    gsap.set(".heroSectionAfterDisplay", { opacity: 0 });
     const addTextWithScrambleEffect = (
       textArray,
       container,
@@ -64,7 +65,7 @@ function HeroSection() {
                 }
 
                 if (index === 2) {
-                  p.className = "pb-[5px]";
+                  p.className = "pb-[7px]";
                   paraTimeline
                     .set(p, {
                       backgroundSize: "100%",
@@ -80,7 +81,7 @@ function HeroSection() {
                       {
                         backgroundSize: "100%",
                         backgroundImage:
-                          "linear-gradient(to right, rgba(34, 34, 34, 1), rgba(34, 34, 34, 0.25) 0%)",
+                          "linear-gradient(to right, rgba(34, 34, 34, 1), rgba(34, 34, 34, 0.25) -10%)",
                       },
                       {
                         backgroundSize: "200%",
@@ -88,9 +89,16 @@ function HeroSection() {
                           "linear-gradient(to right, rgba(34, 34, 34, 1), rgba(34, 34, 34, 0.25) 500%)",
                         duration: 0.8,
                         ease: "power1.inOut",
-                        delay: 0.5,
+                        delay: 0.4,
                       },
-                    );
+                    )
+                    .to(".heroSectionAfterDisplay", {
+                      opacity: 1,
+                      duration: 0.2,
+                      onComplete: () => {
+                        heroSectionEnded();
+                      },
+                    });
                 }
               },
               totalDelay + charIndex * charDelay,
@@ -119,10 +127,30 @@ function HeroSection() {
 
   return (
     <div className="relative z-[100] h-screen bg-white">
+      <span
+        className={`${layGrotesk.className} heroSectionAfterDisplay absolute left-[80px] top-[70px] text-[14px] font-semibold uppercase leading-[16px] tracking-[1.858px] text-black opacity-0`}
+      >
+        LOGO
+      </span>
+      <Image
+        src={"/heroSectionHandBlack.svg"}
+        alt="hero section hand"
+        width={366.6}
+        height={489.54}
+        className="heroSectionAfterDisplay absolute left-1/2 top-0 aspect-[366.6/489.54] w-[21.5vw] max-w-[366px] -translate-x-1/2 -translate-y-[7.5%] rotate-180 opacity-0"
+      />
+      <div className="heroSectionAfterDisplay absolute right-[55px] top-[70px] h-[18.5px] w-[76px] cursor-pointer border-y-[1.5px] border-black opacity-0"></div>
       <div
         id="heroSectionTextContainer"
-        className={`${layGrotesk.className} text-heroSectionTextColor absolute bottom-[15px] left-[16px] translate-y-[5px] text-[128px] leading-[120px]`}
+        className={`${layGrotesk.className} text-heroSectionTextColor absolute bottom-[15px] left-[16px] translate-y-[7px] text-[128px] leading-[120px]`}
       ></div>
+      <Image
+        src={"/workSticker.svg"}
+        alt="open to work sticker"
+        width={127}
+        height={127}
+        className="heroSectionAfterDisplay absolute bottom-[69px] right-[68px] aspect-square w-[127px] opacity-0"
+      />
     </div>
   );
 }
