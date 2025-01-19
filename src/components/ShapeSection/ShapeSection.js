@@ -199,7 +199,7 @@ function ShapeSection() {
             </div>
           </div>
         </div>
-        <div className="h-[100px]" />
+        <div className="h-[250px]" />
       </div>
 
       {/* scroll grid */}
