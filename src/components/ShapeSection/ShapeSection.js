@@ -17,23 +17,25 @@ function ShapeSection() {
     ScrollTrigger.create({
       trigger: shapeSectionSectionRef.current,
       start: "top top",
-      end: "bottom-=100 bottom",
+      end: "bottom bottom",
       pin: shapeSectionPinRef.current,
       pinSpacing: true,
     });
 
     // transformation
+    gsap.set(".firstMaskText", { y: "100%" });
+    gsap.set(".secondMaskText", { y: "100%" });
+
     gsap
       .timeline({
         scrollTrigger: {
           trigger: shapeSectionSectionRef.current,
-          start: "center center",
+          start: "25% center",
+          toggleActions: "play reverse play reverse",
         },
       })
-      .addLabel("start", 0)
-      .to("#shapeSectionTopElement", { y: 0, duration: 0.2 }, "start")
-      .to("#shapeSectionBottomElement", { y: 0, duration: 0.2 }, "start")
-      .to("#shapeSectionShowElement", { opacity: 1, duration: 0.2 });
+      .fromTo(".firstMaskText", { y: "100%" }, { y: 0, duration: 0.4 })
+      .fromTo(".secondMaskText", { y: "100%" }, { y: 0, duration: 0.1 });
 
     // skills band animation
     let clone = document.getElementById("skillBandTarget").cloneNode(true);
@@ -85,55 +87,71 @@ function ShapeSection() {
       <GridLines />
 
       {/* Shape Section */}
-      <div ref={shapeSectionSectionRef} className="relative z-10 h-[1800px]">
-        <div
-          ref={shapeSectionPinRef}
-          id="shapeSectionPinId"
-          className="h-screen"
-        >
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
-              <p
-                id="shapeSectionShowElement"
-                className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em] opacity-0`}
-              >
-                Because Every Detail Matters
-              </p>
-              <p
-                id="shapeSectionTopElement"
-                className={`${layGrotesk.className} translate-y-[26px] text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
-              >
-                <span>Let's Shape</span>
-              </p>
-              <p
-                id="shapeSectionShowElement"
-                className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em] opacity-0`}
-              >
-                To Take It To The Next Level
-              </p>
-              <p id="shapeSectionBottomElement">
-                <span
-                  className={`${layGrotesk.className} -translate-y-[26px] text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
-                >
-                  Your{" "}
-                </span>
-                <span
-                  style={{ fontStyle: "oblique" }}
-                  className={`${maziusReview.className} text-[128px] font-normal leading-[154px] tracking-[0.04em]`}
-                >
-                  Vision
-                </span>
-              </p>
-              <p
-                id="shapeSectionShowElement"
-                className={`${offBit.className} text-[32px] leading-[35px] tracking-[0.06em] opacity-0`}
-              >
-                -LOREM IPSUM-
-              </p>
+      <>
+        <div className="h-[200px]" />
+        <div ref={shapeSectionSectionRef} className="relative z-10 h-[2000px]">
+          <div
+            ref={shapeSectionPinRef}
+            id="shapeSectionPinId"
+            className="h-screen"
+          >
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
+                <div className="overflow-hidden">
+                  <p
+                    id="shapeSectionShowElement"
+                    className={`${offBit.className} secondMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                  >
+                    Because Every Detail Matters
+                  </p>
+                </div>
+
+                <div className="overflow-hidden">
+                  <p
+                    id="shapeSectionTopElement"
+                    className={`${layGrotesk.className} firstMaskText text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
+                  >
+                    <span>Let's Shape</span>
+                  </p>
+                </div>
+                <div className="overflow-hidden">
+                  <p
+                    id="shapeSectionShowElement"
+                    className={`${offBit.className} secondMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                  >
+                    To Take It To The Next Level
+                  </p>
+                </div>
+
+                <div className="overflow-hidden">
+                  <p id="shapeSectionBottomElement" className="firstMaskText">
+                    <span
+                      className={`${layGrotesk.className} text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
+                    >
+                      Your{" "}
+                    </span>
+                    <span
+                      style={{ fontStyle: "oblique" }}
+                      className={`${maziusReview.className} text-[128px] font-normal leading-[154px] tracking-[0.04em]`}
+                    >
+                      Vision
+                    </span>
+                  </p>
+                </div>
+                <div className="overflow-hidden">
+                  <p
+                    id="shapeSectionShowElement"
+                    className={`${offBit.className} secondMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                  >
+                    -LOREM IPSUM-
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        <div className="h-[200px]" />
+      </>
 
       {/* Skills Band */}
       <div
