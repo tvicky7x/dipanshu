@@ -1,107 +1,138 @@
-"use client";
-import React, { useRef } from "react";
-import heroSectionHand from "../../../public/heroSectionHand.svg";
-import Image from "next/image";
+import { layGrotesk } from "@/app/font";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import ReactCurvedText from "react-curved-text";
-import { Ubuntu_Mono } from "next/font/google";
-import { ScrollTrigger } from "gsap/all";
-import GridLines from "../UtilitiesComponents/GridLines";
+import { TextPlugin } from "gsap/all";
+import React, { useEffect } from "react";
 
-const ubuntuMonu = Ubuntu_Mono({
-  weight: ["400"],
-  subsets: ["latin"],
-  display: "swap",
-});
+gsap.registerPlugin(TextPlugin);
 
-gsap.registerPlugin(ScrollTrigger);
+const heroSectionMainText = ["we create", "award", "winning sites"];
 
-function HeroSection({ heroSectionEnded }) {
-  const curvedTextRef = useRef();
-  const heroSectionRef = useRef();
+function HeroSection() {
+  // useGSAP(() => {
+  //   gsap
+  //     .timeline()
+  //     .to("#heroText1", {
+  //       duration: 0.3,
+  //       text: "we create",
+  //     })
+  //     .to("#heroText2", { duration: 0.3, text: "award" })
+  //     .to("#heroText3", { duration: 0.3, text: "winning sites" });
+  // });
 
   useGSAP(() => {
-    // scroll trigger for end
-    ScrollTrigger.create({
-      trigger: heroSectionRef.current,
-      start: "top top",
-      end: "bottom-=50 bottom",
-      onLeave: () => {
-        heroSectionEnded();
-      },
-    });
+    const heroSectionTextContainer = document.querySelector(
+      "#heroSectionTextContainer",
+    );
 
-    // gsap curved section
-    gsap.to(curvedTextRef.current, {
-      rotation: -360,
-      duration: 40,
-      repeat: -1,
-      ease: "none",
-    });
+    const addTextWithScrambleEffect = (
+      textArray,
+      container,
+      charDelay,
+      paraDelay,
+    ) => {
+      const randomChars = "abcdefghijklmnopqrstuvwxyz";
+      let totalDelay = 0;
 
-    // arrow down animation
-    gsap.from("#arrowDownIcon", {
-      y: -30,
-      repeat: -1,
-      yoyo: true,
-      duration: 0.5,
-      ease: "none",
-    });
-  });
+      textArray.forEach((text, index) => {
+        const p = document.createElement("p");
+        container.appendChild(p);
+        if (index === 2) p.className = "text-opacity-0";
+        const revealText = (targetText, element) => {
+          targetText.split("").forEach((char, charIndex) => {
+            const span = document.createElement("span");
+            element.appendChild(span);
+            const paraTimeline = gsap.timeline();
+            // if (index === 2) {
+            //   span.className = "opacity-[0.5]";
+            // }
+            setTimeout(
+              () => {
+                // Random character phase
+                span.textContent = randomChars.charAt(
+                  Math.floor(Math.random() * randomChars.length),
+                );
+
+                setTimeout(() => {
+                  // Replace with the correct character
+                  span.textContent = char;
+                  // if (index === 2) {
+                  //   gsap.fromTo(
+                  //     span,
+                  //     { opacity: 0.15 },
+                  //     { opacity: 1, duration: 2 },
+                  //   );
+                  // }
+                }, charDelay / 2);
+
+                if (index === 1) {
+                  paraTimeline.to(p, {
+                    color: "#F67676",
+                    duration: 0.2,
+                    delay: 0.6,
+                  });
+                }
+
+                if (index === 2) {
+                  p.className = "pb-[5px]";
+                  paraTimeline
+                    .set(p, {
+                      backgroundSize: "100%",
+                      backgroundImage:
+                        "linear-gradient(to right, rgba(34, 34, 34, 0.25), rgba(34, 34, 34, 0.15))",
+                      backgroundClip: "text",
+                      webkitBackgroundClip: "text",
+                      textFillColor: "transparent",
+                      webkitTextFillColor: "transparent",
+                    })
+                    .fromTo(
+                      p,
+                      {
+                        backgroundSize: "100%",
+                        backgroundImage:
+                          "linear-gradient(to right, rgba(34, 34, 34, 1), rgba(34, 34, 34, 0.25) 0%)",
+                      },
+                      {
+                        backgroundSize: "200%",
+                        backgroundImage:
+                          "linear-gradient(to right, rgba(34, 34, 34, 1), rgba(34, 34, 34, 0.25) 500%)",
+                        duration: 0.8,
+                        ease: "power1.inOut",
+                        delay: 0.5,
+                      },
+                    );
+                }
+              },
+              totalDelay + charIndex * charDelay,
+            );
+          });
+
+          // Increment total delay for the next paragraph
+          totalDelay += targetText.length * charDelay + paraDelay;
+        };
+
+        revealText(text, p);
+      });
+    };
+
+    addTextWithScrambleEffect(
+      heroSectionMainText,
+      heroSectionTextContainer,
+      50,
+      100,
+    );
+
+    return () => {
+      heroSectionTextContainer.innerHTML = ""; // Cleanup on unmount
+    };
+  }, []);
 
   return (
-    <div
-      ref={heroSectionRef}
-      className="relative h-[calc(100vh+80px)] min-h-[1124px] overflow-hidden"
-    >
-      {/* grid */}
-      <GridLines />
-
-      <Image
-        src={heroSectionHand}
-        alt="hero section hand illustration"
-        className="heroSectionHand absolute left-1/2 top-[80px] z-10 aspect-auto w-[366px] -translate-x-1/2"
-      />
+    <div className="relative z-[100] h-screen bg-white">
       <div
-        ref={curvedTextRef}
-        className={`${ubuntuMonu.className} heroSectionCurveText absolute left-1/2 top-[412px] z-10 -translate-x-1/2`}
-      >
-        <ReactCurvedText
-          width={3500}
-          height={3500}
-          cx={1750}
-          cy={1750}
-          rx={1450}
-          ry={1450}
-          startOffset={50}
-          reversed={true}
-          text={`${Array(4)
-            .fill(true)
-            .reduce((str) => {
-              return str + "PRODUCT DESIGNER ";
-            }, " ")}`}
-          textProps={{ style: { fontSize: "250px" } }}
-          textPathProps={{
-            fill: "transparent",
-            stroke: "#ffffff",
-            strokeWidth: "1.9px",
-          }}
-          tspanProps={{ wordSpacing: "50px", overflow: "visible" }}
-          // ellipseProps={{ style: "fill: #ff0000" }}
-          svgProps={null}
-        />
-      </div>
-
-      <div className="absolute bottom-[50px] left-1/2 -translate-x-1/2">
-        <Image
-          id="arrowDownIcon"
-          width={55}
-          height={55}
-          src={"./arrowDownIcon.svg"}
-          alt="arrow down icon"
-        />
-      </div>
+        id="heroSectionTextContainer"
+        className={`${layGrotesk.className} text-heroSectionTextColor absolute bottom-[15px] left-[16px] translate-y-[5px] text-[128px] leading-[120px]`}
+      ></div>
     </div>
   );
 }

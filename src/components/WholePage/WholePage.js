@@ -39,6 +39,7 @@ function WholePage() {
       id="wholePage"
       className="overflow-y-auto [&::-webkit-scrollbar]:hidden"
     >
+      <HeroSection />
       <ShapeSection />
       <AboutSection />
       <VisualDesignSection />

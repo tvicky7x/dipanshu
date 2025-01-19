@@ -1,4 +1,4 @@
-import { maziusReview } from "@/app/font";
+import { layGrotesk, maziusReview } from "@/app/font";
 import Image from "next/image";
 import React from "react";
 import GridLines from "../UtilitiesComponents/GridLines";
@@ -10,7 +10,9 @@ function VisualDesignSection() {
       <GridLines />
 
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-        <p className="flex flex-col text-nowrap text-center text-[64px] leading-[80px]">
+        <p
+          className={`${layGrotesk.className} flex flex-col text-nowrap text-center text-[64px] leading-[80px]`}
+        >
           <span>
             I pair strong{" "}
             <span
