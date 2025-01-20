@@ -20,7 +20,7 @@ import StarSection from "../StarSection/StarSection";
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
-  const [heroSectionEnd, setHeroSectionEnd] = useState(true);
+  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
 
   // hero section ended
   function heroSectionEnded() {
