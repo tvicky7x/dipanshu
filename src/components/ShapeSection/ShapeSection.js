@@ -51,7 +51,6 @@ function ShapeSection() {
         scrollTrigger: {
           trigger: shapeSectionSectionRef.current,
           start: "top center",
-          markers: true,
           toggleActions: "play reverse play reverse",
         },
       })
