@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 function PageTransition() {
-  const [textHoldEnd, setTextHoldEnd] = useState(false);
+  const [textHoldEnd, setTextHoldEnd] = useState(true);
 
   // end text on hold
   function endTextOnHold() {
