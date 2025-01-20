@@ -44,18 +44,29 @@ function ShapeSection() {
     // transformation text mask
     gsap.set(".firstMaskText", { y: "100%" });
     gsap.set(".secondMaskText", { y: "100%" });
+    gsap.set(".thirdMaskText", { y: "100%" });
 
     gsap
       .timeline({
         scrollTrigger: {
           trigger: shapeSectionSectionRef.current,
-          start: "30% center",
+          start: "top center",
+          markers: true,
           toggleActions: "play reverse play reverse",
         },
       })
-      .fromTo(".firstMaskText", { y: "100%" }, { y: 0, duration: 0.4 })
+      .fromTo(
+        ".firstMaskText",
+        { y: "100%" },
+        { y: 0, duration: 0.4, delay: 0.8 },
+      )
       .fromTo(
         ".secondMaskText",
+        { y: "100%" },
+        { y: 0, duration: 0.4, delay: 0.2 },
+      )
+      .fromTo(
+        ".thirdMaskText",
         { y: "100%" },
         { y: 0, duration: 0.2, delay: 0.2 },
       );
@@ -114,7 +125,7 @@ function ShapeSection() {
         <div className="whiteBgTransition h-[200px]" />
         <div
           ref={shapeSectionSectionRef}
-          className="whiteBgTransition relative z-10 h-[2500px]"
+          className="whiteBgTransition relative z-10 h-[2000px]"
         >
           <div
             ref={shapeSectionPinRef}
@@ -126,7 +137,7 @@ function ShapeSection() {
                 <div className="overflow-hidden">
                   <p
                     id="shapeSectionShowElement"
-                    className={`${offBit.className} secondMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                    className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
                   >
                     Because Every Detail Matters
                   </p>
@@ -143,14 +154,14 @@ function ShapeSection() {
                 <div className="overflow-hidden">
                   <p
                     id="shapeSectionShowElement"
-                    className={`${offBit.className} secondMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                    className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
                   >
                     To Take It To The Next Level
                   </p>
                 </div>
 
                 <div className="overflow-hidden">
-                  <p id="shapeSectionBottomElement" className="firstMaskText">
+                  <p id="shapeSectionBottomElement" className="secondMaskText">
                     <span
                       className={`${layGrotesk.className} text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
                     >
@@ -167,7 +178,7 @@ function ShapeSection() {
                 <div className="overflow-hidden">
                   <p
                     id="shapeSectionShowElement"
-                    className={`${offBit.className} secondMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                    className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
                   >
                     -LOREM IPSUM-
                   </p>
