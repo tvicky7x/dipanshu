@@ -1,15 +1,24 @@
-import { layGrotesk } from "@/app/font";
+import { layGrotesk, maziusReview, offBit } from "@/app/font";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/all";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import GridLines from "../UtilitiesComponents/GridLines";
 
 gsap.registerPlugin(TextPlugin);
 
 const heroSectionMainText = ["we create", "award", "winning sites"];
 
-function HeroSection({ heroSectionEnded }) {
+function HeroSection({ shapeSectionEnded }) {
+  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
+  const shapeSectionSectionRef = useRef();
+
+  // hero section ended
+  function heroSectionEnded() {
+    setHeroSectionEnd(true);
+  }
+
   // useGSAP(() => {
   //   gsap
   //     .timeline()
@@ -113,6 +122,15 @@ function HeroSection({ heroSectionEnded }) {
       });
     };
 
+    // gsap
+    //   .timeline({
+    //     scrollTrigger: {
+    //       trigger: shapeSectionSectionRef.current,
+    //       start: "top center",
+    //       toggleActions: "play reverse play reverse",
+    //     },
+    //   })
+
     addTextWithScrambleEffect(
       heroSectionMainText,
       heroSectionTextContainer,
@@ -125,32 +143,174 @@ function HeroSection({ heroSectionEnded }) {
     };
   }, []);
 
+  useGSAP(() => {
+    // shape section
+    // bg transition
+    gsap.set("#whiteBgTransition", {
+      backgroundColor: "rgba(255, 255, 255, 1)",
+    });
+
+    // transformation text mask
+    gsap.set(".firstMaskText", { y: "100%" });
+    gsap.set(".secondMaskText", { y: "100%" });
+    gsap.set(".thirdMaskText", { y: "100%", opacity: 0 });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#whiteBgTransition",
+          start: "50% 25%",
+          toggleActions: "play none none reset",
+        },
+      })
+      .to("#whiteBgTransition", {
+        backgroundColor: "rgba(255, 255, 255, 0)",
+        duration: 0.2,
+      });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#whiteBgTransition",
+          start: "50% 25%",
+        },
+      })
+      .fromTo(".firstMaskText", { y: "100%" }, { y: 0, duration: 0.5 })
+      .fromTo(".secondMaskText", { y: "100%" }, { y: 0, duration: 0.5 })
+      .fromTo(
+        ".thirdMaskText",
+        { y: "100%" },
+        { y: 0, opacity: 1, duration: 0.2, delay: 0.1 },
+      )
+      .to(".gridLineAfterDisplay", {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        delay: 0.2,
+        onComplete: () => {
+          shapeSectionEnded();
+          // gsap.set(".heroSectionBg", { backgroundColor: "#fff" });
+          // gsap.to(".adjustedHeight", {
+          //   scrollTrigger: {
+          //     trigger: "#whiteBgTransition",
+          //     start: "bottom top",
+          //     markers: true,
+          //   },
+          //   height: "200px",
+          // });
+        },
+      });
+  }, [heroSectionEnd]);
+
   return (
-    <div className="relative z-[100] h-screen bg-white">
-      <span
-        className={`${layGrotesk.className} heroSectionAfterDisplay absolute left-[80px] top-[70px] text-[14px] font-semibold uppercase leading-[16px] tracking-[1.858px] text-black opacity-0`}
-      >
-        LOGO
-      </span>
-      <Image
-        src={"/heroSectionHandBlack.svg"}
-        alt="hero section hand"
-        width={366.6}
-        height={489.54}
-        className="heroSectionAfterDisplay absolute left-1/2 top-0 aspect-[366.6/489.54] w-[21.5vw] max-w-[366px] -translate-x-1/2 -translate-y-[7.5%] rotate-180 opacity-0"
-      />
-      <div className="heroSectionAfterDisplay absolute right-[55px] top-[70px] h-[18.5px] w-[76px] cursor-pointer border-y-[1.5px] border-black opacity-0"></div>
-      <div
-        id="heroSectionTextContainer"
-        className={`${layGrotesk.className} text-heroSectionTextColor absolute bottom-[15px] left-[16px] translate-y-[7px] text-[128px] leading-[120px]`}
-      ></div>
-      <Image
-        src={"/workSticker.svg"}
-        alt="open to work sticker"
-        width={127}
-        height={127}
-        className="heroSectionAfterDisplay absolute bottom-[69px] right-[68px] aspect-square w-[127px] opacity-0"
-      />
+    <div
+      id="whiteBgTransition"
+      style={{ backgroundColor: "rgba(255, 255, 255, 1)" }}
+      // className="whiteBgTransition"
+    >
+      <div className="heroSectionBg relative z-[100] h-screen">
+        <span
+          className={`${layGrotesk.className} heroSectionAfterDisplay absolute left-[80px] top-[70px] text-[14px] font-semibold uppercase leading-[16px] tracking-[1.858px] text-black opacity-0`}
+        >
+          LOGO
+        </span>
+        <Image
+          src={"/heroSectionHandBlack.svg"}
+          alt="hero section hand"
+          width={366.6}
+          height={489.54}
+          className="heroSectionAfterDisplay absolute left-1/2 top-0 aspect-[366.6/489.54] w-[21.5vw] max-w-[366px] -translate-x-1/2 -translate-y-[7.5%] rotate-180 opacity-0"
+        />
+        <div className="heroSectionAfterDisplay absolute right-[55px] top-[70px] h-[18.5px] w-[76px] cursor-pointer border-y-[1.5px] border-black opacity-0"></div>
+        <div
+          id="heroSectionTextContainer"
+          className={`${layGrotesk.className} absolute bottom-[15px] left-[16px] translate-y-[7px] text-[128px] leading-[120px] text-heroSectionTextColor`}
+        ></div>
+        <Image
+          src={"/workSticker.svg"}
+          alt="open to work sticker"
+          width={127}
+          height={127}
+          className="heroSectionAfterDisplay absolute bottom-[69px] right-[68px] aspect-square w-[127px] opacity-0"
+        />
+      </div>
+      {heroSectionEnd && (
+        <>
+          {/* Shape section */}
+          {/* <div className="adjustedHeight relative h-0">
+            <GridLines />
+          </div> */}
+          <div className="relative">
+            {/* grid */}
+            <div className="gridLineAfterDisplay absolute h-full w-full translate-y-full opacity-0">
+              <GridLines />
+            </div>
+
+            {/* Shape Section */}
+            <div
+              ref={shapeSectionSectionRef}
+              className="relative z-10 h-screen"
+            >
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
+                  <div className="overflow-hidden">
+                    <p
+                      id="shapeSectionShowElement"
+                      className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                    >
+                      Because Every Detail Matters
+                    </p>
+                  </div>
+
+                  <div className="overflow-hidden">
+                    <p
+                      id="shapeSectionTopElement"
+                      className={`${layGrotesk.className} firstMaskText text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
+                    >
+                      <span>Let's Shape</span>
+                    </p>
+                  </div>
+                  <div className="overflow-hidden">
+                    <p
+                      id="shapeSectionShowElement"
+                      className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                    >
+                      To Take It To The Next Level
+                    </p>
+                  </div>
+
+                  <div className="overflow-hidden">
+                    <p
+                      id="shapeSectionBottomElement"
+                      className="secondMaskText"
+                    >
+                      <span
+                        className={`${layGrotesk.className} text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
+                      >
+                        Your{" "}
+                      </span>
+                      <span
+                        style={{ fontStyle: "oblique" }}
+                        className={`${maziusReview.className} text-[128px] font-normal leading-[154px] tracking-[0.04em]`}
+                      >
+                        Vision
+                      </span>
+                    </p>
+                  </div>
+                  <div className="overflow-hidden">
+                    <p
+                      id="shapeSectionShowElement"
+                      className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                    >
+                      -LOREM IPSUM-
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

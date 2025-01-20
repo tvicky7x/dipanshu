@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import HeroSection from "../HeroSection/HeroSection";
-import ShapeSection from "../ShapeSection/ShapeSection";
 import AboutSection from "../AboutSection/AboutSection";
 import VisualDesignSection from "../VisualDesignSection/VisualDesignSection";
 import SkillsSection from "../SkillsSection/SkillsSection";
@@ -16,15 +15,16 @@ import FeaturedWork from "../FeaturedWork/FeaturedWork";
 import WireFrameSection from "../WireFrameSection/WireFrameSection";
 import UniqueSections from "../UniqueSection/UniqueSections";
 import StarSection from "../StarSection/StarSection";
+import SimplicitySection from "../SimplicitySection/SimplicitySection";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function WholePage() {
-  const [heroSectionEnd, setHeroSectionEnd] = useState(false);
+  const [shapeSectionEnd, setShapeSectionEnd] = useState(false);
 
   // hero section ended
-  function heroSectionEnded() {
-    setHeroSectionEnd(true);
+  function shapeSectionEnded() {
+    setShapeSectionEnd(true);
   }
 
   useGSAP(() => {
@@ -46,10 +46,10 @@ function WholePage() {
       id="wholePage"
       className="overflow-y-auto [&::-webkit-scrollbar]:hidden"
     >
-      <HeroSection heroSectionEnded={heroSectionEnded} />
-      {heroSectionEnd && (
+      <HeroSection shapeSectionEnded={shapeSectionEnded} />
+      {shapeSectionEnd && (
         <>
-          <ShapeSection />
+          <SimplicitySection />
           <AboutSection />
           <VisualDesignSection />
           <SkillsSection />
