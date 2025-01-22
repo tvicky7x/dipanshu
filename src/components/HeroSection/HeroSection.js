@@ -34,7 +34,7 @@ function HeroSection({ shapeSectionEnded }) {
     const heroSectionTextContainer = document.querySelector(
       "#heroSectionTextContainer",
     );
-    gsap.set(".heroSectionAfterDisplay", { opacity: 0 });
+    // gsap.set(".heroSectionAfterDisplay", { opacity: 0 });
     const addTextWithScrambleEffect = (
       textArray,
       container,
@@ -131,12 +131,14 @@ function HeroSection({ shapeSectionEnded }) {
     //     },
     //   })
 
-    addTextWithScrambleEffect(
-      heroSectionMainText,
-      heroSectionTextContainer,
-      50,
-      100,
-    );
+    setTimeout(() => {
+      addTextWithScrambleEffect(
+        heroSectionMainText,
+        heroSectionTextContainer,
+        50,
+        100,
+      );
+    }, 200);
 
     return () => {
       heroSectionTextContainer.innerHTML = ""; // Cleanup on unmount
@@ -175,7 +177,7 @@ function HeroSection({ shapeSectionEnded }) {
           start: "50% 25%",
         },
       })
-      .fromTo(".firstMaskText", { y: "100%" }, { y: 0, duration: 0.5 })
+      .fromTo(".firstMaskText", { y: "100%" }, { y: 0, duration: 0.5 }, 0.5)
       .fromTo(".secondMaskText", { y: "100%" }, { y: 0, duration: 0.5 })
       .fromTo(
         ".thirdMaskText",
