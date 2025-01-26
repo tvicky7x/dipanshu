@@ -81,15 +81,15 @@ function AboutSection() {
             className="h-screen w-full"
           >
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="flex w-[650px] flex-col gap-y-[56px] text-center text-black">
+              <div className="flex w-[450px] flex-col gap-y-[40px] text-center text-black xl:w-[650px] xl:gap-y-[56px]">
                 <p
-                  className={`${layGrotesk.className} text-[24px] font-semibold leading-[22px] tracking-[0.04em]`}
+                  className={`${layGrotesk.className} text-[18px] font-semibold leading-[22px] tracking-[0.04em] xl:text-[24px]`}
                 >
                   {"[ABOUT]"}
                 </p>
                 <div
                   id="aboutTextHighlightContainer"
-                  className="space-y-[1.3em] text-[32px] leading-[40px] tracking-[0.02em] text-hiddenTextColor"
+                  className="space-y-[30px] text-[24px] leading-[34px] tracking-[0.02em] text-hiddenTextColor xl:space-y-[40px] xl:text-[32px] xl:leading-[40px]"
                 >
                   {aboutTextHighlightContent.map((str, index) => (
                     <p key={index}>
@@ -104,15 +104,18 @@ function AboutSection() {
           </div>
         </div>
         {/* About picture section */}
-        <div id="aboutSectionPictureSection" className="relative h-[1500px]">
+        <div
+          id="aboutSectionPictureSection"
+          className="relative h-[1200px] xl:h-[1500px]"
+        >
           <div
             id="aboutSectionPicturePinSection"
             className="flex h-screen w-full items-center justify-center"
           >
-            <div className="flex flex-col items-center gap-y-[80px]">
+            <div className="flex flex-col items-center gap-y-[60px] xl:gap-y-[80px]">
               <div className="aspect-[376/460] w-[23vw] rounded-[26px] bg-black"></div>
               <p
-                className={`${layGrotesk.className} w-[1010px] text-center text-[32px] leading-[40px] text-black`}
+                className={`${layGrotesk.className} w-[700px] text-center text-[24px] leading-[34px] text-black xl:w-[1010px] xl:text-[32px] xl:leading-[40px]`}
               >
                 For over 10 years I have been striving to create bold
                 experiences that connect brands with their audience through
@@ -121,7 +124,7 @@ function AboutSection() {
             </div>
           </div>
         </div>
-        <div className="h-[350px]" />
+        <div className="h-[250px] xl:h-[350px]" />
       </div>
       {/* scroll grid */}
       <div
