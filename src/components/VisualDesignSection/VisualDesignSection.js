@@ -5,13 +5,13 @@ import GridLines from "../UtilitiesComponents/GridLines";
 
 function VisualDesignSection() {
   return (
-    <div className="relative h-[1024px]">
+    <div className="relative h-[768px] xl:h-[1024px]">
       {/* grid */}
       <GridLines />
 
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
         <p
-          className={`${layGrotesk.className} flex flex-col text-nowrap text-center text-[64px] leading-[80px]`}
+          className={`${layGrotesk.className} flex flex-col text-nowrap text-center text-[48px] leading-[64px] xl:text-[64px] xl:leading-[80px]`}
         >
           <span>
             I pair strong{" "}

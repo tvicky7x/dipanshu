@@ -27,16 +27,16 @@ const servicesArray = [
 function ServicesSection() {
   return (
     <div className="px-[72px]">
-      <div className="border-x-2 border-white/15 pb-[204px] pt-[150px]">
-        <div className="flex flex-col gap-y-[160px]">
-          <div className="flex flex-col gap-y-[20px] text-center uppercase">
+      <div className="border-x-2 border-white/15 pb-[154px] pt-[100px] xl:pb-[204px] xl:pt-[150px]">
+        <div className="flex flex-col gap-y-[140px] xl:gap-y-[160px]">
+          <div className="flex flex-col gap-y-[16px] text-center uppercase xl:gap-y-[20px]">
             <p
-              className={`${aeonikTrial.className} text-[24px] leading-[22px] tracking-[0.02em]`}
+              className={`${aeonikTrial.className} text-[20px] leading-[18px] tracking-[0.02em] xl:text-[24px] xl:leading-[22px]`}
             >
               {"[SERVICES]"}
             </p>
             <p
-              className={`${layGrotesk.className} text-[70px] font-medium leading-[83px]`}
+              className={`${layGrotesk.className} text-[54px] font-medium leading-[67px] xl:text-[70px] xl:leading-[83px]`}
             >
               Focused on Impact
             </p>
@@ -47,23 +47,23 @@ function ServicesSection() {
                 <React.Fragment key={index}>
                   <div className="flex flex-col gap-y-[30px] text-center">
                     <p
-                      className={`${aeonikTrial.className} text-[24px] font-light leading-[22px]`}
+                      className={`${aeonikTrial.className} text-[20px] font-light leading-[18px] xl:text-[24px] xl:leading-[22px]`}
                     >
                       {item?.comment}
                     </p>
                     <p
-                      className={`${layGrotesk.className} text-[64px] font-medium uppercase leading-[50px] tracking-[0.02em]`}
+                      className={`${layGrotesk.className} text-[58px] font-medium uppercase leading-[44px] tracking-[0.02em] xl:text-[64px] xl:leading-[50px]`}
                     >
                       {item?.serviceName}
                     </p>
                     <p
-                      className={`${offBit.className} text-[24px] leading-[50px] tracking-[0.06em]`}
+                      className={`${offBit.className} text-[20px] leading-[46px] tracking-[0.06em] xl:text-[24px] xl:leading-[50px]`}
                     >
                       {item?.quote}
                     </p>
                   </div>
                   {index !== array.length - 1 && (
-                    <div className="my-[54px] border-b-2 border-white/15" />
+                    <div className="my-[50px] border-b-2 border-white/15 xl:my-[54px]" />
                   )}
                 </React.Fragment>
               );
