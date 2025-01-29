@@ -83,13 +83,13 @@ function AboutSection() {
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="flex w-[450px] flex-col gap-y-[40px] text-center text-black xl:w-[650px] xl:gap-y-[56px]">
                 <p
-                  className={`${layGrotesk.className} text-[18px] font-semibold leading-[22px] tracking-[0.04em] xl:text-[24px]`}
+                  className={`${layGrotesk.className} text-[20px] font-semibold leading-[18px] tracking-[0.04em] xl:text-[24px]`}
                 >
                   {"[ABOUT]"}
                 </p>
                 <div
                   id="aboutTextHighlightContainer"
-                  className="space-y-[30px] text-[24px] leading-[34px] tracking-[0.02em] text-hiddenTextColor xl:space-y-[40px] xl:text-[32px] xl:leading-[40px]"
+                  className="space-y-[30px] text-[26px] leading-[34px] tracking-[0.02em] text-hiddenTextColor xl:space-y-[40px] xl:text-[32px] xl:leading-[40px]"
                 >
                   {aboutTextHighlightContent.map((str, index) => (
                     <p key={index}>
@@ -115,7 +115,7 @@ function AboutSection() {
             <div className="flex flex-col items-center gap-y-[60px] xl:gap-y-[80px]">
               <div className="aspect-[376/460] w-[23vw] rounded-[26px] bg-black"></div>
               <p
-                className={`${layGrotesk.className} w-[700px] text-center text-[24px] leading-[34px] text-black xl:w-[1010px] xl:text-[32px] xl:leading-[40px]`}
+                className={`${layGrotesk.className} w-[800px] text-center text-[26px] leading-[34px] text-black xl:w-[1010px] xl:text-[32px] xl:leading-[40px]`}
               >
                 For over 10 years I have been striving to create bold
                 experiences that connect brands with their audience through

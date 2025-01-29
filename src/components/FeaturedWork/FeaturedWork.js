@@ -204,7 +204,7 @@ function FeaturedWork() {
                       <div
                         key={index}
                         ref={(ref) => (workRefs.current[index + 1] = ref)}
-                        className="h-full w-1/4 flex-shrink-0 pt-[calc(10vh+200px)]"
+                        className="h-full w-1/4 flex-shrink-0 pt-[calc(10vh+160px)] xl:pt-[calc(10vh+200px)]"
                       >
                         <span
                           className={`${inter.className} ps-[13.5px] text-[14px] leading-[19px] tracking-[0.02em] xl:text-[16px]`}

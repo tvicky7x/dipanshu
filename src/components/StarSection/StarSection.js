@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function StarSection() {
   return (
-    <div className="relative h-[130vh]">
+    <div className="relative h-[calc(100vh+100px)] xl:h-[calc(100vh+200px)]">
       <div
         style={{ backgroundImage: "url(skillsBg.svg)" }}
         className="absolute left-0 top-0 h-full w-1/2"
@@ -25,9 +25,9 @@ function StarSection() {
       <div className="absolute left-0 top-1/2 z-20 flex h-[80vh] w-full -translate-y-1/2 flex-col justify-between">
         <div className="relative z-10 h-[99px] ps-[72px]">
           <div className="h-full border-y-2 border-white/15 pe-[72px]">
-            <div className="ms-auto flex h-full w-[calc(25%+72px)] translate-x-[72px] items-center bg-white px-[60px] py-[18px]">
+            <div className="ms-auto flex h-full w-[calc(25%+72px)] translate-x-[72px] items-center bg-white px-[25px] py-[16px] xl:px-[60px] xl:py-[18px]">
               <p
-                className={`${aeonikTrial.className} text-[15px] leading-[22px] text-black text-opacity-50`}
+                className={`${aeonikTrial.className} text-[14px] leading-[20px] text-black text-opacity-50 xl:text-[15px] xl:leading-[22px]`}
               >
                 Transformação do design em uma experiência interativa, com
                 animações e funcionalidades dinâmicas.
@@ -41,9 +41,9 @@ function StarSection() {
             className="h-full border-y-2 border-white/15 bg-clip-padding ps-[72px]"
           >
             <div className="h-full w-[calc(75%+74px)] -translate-x-[72px] border-e-2 border-white/15 bg-black ps-[72px]">
-              <div className="flex h-full w-[calc(33.3%+74px)] -translate-x-[72px] items-center bg-white px-[60px] py-[18px]">
+              <div className="flex h-full w-[calc(33.3%+74px)] -translate-x-[72px] items-center bg-white px-[25px] py-[16px] xl:px-[60px] xl:py-[18px]">
                 <p
-                  className={`${aeonikTrial.className} text-[15px] leading-[22px] text-black text-opacity-50`}
+                  className={`${aeonikTrial.className} text-[14px] leading-[20px] text-black text-opacity-50 xl:text-[15px] xl:leading-[22px]`}
                 >
                   Transformação do design em uma experiência interativa, com
                   animações e funcionalidades dinâmicas.

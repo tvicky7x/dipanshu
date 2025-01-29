@@ -48,9 +48,9 @@ const uniqueSection = [
 
 function UniqueSections() {
   return (
-    <div className="relative h-[1024px] bg-white px-[72px] text-black">
+    <div className="relative h-[768px] bg-white px-[72px] text-black xl:h-[1024px]">
       <h2
-        className={`${layGrotesk.className} absolute left-1/2 top-[176px] -translate-x-1/2 text-[70px] font-medium uppercase leading-[83px] tracking-[0.04em]`}
+        className={`${layGrotesk.className} absolute left-1/2 top-[126px] -translate-x-1/2 text-[60px] font-medium uppercase leading-normal tracking-[0.04em] xl:top-[176px] xl:text-[70px]`}
       >
         Lorem ipsum
       </h2>
@@ -61,16 +61,16 @@ function UniqueSections() {
           {uniqueSection?.map((item, index) => {
             return (
               <div key={index} className={`relative`}>
-                <div className="absolute bottom-[210px] left-0 w-full border-y-2 border-black/15 p-[24px]">
+                <div className="absolute bottom-[130px] left-0 w-full border-y-2 border-black/15 p-[18px] xl:bottom-[210px] xl:p-[24px]">
                   <Image
                     width={32}
                     height={32}
                     src={item?.imageUrl}
                     alt={item?.head}
-                    className="aspect-square w-[32px]"
+                    className="aspect-square w-[28px] xl:w-[32px]"
                   />
                   <p
-                    className={`${layGrotesk.className} mb-[20px] mt-[102px] text-[25.9px] leading-[39px]`}
+                    className={`${layGrotesk.className} mb-[14px] mt-[70px] text-[22px] leading-[36px] xl:mb-[20px] xl:mt-[102px] xl:text-[25.9px]`}
                   >
                     {item?.head}
                   </p>
@@ -79,7 +79,7 @@ function UniqueSections() {
                       return (
                         <p
                           key={index}
-                          className={`${aeonikTrial.className} text-[14.5px] leading-[22px]`}
+                          className={`${aeonikTrial.className} text-[12.5px] leading-[19.5px] xl:text-[14.5px] xl:leading-[22px]`}
                         >
                           {item}
                         </p>

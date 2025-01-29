@@ -47,17 +47,17 @@ function ServicesSection() {
                 <React.Fragment key={index}>
                   <div className="flex flex-col gap-y-[30px] text-center">
                     <p
-                      className={`${aeonikTrial.className} text-[20px] font-light leading-[18px] xl:text-[24px] xl:leading-[22px]`}
+                      className={`${aeonikTrial.className} text-[18px] font-light leading-[16px] xl:text-[24px] xl:leading-[22px]`}
                     >
                       {item?.comment}
                     </p>
                     <p
-                      className={`${layGrotesk.className} text-[58px] font-medium uppercase leading-[44px] tracking-[0.02em] xl:text-[64px] xl:leading-[50px]`}
+                      className={`${layGrotesk.className} text-[50px] font-medium uppercase leading-[36px] tracking-[0.02em] xl:text-[64px] xl:leading-[50px]`}
                     >
                       {item?.serviceName}
                     </p>
                     <p
-                      className={`${offBit.className} text-[20px] leading-[46px] tracking-[0.06em] xl:text-[24px] xl:leading-[50px]`}
+                      className={`${offBit.className} text-[20px] leading-[40px] tracking-[0.06em] xl:text-[24px] xl:leading-[50px]`}
                     >
                       {item?.quote}
                     </p>
