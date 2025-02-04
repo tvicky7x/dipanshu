@@ -36,7 +36,7 @@ function ContactSection() {
   });
 
   return (
-    <div className="relative h-[950px]">
+    <div className="relative h-[650px] lg:h-[850px] xl:h-[950px]">
       {/* Grid lines */}
       <div className="absolute left-0 top-0 h-full w-full px-[72px]">
         <div
@@ -52,7 +52,7 @@ function ContactSection() {
         </div>
       </div>
       <p
-        className={`${layGrotesk.className} absolute left-1/2 top-[102px] flex -translate-x-1/2 flex-col text-nowrap text-center text-[90px] font-medium leading-[90px]`}
+        className={`${layGrotesk.className} absolute left-1/2 top-[80px] flex -translate-x-1/2 flex-col text-nowrap text-center text-[52px] font-medium leading-tight lg:top-[102px] lg:text-[75px] xl:text-[90px]`}
       >
         <span>
           Let’s{" "}
@@ -74,7 +74,8 @@ function ContactSection() {
           </span>
         </span>
       </p>
-      <div className="group peer absolute left-1/2 top-[379px] aspect-[327/356] w-[327.35px] -translate-x-1/2">
+      {/* star svg */}
+      <div className="group peer absolute left-1/2 top-1/2 mt-[60px] -translate-x-1/2 -translate-y-1/2 scale-[0.7] lg:mt-[90px] lg:scale-[0.82] xl:scale-[1]">
         <svg
           width="328"
           height="357"
@@ -149,10 +150,10 @@ function ContactSection() {
         height={546}
         alt="right hand"
         id="rightHandContactUs"
-        className="absolute bottom-0 right-0 aspect-auto h-[50%] translate-x-[9%] -rotate-[15deg]"
+        className="absolute right-0 top-[calc(50%+80px)] aspect-auto h-[35vh] -translate-y-12 translate-x-[35%] -rotate-[15deg] lg:h-[40vh] lg:translate-x-[25%] xl:h-[55vh] xl:translate-x-[9%]"
       />
       <div
-        className={`${offBit.className} absolute bottom-[3%] left-1/2 -translate-x-1/2 text-[32px] leading-[35px] tracking-[0.05em]`}
+        className={`${offBit.className} absolute bottom-[3%] left-1/2 -translate-x-1/2 text-[23px] leading-tight tracking-[0.05em] lg:text-[27px] xl:text-[32px]`}
       >
         <Link href={"/"}>Instagram</Link>
         <span>{" | "}</span>

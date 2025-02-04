@@ -177,7 +177,7 @@ function HeroSection({ shapeSectionEnded }) {
           start: "50% 25%",
         },
       })
-      .fromTo(".firstMaskText", { y: "100%" }, { y: 0, duration: 0.5 }, 0.5)
+      .fromTo(".firstMaskText", { y: "100%" }, { y: 0, duration: 0.5 }, 0.8)
       .fromTo(".secondMaskText", { y: "100%" }, { y: 0, duration: 0.5 })
       .fromTo(
         ".thirdMaskText",
@@ -223,17 +223,17 @@ function HeroSection({ shapeSectionEnded }) {
           height={489.54}
           className="heroSectionAfterDisplay absolute left-1/2 top-0 aspect-[366.6/489.54] w-[21.5vw] max-w-[366px] -translate-x-1/2 -translate-y-[7.5%] rotate-180 opacity-0"
         />
-        <div className="heroSectionAfterDisplay absolute right-[55px] top-[70px] h-[18.5px] w-[76px] cursor-pointer border-y-[1.5px] border-black opacity-0"></div>
+        <div className="heroSectionAfterDisplay absolute right-[55px] top-[70px] h-[13px] w-[54px] cursor-pointer border-y-[1.5px] border-black opacity-0 lg:h-[15px] lg:w-[62px] xl:h-[18.5px] xl:w-[76px]"></div>
         <div
           id="heroSectionTextContainer"
-          className={`${layGrotesk.className} absolute bottom-[15px] left-[16px] translate-y-[7px] text-[128px] leading-[120px] text-heroSectionTextColor`}
+          className={`${layGrotesk.className} absolute bottom-[15px] left-[16px] translate-y-[7px] text-[74px] leading-[68px] text-heroSectionTextColor lg:text-[92px] lg:leading-[84px] xl:text-[128px] xl:leading-[120px]`}
         ></div>
         <Image
           src={"/workSticker.svg"}
           alt="open to work sticker"
           width={127}
           height={127}
-          className="heroSectionAfterDisplay absolute bottom-[69px] right-[68px] aspect-square w-[127px] opacity-0"
+          className="heroSectionAfterDisplay absolute bottom-[69px] right-[68px] aspect-square w-[78px] opacity-0 lg:w-[98px] xl:w-[127px]"
         />
       </div>
       {heroSectionEnd && (
@@ -254,11 +254,11 @@ function HeroSection({ shapeSectionEnded }) {
               className="relative z-10 h-screen"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="flex flex-col gap-y-[18px] text-nowrap text-center uppercase">
+                <div className="flex flex-col gap-y-[16px] text-nowrap text-center uppercase xl:gap-y-[18px]">
                   <div className="overflow-hidden">
                     <p
                       id="shapeSectionShowElement"
-                      className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                      className={`${offBit.className} thirdMaskText text-[18px] leading-none tracking-[0.06em] lg:text-[22px] xl:text-[32px]`}
                     >
                       Because Every Detail Matters
                     </p>
@@ -267,7 +267,7 @@ function HeroSection({ shapeSectionEnded }) {
                   <div className="overflow-hidden">
                     <p
                       id="shapeSectionTopElement"
-                      className={`${layGrotesk.className} firstMaskText text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
+                      className={`${layGrotesk.className} firstMaskText text-[72px] font-semibold leading-none tracking-[0.02em] lg:text-[96px] xl:text-[128px]`}
                     >
                       <span>Let's Shape</span>
                     </p>
@@ -275,7 +275,7 @@ function HeroSection({ shapeSectionEnded }) {
                   <div className="overflow-hidden">
                     <p
                       id="shapeSectionShowElement"
-                      className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                      className={`${offBit.className} thirdMaskText text-[18px] leading-none tracking-[0.06em] lg:text-[22px] xl:text-[32px]`}
                     >
                       To Take It To The Next Level
                     </p>
@@ -287,13 +287,13 @@ function HeroSection({ shapeSectionEnded }) {
                       className="secondMaskText"
                     >
                       <span
-                        className={`${layGrotesk.className} text-[128px] font-semibold leading-[128px] tracking-[0.02em]`}
+                        className={`${layGrotesk.className} text-[72px] font-semibold leading-none tracking-[0.02em] lg:text-[96px] xl:text-[128px]`}
                       >
                         Your{" "}
                       </span>
                       <span
                         style={{ fontStyle: "oblique" }}
-                        className={`${maziusReview.className} text-[128px] font-normal leading-[154px] tracking-[0.04em]`}
+                        className={`${maziusReview.className} text-[72px] font-normal leading-none tracking-[0.04em] lg:text-[96px] xl:text-[128px]`}
                       >
                         Vision
                       </span>
@@ -302,7 +302,7 @@ function HeroSection({ shapeSectionEnded }) {
                   <div className="overflow-hidden">
                     <p
                       id="shapeSectionShowElement"
-                      className={`${offBit.className} thirdMaskText text-[32px] leading-[35px] tracking-[0.06em]`}
+                      className={`${offBit.className} thirdMaskText text-[18px] leading-none tracking-[0.06em] lg:text-[22px] xl:text-[32px]`}
                     >
                       -LOREM IPSUM-
                     </p>

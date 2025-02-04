@@ -176,7 +176,7 @@ function FeaturedWork() {
       >
         <div
           ref={whiteSectionRef}
-          className="h-full w-[calc(100%+70px)] rounded-tl-[70px] bg-white ps-[70px]"
+          className="h-full w-[calc(100%+50px)] rounded-tl-[50px] bg-white ps-[70px] lg:w-[calc(100%+60px)] lg:rounded-tl-[60px] xl:w-[calc(100%+70px)] xl:rounded-tl-[70px]"
         >
           <div
             id="pinnedSection"
@@ -185,7 +185,7 @@ function FeaturedWork() {
           >
             <h2
               ref={headingRef}
-              className={`${layGrotesk.className} absolute -left-[calc(1100px-70px)] top-[10vh] z-10 text-nowrap text-[200px] font-medium uppercase leading-[100%]`}
+              className={`${layGrotesk.className} absolute -left-[calc(500px-50px)] top-[10vh] z-10 text-nowrap text-[90px] font-medium uppercase leading-[100%] lg:-left-[calc(875px-60px)] lg:text-[120px] xl:-left-[calc(1100px-70px)] xl:text-[200px]`}
             >
               Featured Work
             </h2>
@@ -204,10 +204,10 @@ function FeaturedWork() {
                       <div
                         key={index}
                         ref={(ref) => (workRefs.current[index + 1] = ref)}
-                        className="h-full w-1/4 flex-shrink-0 pt-[calc(10vh+200px)]"
+                        className="h-full w-1/4 flex-shrink-0 pt-[calc(10vh+90px)] lg:pt-[calc(10vh+120px)] xl:pt-[calc(10vh+200px)]"
                       >
                         <span
-                          className={`${inter.className} ps-[13.5px] text-[16px] leading-[19px] tracking-[0.02em]`}
+                          className={`${inter.className} ps-[13.5px] text-[14px] leading-[19px] tracking-[0.02em] xl:text-[16px]`}
                         >
                           00{index + 1}
                         </span>
@@ -223,16 +223,16 @@ function FeaturedWork() {
                             style={{
                               backgroundColor: item?.fillColor,
                             }}
-                            className={`${index % 2 === 0 ? "top-[26px]" : "bottom-[50px]"} absolute left-0 flex aspect-[285/175] w-[15vw] flex-col gap-y-[25px] rounded-[8px] px-[13.5px] pb-[11px] pt-[22px]`}
+                            className={`${index % 2 === 0 ? "top-[26px]" : "bottom-[50px]"} absolute left-0 flex aspect-[285/175] w-[20vw] flex-col gap-y-[14px] rounded-[6px] px-[7px] pb-[6px] pt-[12px] lg:w-[16vw] lg:gap-y-[18px] lg:rounded-[8px] lg:px-[9px] lg:pb-[8px] lg:pt-[16px] xl:w-[15vw] xl:gap-y-[25px] xl:px-[13.5px] xl:pb-[11px] xl:pt-[22px]`}
                           >
-                            <div className="flex flex-col gap-y-[8px]">
+                            <div className="flex flex-col gap-y-[0px] lg:gap-y-[4px] xl:gap-y-[8px]">
                               <p
-                                className={`${layGrotesk.className} text-[24px] font-medium tracking-[0.02em]`}
+                                className={`${layGrotesk.className} text-[14px] font-medium tracking-[0.02em] lg:text-[18px] xl:text-[24px]`}
                               >
                                 {item?.title}
                               </p>
                               <p
-                                className={`${aeonikTrial.className} line-clamp-2 text-[14px] leading-[16px] tracking-[0.02em]`}
+                                className={`${aeonikTrial.className} line-clamp-2 text-[11px] leading-[13px] tracking-[0.02em] lg:text-[12px] lg:leading-[14px] xl:text-[14px] xl:leading-[16px]`}
                               >
                                 {item?.smallDescription}
                               </p>
@@ -255,7 +255,7 @@ function FeaturedWork() {
           </div>
         </div>
       </div>
-      <div className="relative h-[20vh] rounded-b-[70px] bg-white px-[72px]">
+      <div className="relative h-[20vh] rounded-b-[50px] bg-white px-[72px] lg:rounded-b-[60px] xl:rounded-b-[70px]">
         <GridLines whiteBg={true} />
       </div>
     </div>

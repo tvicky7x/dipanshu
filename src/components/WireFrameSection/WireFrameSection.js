@@ -22,19 +22,19 @@ function WireFrameSection() {
 
   return (
     <>
-      <div className="flex h-screen flex-col">
-        <div className="relative h-[5%]">
+      <div className="flex max-h-screen flex-col">
+        <div className="relative flex-grow">
           <GridLines />
         </div>
         <div
           style={{ backgroundImage: `url(/skillsBg.svg)` }}
-          className="h-[90%] overflow-hidden border-y-2 border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[72px]"
+          className="overflow-hidden border-y-2 border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[72px]"
         >
           <div className="outline-x-2 relative h-full w-full overflow-hidden bg-black outline-white/15">
             <div
               ref={wireFrameSectionRef}
               onMouseMove={(e) => draggingCursor(e)}
-              className="relative flex h-full w-full select-none flex-nowrap"
+              className="relative flex h-full w-full cursor-col-resize select-none flex-nowrap"
             >
               {/* final section */}
               <img
@@ -53,7 +53,7 @@ function WireFrameSection() {
                   className={`absolute bottom-0 left-0 aspect-auto h-full w-[calc(100vw-144px)] max-w-none`}
                 />
                 {/* Dragging section */}
-                <div className="absolute right-0 top-0 h-full w-[20px] translate-x-1/2 cursor-col-resize">
+                <div className="absolute right-0 top-0 h-full w-[20px] translate-x-1/2">
                   <div className="absolute left-1/2 h-full w-[2px] -translate-x-1/2 bg-black"></div>
                   <div className="absolute left-1/2 top-1/2 flex w-max -translate-x-1/2 -translate-y-1/2 gap-x-[8px]">
                     <img
@@ -74,7 +74,7 @@ function WireFrameSection() {
             </div>
           </div>
         </div>
-        <div className="relative h-[5%]">
+        <div className="relative flex-grow">
           <GridLines />
         </div>
       </div>
