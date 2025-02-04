@@ -49,7 +49,7 @@ function SimplicitySection() {
 
   return (
     <>
-      <div className="relative h-[80px] xl:h-[150px]">
+      <div className="relative h-[60px] lg:h-[80px] xl:h-[150px]">
         <GridLines />
       </div>
       <div className="relative">
@@ -58,11 +58,11 @@ function SimplicitySection() {
         {/* Skills Band */}
         <div
           id="skillsBandWrapper"
-          className="relative z-10 flex h-[150px] items-center border-y-[2px] border-white/15 bg-black xl:h-[201px]"
+          className="relative z-10 flex h-[130px] items-center border-y-[2px] border-white/15 bg-black lg:h-[150px] xl:h-[201px]"
         >
           <div id="skillBandTarget" className="relative">
             <p
-              className={`${offBit.className} overflow-visible whitespace-pre-wrap text-nowrap text-[64px] uppercase leading-[96px] tracking-[0.06em] xl:text-[96px] xl:leading-[128px]`}
+              className={`${offBit.className} overflow-visible whitespace-pre-wrap text-nowrap text-[48px] uppercase leading-[80px] tracking-[0.06em] lg:text-[64px] lg:leading-[96px] xl:text-[96px] xl:leading-[128px]`}
             >
               {skillLoopText}
             </p>
@@ -71,7 +71,7 @@ function SimplicitySection() {
                 <div
                   key={index}
                   style={{ left: `${index * 16.6}%` }}
-                  className={`${aeonikTrial.className} ${index % 2 === 0 ? `top-0 -translate-y-2` : `bottom-0 -translate-y-2`} absolute border border-white bg-black p-[7px] text-[14px] font-light leading-[24px] xl:p-[9px] xl:text-[16px] xl:leading-[24px]`}
+                  className={`${aeonikTrial.className} ${index % 2 === 0 ? `top-0 -translate-y-2` : `bottom-0 -translate-y-2`} absolute border border-white bg-black p-[5px] text-[12px] font-light leading-[20px] lg:p-[7px] lg:text-[14px] lg:leading-[24px] xl:p-[9px] xl:text-[16px] xl:leading-[24px]`}
                 >
                   {item}
                 </div>
@@ -82,11 +82,11 @@ function SimplicitySection() {
 
         {/* Simplicity Section */}
         <div>
-          <div className="relative z-10 h-[768px] xl:h-[1024px]">
+          <div className="relative z-10 h-[650px] lg:h-[768px] xl:h-[1024px]">
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="flex flex-col text-nowrap text-center">
                 <p
-                  className={`${layGrotesk.className} flex flex-col text-[75px] font-medium leading-[1.2] tracking-[-0.02em] xl:text-[96px]`}
+                  className={`${layGrotesk.className} flex flex-col text-[58px] font-medium leading-[1.2] tracking-[-0.02em] lg:text-[75px] xl:text-[96px]`}
                 >
                   <span>
                     <span
@@ -112,14 +112,14 @@ function SimplicitySection() {
                   </span>
                 </p>
                 <p
-                  className={`${aeonikTrial.className} mt-[20px] text-[16px] font-light uppercase italic leading-normal tracking-[0.04em] xl:text-[20px]`}
+                  className={`${aeonikTrial.className} mt-[20px] text-[14px] font-light uppercase italic leading-normal tracking-[0.04em] lg:text-[16px] xl:text-[20px]`}
                 >
                   — Leonardo da Vinci
                 </p>
               </div>
             </div>
           </div>
-          <div className="h-[100px] xl:h-[200px]" />
+          <div className="h-[50px] lg:h-[100px] xl:h-[200px]" />
         </div>
 
         {/* scroll grid */}
