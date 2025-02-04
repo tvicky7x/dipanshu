@@ -229,12 +229,12 @@ function SkillsSection() {
           {/* Title container */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-nowrap text-center uppercase">
             <p
-              className={`${aeonikTrial.className} text-[20px] leading-[18px] tracking-[0.02em] xl:text-[24px] xl:leading-[22px]`}
+              className={`${aeonikTrial.className} text-[18px] leading-[18px] tracking-[0.02em] lg:text-[20px] xl:text-[24px] xl:leading-[22px]`}
             >
               {"[SKILLS]"}
             </p>
             <p
-              className={`${layGrotesk.className} mt-[16px] text-[54px] leading-[67px] xl:mt-[20px] xl:text-[70px] xl:leading-[83px]`}
+              className={`${layGrotesk.className} mt-[12px] text-[42px] leading-[67px] lg:mt-[16px] lg:text-[54px] xl:mt-[20px] xl:text-[70px] xl:leading-[83px]`}
             >
               Design Arsenal
             </p>
