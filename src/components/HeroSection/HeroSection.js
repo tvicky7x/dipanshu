@@ -1,12 +1,9 @@
 import { layGrotesk, maziusReview, offBit } from "@/app/font";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { TextPlugin } from "gsap/all";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import GridLines from "../UtilitiesComponents/GridLines";
-
-gsap.registerPlugin(TextPlugin);
 
 const heroSectionMainText = ["we create", "award", "winning sites"];
 
@@ -18,17 +15,6 @@ function HeroSection({ shapeSectionEnded }) {
   function heroSectionEnded() {
     setHeroSectionEnd(true);
   }
-
-  // useGSAP(() => {
-  //   gsap
-  //     .timeline()
-  //     .to("#heroText1", {
-  //       duration: 0.3,
-  //       text: "we create",
-  //     })
-  //     .to("#heroText2", { duration: 0.3, text: "award" })
-  //     .to("#heroText3", { duration: 0.3, text: "winning sites" });
-  // });
 
   useGSAP(() => {
     const heroSectionTextContainer = document.querySelector(
@@ -122,15 +108,6 @@ function HeroSection({ shapeSectionEnded }) {
       });
     };
 
-    // gsap
-    //   .timeline({
-    //     scrollTrigger: {
-    //       trigger: shapeSectionSectionRef.current,
-    //       start: "top center",
-    //       toggleActions: "play reverse play reverse",
-    //     },
-    //   })
-
     setTimeout(() => {
       addTextWithScrambleEffect(
         heroSectionMainText,
@@ -191,15 +168,6 @@ function HeroSection({ shapeSectionEnded }) {
         delay: 0.2,
         onComplete: () => {
           shapeSectionEnded();
-          // gsap.set(".heroSectionBg", { backgroundColor: "#fff" });
-          // gsap.to(".adjustedHeight", {
-          //   scrollTrigger: {
-          //     trigger: "#whiteBgTransition",
-          //     start: "bottom top",
-          //     markers: true,
-          //   },
-          //   height: "200px",
-          // });
         },
       });
   }, [heroSectionEnd]);
@@ -239,9 +207,6 @@ function HeroSection({ shapeSectionEnded }) {
       {heroSectionEnd && (
         <>
           {/* Shape section */}
-          {/* <div className="adjustedHeight relative h-0">
-            <GridLines />
-          </div> */}
           <div className="relative">
             {/* grid */}
             <div className="gridLineAfterDisplay absolute h-full w-full translate-y-full opacity-0">
