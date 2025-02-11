@@ -165,8 +165,8 @@ function FeaturedWork() {
 
   return (
     <div>
-      <div className="h-[50vh] px-[72px]">
-        <div className="h-full border-x-2 border-white/15"></div>
+      <div className="h-[50vh] px-[20px] md:px-[72px]">
+        <div className="h-full border-x border-white/15 md:border-x-2"></div>
       </div>
       <div
         id="featuredWorkSection"
@@ -185,11 +185,11 @@ function FeaturedWork() {
           >
             <h2
               ref={headingRef}
-              className={`${layGrotesk.className} absolute -left-[calc(500px-50px)] top-[10vh] z-10 text-nowrap text-[90px] font-medium uppercase leading-[100%] lg:-left-[calc(875px-60px)] lg:text-[120px] xl:-left-[calc(1100px-70px)] xl:text-[200px]`}
+              className={`${layGrotesk.className} absolute -left-[calc(530px-50px)] top-[10vh] z-10 text-nowrap text-[96px] font-medium uppercase leading-[100%] md:-left-[calc(500px-50px)] md:text-[90px] lg:-left-[calc(875px-60px)] lg:text-[120px] xl:-left-[calc(1100px-70px)] xl:text-[200px]`}
             >
               Featured Work
             </h2>
-            <div className="h-full w-full px-[72px]">
+            <div className="hidden h-full w-full px-[72px] md:block">
               <div className="featuredCard h-full overflow-hidden border-x-2 border-black/15 opacity-0">
                 <div
                   ref={flexedSectionRef}
