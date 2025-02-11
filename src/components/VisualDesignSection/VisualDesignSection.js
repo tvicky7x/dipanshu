@@ -5,13 +5,13 @@ import GridLines from "../UtilitiesComponents/GridLines";
 
 function VisualDesignSection() {
   return (
-    <div className="relative h-[650px] lg:h-[768px] xl:h-[1024px]">
+    <div className="relative h-screen md:h-[650px] lg:h-[768px] xl:h-[1024px]">
       {/* grid */}
       <GridLines />
 
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
         <p
-          className={`${layGrotesk.className} flex flex-col text-nowrap text-center text-[38px] leading-[54px] lg:text-[48px] lg:leading-[64px] xl:text-[64px] xl:leading-[80px]`}
+          className={`${layGrotesk.className} flex w-[340px] flex-col text-center text-[48px] leading-[56px] md:w-auto md:text-nowrap md:text-[38px] md:leading-[54px] lg:text-[48px] lg:leading-[64px] xl:text-[64px] xl:leading-[80px]`}
         >
           <span>
             I pair strong{" "}
@@ -40,7 +40,7 @@ function VisualDesignSection() {
         alt="magical hand"
         width={426}
         height={396.5}
-        className="absolute bottom-0 right-0 z-10 aspect-auto h-[40%]"
+        className="absolute bottom-0 right-0 z-10 aspect-auto h-[20%] translate-x-[25%] md:h-[40%]"
       />
     </div>
   );

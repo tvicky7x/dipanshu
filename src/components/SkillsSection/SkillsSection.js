@@ -215,33 +215,33 @@ function SkillsSection() {
   return (
     <div className="relative flex h-screen flex-col">
       {/* grid */}
-      <div className="relative h-[7%]">
+      <div className="relative h-0 md:h-[7%]">
         <GridLines />
       </div>
       <div
         style={{ backgroundImage: "url(skillsBg.svg)" }}
-        className="g-cover pointer-events-none relative z-10 h-full w-full border-y-2 border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[72px]"
+        className="g-cover pointer-events-none relative z-10 h-full w-full border-y border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[20px] md:border-y-2 md:px-[72px]"
       >
         <div
           ref={skillsContainerRef}
-          className="pointer-events-auto relative h-full w-full bg-black"
+          className="relative h-full w-full bg-black md:pointer-events-auto"
         >
           {/* Title container */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-nowrap text-center uppercase">
             <p
-              className={`${aeonikTrial.className} text-[18px] leading-[18px] tracking-[0.02em] lg:text-[20px] xl:text-[24px] xl:leading-[22px]`}
+              className={`${aeonikTrial.className} text-[16px] leading-[22px] tracking-[0.02em] md:text-[18px] md:leading-[18px] lg:text-[20px] xl:text-[24px] xl:leading-[22px]`}
             >
               {"[SKILLS]"}
             </p>
             <p
-              className={`${layGrotesk.className} mt-[12px] text-[42px] leading-[67px] lg:mt-[16px] lg:text-[54px] xl:mt-[20px] xl:text-[70px] xl:leading-[83px]`}
+              className={`${layGrotesk.className} mt-[8px] text-[36px] leading-normal md:mt-[12px] md:text-[42px] md:leading-[67px] lg:mt-[16px] lg:text-[54px] xl:mt-[20px] xl:text-[70px] xl:leading-[83px]`}
             >
               Design Arsenal
             </p>
           </div>
         </div>
       </div>
-      <div className="h-[7%] px-[72px]">
+      <div className="h-0 px-[72px] md:h-[7%]">
         <div className="h-full w-full border-x-2 border-white/15"></div>
       </div>
     </div>

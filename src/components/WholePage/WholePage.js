@@ -16,6 +16,7 @@ import WireFrameSection from "../WireFrameSection/WireFrameSection";
 import UniqueSections from "../UniqueSection/UniqueSections";
 import StarSection from "../StarSection/StarSection";
 import SimplicitySection from "../SimplicitySection/SimplicitySection";
+import HeroSectionMobile from "../HeroSection/HeroSectionMobile";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,28 +42,46 @@ function WholePage() {
   });
 
   return (
-    <div
-      style={{ backgroundImage: "url(bg.svg)" }}
-      id="wholePage"
-      className="overflow-y-auto [&::-webkit-scrollbar]:hidden"
-    >
-      <HeroSection shapeSectionEnded={shapeSectionEnded} />
-      {shapeSectionEnd && (
-        <>
-          <SimplicitySection />
-          <AboutSection />
-          <VisualDesignSection />
-          <SkillsSection />
-          <ServicesSection />
-          <FeaturedWork />
-          <DesignProcessSection />
-          <WireFrameSection />
-          <UniqueSections />
-          <StarSection />
-          <ContactSection />
-        </>
-      )}
-    </div>
+    <>
+      {/* <div
+        style={{ backgroundImage: "url(bg.svg)" }}
+        id="wholePage"
+        className="hidden overflow-y-auto md:block [&::-webkit-scrollbar]:hidden"
+      >
+        <HeroSection shapeSectionEnded={shapeSectionEnded} />
+        {shapeSectionEnd && (
+          <>
+            <SimplicitySection />
+            <AboutSection />
+            <VisualDesignSection />
+            <SkillsSection />
+            <ServicesSection />
+            <FeaturedWork />
+            <DesignProcessSection />
+            <WireFrameSection />
+            <UniqueSections />
+            <StarSection />
+            <ContactSection />
+          </>
+        )}
+      </div> */}
+      <div
+        style={{ backgroundImage: "url(bg.svg)" }}
+        className="overflow-hidden"
+      >
+        <HeroSectionMobile shapeSectionEnded={shapeSectionEnded} />
+        {shapeSectionEnd && (
+          <>
+            <SimplicitySection />
+            <AboutSection />
+            <VisualDesignSection />
+            <SkillsSection />
+            <ServicesSection />
+            <FeaturedWork />
+          </>
+        )}
+      </div>
+    </>
   );
 }
 

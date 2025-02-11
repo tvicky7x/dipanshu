@@ -81,15 +81,15 @@ function AboutSection() {
             className="h-screen w-full"
           >
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="flex w-[400px] flex-col gap-y-[30px] text-center text-black lg:w-[450px] lg:gap-y-[40px] xl:w-[650px] xl:gap-y-[56px]">
+              <div className="flex w-[300px] flex-col gap-y-[30px] text-center text-black md:w-[400px] lg:w-[450px] lg:gap-y-[40px] xl:w-[650px] xl:gap-y-[56px]">
                 <p
-                  className={`${layGrotesk.className} text-[18px] font-semibold leading-[18px] tracking-[0.04em] lg:text-[20px] xl:text-[24px]`}
+                  className={`${layGrotesk.className} text-[16px] font-semibold leading-[22px] tracking-[0.04em] md:text-[18px] md:leading-[18px] lg:text-[20px] xl:text-[24px]`}
                 >
                   {"[ABOUT]"}
                 </p>
                 <div
                   id="aboutTextHighlightContainer"
-                  className="space-y-[25px] text-[22px] leading-[30px] tracking-[0.02em] text-hiddenTextColor lg:space-y-[30px] lg:text-[26px] lg:leading-[34px] xl:space-y-[40px] xl:text-[32px] xl:leading-[40px]"
+                  className="space-y-[20px] text-[16px] leading-[25px] tracking-[0.02em] text-hiddenTextColor md:space-y-[25px] md:text-[22px] md:leading-[30px] lg:space-y-[30px] lg:text-[26px] lg:leading-[34px] xl:space-y-[40px] xl:text-[32px] xl:leading-[40px]"
                 >
                   {aboutTextHighlightContent.map((str, index) => (
                     <p key={index}>
@@ -113,9 +113,9 @@ function AboutSection() {
             className="flex h-screen w-full items-center justify-center"
           >
             <div className="flex flex-col items-center gap-y-[60px] xl:gap-y-[80px]">
-              <div className="aspect-[376/460] w-[23vw] rounded-[26px] bg-black"></div>
+              <div className="aspect-[376/460] w-[50vw] rounded-[26px] bg-black md:w-[23vw]"></div>
               <p
-                className={`${layGrotesk.className} w-[600px] text-center text-[22px] leading-[30px] text-black lg:w-[800px] lg:text-[26px] lg:leading-[34px] xl:w-[1010px] xl:text-[32px] xl:leading-[40px]`}
+                className={`${layGrotesk.className} w-[300px] text-center text-[16px] leading-[25px] text-black md:w-[600px] md:text-[22px] md:leading-[30px] lg:w-[800px] lg:text-[26px] lg:leading-[34px] xl:w-[1010px] xl:text-[32px] xl:leading-[40px]`}
               >
                 For over 10 years I have been striving to create bold
                 experiences that connect brands with their audience through
@@ -129,9 +129,9 @@ function AboutSection() {
       {/* scroll grid */}
       <div
         ref={scrollBarBlackContainerRef}
-        className="absolute bottom-0 left-0 w-full px-[72px]"
+        className="absolute bottom-0 left-0 w-full px-[20px] md:px-[72px]"
       >
-        <div className="grid grid-flow-col grid-cols-4 divide-x-2 divide-white/15 border-x-2 border-white/15">
+        <div className="grid grid-flow-col grid-cols-4 divide-x divide-transparent border-x border-transparent md:divide-x-2 md:divide-white/15 md:border-x-2 md:border-white/15">
           {Array(4)
             .fill(true)
             .map((_, index) => {
