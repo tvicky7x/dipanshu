@@ -83,7 +83,9 @@ function FeaturedWork() {
   const headingRef = useRef();
   const pinnedSectionRef = useRef();
   const flexedSectionRef = useRef();
+  const flexedSectionMobileRef = useRef();
   const workRefs = useRef([]);
+  const worksMobileRefs = useRef([]);
 
   useGSAP(() => {
     // pinning
@@ -145,6 +147,11 @@ function FeaturedWork() {
       workRefs.current[0].clientWidth * (workRefs.current.length - 1) -
       workRefs.current[0].clientWidth * 3;
 
+    const flexSectionMobileTransformValue =
+      (100 / worksMobileRefs.current.length - 1) *
+        worksMobileRefs.current.length -
+      2;
+
     gsap
       .timeline({
         scrollTrigger: {
@@ -158,6 +165,13 @@ function FeaturedWork() {
         flexedSectionRef.current,
         {
           x: `-${flexSectionTransformValue + 1}px`,
+        },
+        0,
+      )
+      .to(
+        flexedSectionMobileRef.current,
+        {
+          y: `-${flexSectionMobileTransformValue}%`,
         },
         0,
       );
@@ -252,10 +266,74 @@ function FeaturedWork() {
                 </div>
               </div>
             </div>
+            <div className="featuredCard h-full w-full px-[20px] md:hidden">
+              <div className="flex h-full w-full items-end border-x border-black/15">
+                <div className="h-[calc(100%-250px)] w-full overflow-hidden border-t border-black/15">
+                  <div ref={flexedSectionMobileRef} className="flex flex-col">
+                    {featuredWorkArray?.map((item, index) => {
+                      return (
+                        <div
+                          key={index}
+                          ref={(ref) => (worksMobileRefs.current[index] = ref)}
+                          className="flex-shrink-0 border-b border-black/15 last:border-b-0"
+                        >
+                          <div className="flex items-center gap-x-[24px] px-[20px] pt-[16px]">
+                            <span
+                              className={`${inter.className} text-[16px] tracking-[0.02em]`}
+                            >
+                              00{index + 1}
+                            </span>
+                            {/* <p
+                          className={`${aeonikTrial.className} text-[16px] tracking-[0.02em]`}
+                        >
+                          {item?.title}
+                        </p> */}
+                          </div>
+                          <div className="pb-[132px] pt-[64px]">
+                            <motion.div
+                              initial={{ opacity: 0, scale: 0 }}
+                              whileInView={{
+                                opacity: 1,
+                                scale: 1,
+                                transition: { duration: 0.5 },
+                              }}
+                              style={{
+                                backgroundColor: item?.fillColor,
+                              }}
+                              className={`mx-auto flex aspect-[285/270] w-[285px] flex-col gap-y-[25px] rounded-[8px] px-[13.5px] pb-[12px] pt-[22px]`}
+                            >
+                              <div className="flex flex-col gap-y-[8px]">
+                                <p
+                                  className={`${layGrotesk.className} text-[24px] font-medium leading-[100%] tracking-[0.02em]`}
+                                >
+                                  {item?.title}
+                                </p>
+                                <p
+                                  className={`${aeonikTrial.className} line-clamp-2 text-[14px] leading-[16px] tracking-[0.02em]`}
+                                >
+                                  {item?.smallDescription}
+                                </p>
+                              </div>
+                              <div className="flex h-full items-center justify-center overflow-hidden rounded-[6px]">
+                                <img
+                                  src={item?.imageUrl}
+                                  alt={item?.title}
+                                  className="aspect-auto w-full"
+                                />
+                              </div>
+                            </motion.div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className="relative h-[20vh] rounded-b-[50px] bg-white px-[72px] lg:rounded-b-[60px] xl:rounded-b-[70px]">
+      <div className="relative h-[50px] rounded-b-[50px] bg-white px-[72px] md:h-[20vh] lg:rounded-b-[60px] xl:rounded-b-[70px]">
         <GridLines whiteBg={true} />
       </div>
     </div>
