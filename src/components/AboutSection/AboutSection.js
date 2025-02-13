@@ -42,7 +42,7 @@ function AboutSection() {
       .timeline({
         scrollTrigger: {
           trigger: "#aboutSectionContainer",
-          start: "-=200",
+          start: "top 5%",
           end: "bottom bottom",
           scrub: true,
         },
@@ -92,7 +92,7 @@ function AboutSection() {
                   className="space-y-[20px] text-[16px] leading-[25px] tracking-[0.02em] text-hiddenTextColor md:space-y-[25px] md:text-[22px] md:leading-[30px] lg:space-y-[30px] lg:text-[26px] lg:leading-[34px] xl:space-y-[40px] xl:text-[32px] xl:leading-[40px]"
                 >
                   {aboutTextHighlightContent.map((str, index) => (
-                    <p key={index}>
+                    <p key={index} className={layGrotesk.className}>
                       {str.split("").map((char, i) => (
                         <span key={i}>{char}</span>
                       ))}

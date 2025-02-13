@@ -220,7 +220,7 @@ function SkillsSection() {
       </div>
       <div
         style={{ backgroundImage: "url(skillsBg.svg)" }}
-        className="g-cover pointer-events-none relative z-10 h-full w-full border-y border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[20px] md:border-y-2 md:px-[72px]"
+        className="g-cover pointer-events-auto relative z-10 h-full w-full border-y border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[20px] md:border-y-2 md:px-[72px]"
       >
         <div
           ref={skillsContainerRef}
