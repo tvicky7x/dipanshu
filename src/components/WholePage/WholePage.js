@@ -78,6 +78,9 @@ function WholePage() {
             <SkillsSection />
             <ServicesSection />
             <FeaturedWork />
+            <DesignProcessSection />
+            <WireFrameSection />
+            <UniqueSections />
           </>
         )}
       </div>
