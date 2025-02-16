@@ -125,7 +125,7 @@ function SimplicitySection() {
         {/* scroll grid */}
         <div
           ref={scrollBarContainerRef}
-          className="absolute bottom-0 left-0 grid w-full grid-flow-col grid-cols-4 px-[20px] md:px-[72px]"
+          className="absolute bottom-0 left-0 grid w-full grid-flow-col grid-cols-4 px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]"
         >
           {Array(4)
             .fill(true)

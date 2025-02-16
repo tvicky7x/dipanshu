@@ -129,7 +129,7 @@ function AboutSection() {
       {/* scroll grid */}
       <div
         ref={scrollBarBlackContainerRef}
-        className="absolute bottom-0 left-0 w-full px-[20px] md:px-[72px]"
+        className="absolute bottom-0 left-0 w-full px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]"
       >
         <div className="grid grid-flow-col grid-cols-4 divide-x divide-transparent border-x border-transparent md:divide-x-2 md:divide-white/15 md:border-x-2 md:border-white/15">
           {Array(4)

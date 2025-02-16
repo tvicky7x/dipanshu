@@ -226,7 +226,7 @@ function FeaturedWork() {
 
   return (
     <div>
-      <div className="h-[50vh] px-[20px] md:px-[72px]">
+      <div className="h-[50vh] px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]">
         <div className="h-full border-x border-white/15 md:border-x-2"></div>
       </div>
       <div

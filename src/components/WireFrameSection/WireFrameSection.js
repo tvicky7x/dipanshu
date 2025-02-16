@@ -28,7 +28,7 @@ function WireFrameSection() {
         </div>
         <div
           style={{ backgroundImage: `url(/skillsBg.svg)` }}
-          className="overflow-hidden border-y-2 border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[72px]"
+          className="overflow-hidden border-y-2 border-white/15 bg-auto bg-clip-padding bg-left-top bg-repeat px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]"
         >
           <div className="outline-x-2 relative h-full w-full overflow-hidden bg-black outline-white/15">
             <div
@@ -50,7 +50,7 @@ function WireFrameSection() {
               >
                 <img
                   src="/wireFrameBefore.jpg"
-                  className={`absolute bottom-0 left-0 aspect-auto h-full w-[calc(100vw-144px)] max-w-none`}
+                  className={`absolute bottom-0 left-0 aspect-auto h-full w-[calc(100vw-40px)] max-w-none md:w-[calc(100vw-64px)] lg:w-[calc(100vw-128px)] xl:w-[calc(100vw-144px)]`}
                 />
                 {/* Dragging section */}
                 <div className="absolute right-0 top-0 h-full w-[20px] translate-x-1/2">

@@ -26,7 +26,7 @@ const servicesArray = [
 
 function ServicesSection() {
   return (
-    <div className="px-[20px] md:px-[72px]">
+    <div className="px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]">
       <div className="border-x border-white/15 pb-[104px] pt-[50px] md:border-x-2 lg:pb-[154px] lg:pt-[100px] xl:pb-[204px] xl:pt-[150px]">
         <div className="flex flex-col gap-y-[120px] lg:gap-y-[140px] xl:gap-y-[160px]">
           <div className="flex flex-col gap-y-[8px] text-center uppercase md:gap-y-[12px] lg:gap-y-[16px] xl:gap-y-[20px]">
