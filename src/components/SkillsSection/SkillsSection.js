@@ -241,7 +241,7 @@ function SkillsSection() {
           </div>
         </div>
       </div>
-      <div className="h-0 px-[72px] md:h-[7%]">
+      <div className="h-0 px-[20px] md:h-[7%] md:px-[32px] lg:px-[64px] xl:px-[72px]">
         <div className="h-full w-full border-x-2 border-white/15"></div>
       </div>
     </div>

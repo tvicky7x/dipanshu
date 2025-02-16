@@ -48,13 +48,13 @@ const uniqueSection = [
 
 function UniqueSections() {
   return (
-    <div className="relative h-[650px] bg-white px-[72px] text-black lg:h-[768px] xl:h-[1024px]">
+    <div className="relative h-[650px] bg-white px-[20px] text-black md:px-[32px] lg:h-[768px] lg:px-[64px] xl:h-[1024px] xl:px-[72px]">
       <h2
         className={`${layGrotesk.className} absolute left-1/2 top-[80px] -translate-x-1/2 text-[50px] font-medium uppercase leading-normal tracking-[0.04em] lg:top-[126px] lg:text-[60px] xl:top-[176px] xl:text-[70px]`}
       >
         Lorem ipsum
       </h2>
-      <div className="absolute left-0 top-0 h-full w-full px-[72px]">
+      <div className="absolute left-0 top-0 h-full w-full px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]">
         <div
           className={`grid h-full grid-flow-col grid-cols-4 divide-x-2 divide-black/15 border-x-2 border-black/15`}
         >

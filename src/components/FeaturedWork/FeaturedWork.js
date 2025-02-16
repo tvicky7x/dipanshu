@@ -243,11 +243,11 @@ function FeaturedWork() {
           >
             <h2
               ref={headingRef}
-              className={`${layGrotesk.className} absolute -left-[calc(530px-50px)] top-[10vh] z-10 text-nowrap text-[96px] font-medium uppercase leading-[100%] md:-left-[calc(500px-50px)] md:text-[90px] lg:-left-[calc(875px-60px)] lg:text-[120px] xl:-left-[calc(1100px-70px)] xl:text-[200px]`}
+              className={`${layGrotesk.className} absolute -left-[calc(530px-50px)] top-[10vh] z-10 text-nowrap text-[96px] font-medium uppercase leading-[100%] md:-left-[calc(500px-50px)] md:text-[90px] lg:-left-[calc(670px-60px)] lg:text-[120px] xl:-left-[calc(1100px-70px)] xl:text-[200px]`}
             >
               Featured Work
             </h2>
-            <div className="h-full w-full px-[72px]">
+            <div className="h-full w-full px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]">
               <div className="featuredCard h-full overflow-hidden border-x-2 border-black/15 opacity-0">
                 <div
                   ref={flexedSectionRef}
@@ -396,9 +396,9 @@ function FeaturedWork() {
         </div>
       </div>
       {!flexedSectionMobileVisible && (
-        <div className="h-[150px] bg-white"></div>
+        <div className="block h-[150px] bg-white md:hidden"></div>
       )}
-      <div className="relative h-[50px] rounded-b-[50px] bg-white px-[72px] md:h-[20vh] lg:rounded-b-[60px] xl:rounded-b-[70px]">
+      <div className="relative h-[50px] rounded-b-[50px] bg-white px-[20px] md:h-[20vh] md:px-[32px] lg:rounded-b-[60px] lg:px-[64px] xl:rounded-b-[70px] xl:px-[72px]">
         <GridLines whiteBg={true} />
       </div>
     </div>

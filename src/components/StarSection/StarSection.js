@@ -9,7 +9,7 @@ function StarSection() {
         style={{ backgroundImage: "url(skillsBg.svg)" }}
         className="absolute left-0 top-0 h-full w-1/2"
       />
-      <div className="absolute left-0 top-0 z-10 h-full w-full px-[72px]">
+      <div className="absolute left-0 top-0 z-10 h-full w-full px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]">
         <div
           className={`grid h-full grid-flow-col grid-cols-4 divide-x-2 divide-white/15 border-x-2 border-white/15 bg-black`}
         >

@@ -60,7 +60,10 @@ function DesignProcessSection() {
         ref={designProcessSectionRef}
         className="relative hidden h-[2000px] md:block lg:h-[3000px] xl:h-[4000px]"
       >
-        <div ref={pinnedDesignedRef} className="h-screen px-[72px]">
+        <div
+          ref={pinnedDesignedRef}
+          className="h-screen px-[20px] md:px-[32px] lg:px-[64px] xl:px-[72px]"
+        >
           <div className="flex h-full flex-col border-x-2 border-white/15">
             {/* heading Section */}
             <div className="relative h-[40vh] flex-shrink-0">
