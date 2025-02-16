@@ -53,7 +53,7 @@ function DesignProcessSection() {
 
   return (
     <>
-      <div className="relative h-[50px] md:h-[15vh]">
+      <div className="relative h-[50px] md:h-[7vh] lg:h-[10vh] xl:h-[15vh]">
         <GridLines />
       </div>
       <div
@@ -260,7 +260,7 @@ function DesignProcessSection() {
           })}
         </div>
       </div>
-      <div className="relative h-[64px] md:h-[15vh]">
+      <div className="relative h-[64px] md:h-[7vh] lg:h-[10vh] xl:h-[15vh]">
         <GridLines />
       </div>
     </>

@@ -80,6 +80,7 @@ function WholePage() {
             <FeaturedWork />
             <DesignProcessSection />
             <WireFrameSection />
+            <UniqueSections />
           </>
         )}
       </div>
