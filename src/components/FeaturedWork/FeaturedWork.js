@@ -88,7 +88,6 @@ function FeaturedWork() {
   const pinnedSectionRef = useRef();
   const pinnedSectionMobileRef = useRef();
   const flexedSectionRef = useRef();
-  const flexedSectionMobileRef = useRef();
   const workRefs = useRef([]);
   const worksMobileRefs = useRef([]);
 
@@ -180,7 +179,7 @@ function FeaturedWork() {
         scrollTrigger: {
           trigger: featuredWorkMobileSectionRef.current,
           start: "top 25%",
-          end: "top -1150px",
+          end: "top -1200px",
           scrub: true,
           onUpdate: (self) => {
             if (self.direction === -1) {
@@ -396,6 +395,9 @@ function FeaturedWork() {
           )}
         </div>
       </div>
+      {!flexedSectionMobileVisible && (
+        <div className="h-[150px] bg-white"></div>
+      )}
       <div className="relative h-[50px] rounded-b-[50px] bg-white px-[72px] md:h-[20vh] lg:rounded-b-[60px] xl:rounded-b-[70px]">
         <GridLines whiteBg={true} />
       </div>

@@ -6,6 +6,21 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import GridLines from "../UtilitiesComponents/GridLines";
 
+const designProcess = [
+  {
+    heading: "Discover",
+    para: "Estrutura inicial, mapeando funcionalidade efluxo do projeto, sem detalhes visuais.",
+  },
+  {
+    heading: "Ideate and Conceptualize",
+    para: "Nossa essência está em criar experiências visuais impactantes, combinando estética eusabilidade para entregar soluções inovadoras, rompendo o convencional e encantando em cada detalhe.",
+  },
+  {
+    heading: "Design and Refine",
+    para: "Transformação do design em uma experiência interativa, com animações e funcionalidades dinâmicas.",
+  },
+];
+
 gsap.registerPlugin(ScrollTrigger);
 
 function DesignProcessSection() {
@@ -38,12 +53,12 @@ function DesignProcessSection() {
 
   return (
     <>
-      <div className="relative h-[15vh]">
+      <div className="relative h-[50px] md:h-[15vh]">
         <GridLines />
       </div>
       <div
         ref={designProcessSectionRef}
-        className="relative h-[2000px] lg:h-[3000px] xl:h-[4000px]"
+        className="relative hidden h-[2000px] md:block lg:h-[3000px] xl:h-[4000px]"
       >
         <div ref={pinnedDesignedRef} className="h-screen px-[72px]">
           <div className="flex h-full flex-col border-x-2 border-white/15">
@@ -104,13 +119,12 @@ function DesignProcessSection() {
                               <p
                                 className={`${layGrotesk.className} line-clamp-1 text-[15px] leading-[25px] lg:text-[17px] lg:leading-[29px] xl:text-[19.9px] xl:leading-[31px]`}
                               >
-                                Discover
+                                {designProcess[0]?.heading}
                               </p>
                               <p
                                 className={`${aeonikTrial.className} line-clamp-2 text-[13px] leading-[18px] text-black text-opacity-50 lg:text-[14px] lg:leading-[20px] xl:text-[15px] xl:leading-[22px]`}
                               >
-                                Estrutura inicial, mapeando funcionalidade e
-                                fluxo do projeto, sem detalhes visuais.
+                                {designProcess[0]?.para}
                               </p>
                             </div>
                           </div>
@@ -144,16 +158,12 @@ function DesignProcessSection() {
                               <p
                                 className={`${layGrotesk.className} line-clamp-1 text-[15px] leading-[25px] lg:text-[17px] lg:leading-[29px] xl:text-[19.9px] xl:leading-[31px]`}
                               >
-                                Ideate and Conceptualize
+                                {designProcess[1]?.heading}
                               </p>
                               <p
                                 className={`${aeonikTrial.className} line-clamp-2 text-[13px] leading-[18px] text-black text-opacity-50 lg:text-[14px] lg:leading-[20px] xl:text-[15px] xl:leading-[22px]`}
                               >
-                                Nossa essência está em criar experiências
-                                visuais impactantes, combinando estética e
-                                usabilidade para entregar soluções inovadoras,
-                                rompendo o convencional e encantando em cada
-                                detalhe.
+                                {designProcess[1]?.para}
                               </p>
                             </div>
                           </div>
@@ -184,14 +194,12 @@ function DesignProcessSection() {
                               <p
                                 className={`${layGrotesk.className} line-clamp-1 text-[15px] leading-[25px] lg:text-[17px] lg:leading-[29px] xl:text-[19.9px] xl:leading-[31px]`}
                               >
-                                Design and Refine
+                                {designProcess[2]?.heading}
                               </p>
                               <p
                                 className={`${aeonikTrial.className} line-clamp-2 text-[13px] leading-[18px] text-black text-opacity-50 lg:text-[14px] lg:leading-[20px] xl:text-[15px] xl:leading-[22px]`}
                               >
-                                Transformação do design em uma experiência
-                                interativa, com animações e funcionalidades
-                                dinâmicas.
+                                {designProcess[2]?.para}
                               </p>
                             </div>
                           </div>
@@ -204,7 +212,52 @@ function DesignProcessSection() {
           </div>
         </div>
       </div>
-      <div className="relative h-[15vh]">
+      <div className="block px-[20px] md:hidden">
+        <div className="border-x border-white/15">
+          <div className="flex flex-col gap-y-[100px]">
+            <p
+              className={`${layGrotesk.className} text-center text-[36px] tracking-[0.04em]`}
+            >
+              Lorem Ipsum
+            </p>
+            <div className="flex w-full items-center justify-between border-y border-white/15 px-[24px] py-[26px]">
+              <span className={`${aeonikTrial.className} text-[16px]`}>
+                Lorem Ipsum
+              </span>
+              <Image
+                src={"/arrowLink.svg"}
+                alt="arrow link icon"
+                width={24}
+                height={24}
+                loading="lazy"
+                className="aspect-auto w-[23px]"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          {designProcess.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="border-designProcessBorder flex flex-col gap-y-[10px] border-b bg-white px-[20px] py-[36px]"
+              >
+                <p
+                  className={`${layGrotesk.className} text-[16px] leading-[31px] text-black`}
+                >
+                  {item?.heading}
+                </p>
+                <p
+                  className={`${aeonikTrial.className} text-[15px] leading-[17px] text-black text-opacity-50`}
+                >
+                  {item?.para}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="relative h-[64px] md:h-[15vh]">
         <GridLines />
       </div>
     </>
